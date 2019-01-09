@@ -2,6 +2,11 @@
 
 namespace App\Console;
 
+use App\Console\Commands\FirstReminder;
+use App\Console\Commands\SecondReminder;
+use App\Console\Commands\Spider;
+use App\Console\Commands\StockAnalyzer;
+use App\Console\Commands\StockFlowSpider;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -17,6 +22,17 @@ class Kernel extends ConsoleKernel
     ];
 
     /**
+     * 买点率统计：
+     * 1、KDJ小于20
+     * 2、KDJ金叉
+     * 3、5日与10日均线金叉
+     * 4、5日与20日金叉
+     * 5、换手率>1
+     *
+     * 卖点概率统计：
+     * 1、KDJ大于80
+     * 2、5日均线下降
+     * 3、
      * Define the application's command schedule.
      *
      * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
@@ -24,8 +40,11 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        $schedule->command(FirstReminder::class)->cron('0 21 * * *');
+        $schedule->command(SecondReminder::class)->cron('30 21 * * *');
+        $schedule->command(Spider::class)->cron('0 12 * * *');
+        $schedule->command(StockFlowSpider::class)->cron('0 17 * * *');
+        $schedule->command(StockAnalyzer::class)->cron('0 18 * * *');
     }
 
     /**
