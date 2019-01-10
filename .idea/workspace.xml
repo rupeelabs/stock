@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0da30504-7a91-4c15-ae80-972d4e540780" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Service/SpiderService.php" afterPath="$PROJECT_DIR$/app/Service/SpiderService.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -65,17 +64,17 @@
       <file leaf-file-name="SpiderService.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Service/SpiderService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="59" column="149" lean-forward="false" selection-start-line="59" selection-start-column="149" selection-end-line="59" selection-end-column="149" />
+            <state relative-caret-position="107">
+              <caret line="57" column="31" lean-forward="true" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
               <folding>
-                <marker date="1547120145785" expanded="true" signature="1007:1042" ph="SELECT id Fr... stock" />
-                <marker date="1547120145785" expanded="true" signature="1124:1235" ph="INSERT INTO stock... " />
-                <marker date="1547120145785" expanded="true" signature="1843:1865" ph="select code stock" />
-                <marker date="1547120145785" expanded="true" signature="2426:2475" ph="select id fr... stock_flow" />
-                <marker date="1547120145785" expanded="true" signature="2628:2748" ph="INSERT INTO stock_flow... " />
-                <marker date="1547120145785" expanded="true" signature="3280:3302" ph="select code stock" />
-                <marker date="1547120145785" expanded="true" signature="3923:3972" ph="select id fr... stock_flow" />
-                <marker date="1547120145785" expanded="true" signature="4109:4229" ph="INSERT INTO stock_flow... " />
+                <marker date="1547120900842" expanded="true" signature="1007:1042" ph="SELECT id Fr... stock" />
+                <marker date="1547120900842" expanded="true" signature="1124:1235" ph="INSERT INTO stock... " />
+                <marker date="1547120900842" expanded="true" signature="1843:1865" ph="select code stock" />
+                <marker date="1547120900842" expanded="true" signature="2424:2473" ph="select id fr... stock_flow" />
+                <marker date="1547120900842" expanded="true" signature="2626:2746" ph="INSERT INTO stock_flow... " />
+                <marker date="1547120900842" expanded="true" signature="3278:3300" ph="select code stock" />
+                <marker date="1547120900842" expanded="true" signature="3921:3970" ph="select id fr... stock_flow" />
+                <marker date="1547120900842" expanded="true" signature="4107:4227" ph="INSERT INTO stock_flow... " />
               </folding>
             </state>
           </provider>
@@ -305,12 +304,12 @@
       <workItem from="1547025721640" duration="485000" />
       <workItem from="1547039765049" duration="458000" />
       <workItem from="1547084515349" duration="805000" />
-      <workItem from="1547114981370" duration="1165000" />
+      <workItem from="1547114981370" duration="1452000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40327000" />
+    <option name="totallyTimeSpent" value="40614000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="86" y="33" width="1359" height="877" extended-state="6" />
@@ -701,17 +700,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Service/SpiderService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="59" column="149" lean-forward="false" selection-start-line="59" selection-start-column="149" selection-end-line="59" selection-end-column="149" />
+        <state relative-caret-position="107">
+          <caret line="57" column="31" lean-forward="true" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
           <folding>
-            <marker date="1547120145785" expanded="true" signature="1007:1042" ph="SELECT id Fr... stock" />
-            <marker date="1547120145785" expanded="true" signature="1124:1235" ph="INSERT INTO stock... " />
-            <marker date="1547120145785" expanded="true" signature="1843:1865" ph="select code stock" />
-            <marker date="1547120145785" expanded="true" signature="2426:2475" ph="select id fr... stock_flow" />
-            <marker date="1547120145785" expanded="true" signature="2628:2748" ph="INSERT INTO stock_flow... " />
-            <marker date="1547120145785" expanded="true" signature="3280:3302" ph="select code stock" />
-            <marker date="1547120145785" expanded="true" signature="3923:3972" ph="select id fr... stock_flow" />
-            <marker date="1547120145785" expanded="true" signature="4109:4229" ph="INSERT INTO stock_flow... " />
+            <marker date="1547120900842" expanded="true" signature="1007:1042" ph="SELECT id Fr... stock" />
+            <marker date="1547120900842" expanded="true" signature="1124:1235" ph="INSERT INTO stock... " />
+            <marker date="1547120900842" expanded="true" signature="1843:1865" ph="select code stock" />
+            <marker date="1547120900842" expanded="true" signature="2424:2473" ph="select id fr... stock_flow" />
+            <marker date="1547120900842" expanded="true" signature="2626:2746" ph="INSERT INTO stock_flow... " />
+            <marker date="1547120900842" expanded="true" signature="3278:3300" ph="select code stock" />
+            <marker date="1547120900842" expanded="true" signature="3921:3970" ph="select id fr... stock_flow" />
+            <marker date="1547120900842" expanded="true" signature="4107:4227" ph="INSERT INTO stock_flow... " />
           </folding>
         </state>
       </provider>

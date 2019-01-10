@@ -57,7 +57,7 @@ class SpiderService
         $stocks = \DB::select("select code from stock");
         foreach ($stocks as $stock) {
             $code = $stock->code;
-            $url = "http://pdfm.eastmoney.com/EM_UBG_PDTI_Fast/api/js?token=4f1862fc3b5e77c150a2b985b12db0fd&rtntype=6&id={$code}{$stock['market_type']}&type=k&authorityType=fa&cb=jsonp1546755196396";
+            $url = "http://pdfm.eastmoney.com/EM_UBG_PDTI_Fast/api/js?token=4f1862fc3b5e77c150a2b985b12db0fd&rtntype=6&id={$code}{$stock->market_type}&type=k&authorityType=fa&cb=jsonp1546755196396";
             $stock = json_decode($this->grab($url), true);
             $flows = $stock['data'];
 
