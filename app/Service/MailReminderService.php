@@ -24,6 +24,8 @@ class MailReminderService
         foreach ($stocks as $stock) {
             $code = $stock->code;
             $flows = \DB::select("select * from stock_flow where code=? ORDER by date desc limit 2", [$code]);
+            if (empty($flows))
+                continue;
             if ($flows[0]->date != $today)
                 continue;
             if ($flows[0]->five_ave > $flows[1]->five_ave) {

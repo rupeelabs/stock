@@ -44,10 +44,12 @@ class FirstReminder extends Command
      */
     public function handle()
     {
+        echo '['.date('Y-m-d H:i:s').'] First Reminder Start';
         $this->service->fiveAveRiseRemind();
 //        Mail::raw('你好，我是PHP程序！', function ($message) {
 //            $to = '396444855@qq.com';
 //            $message ->to($to)->subject('纯文本信息邮件测试');
 //        });
+        echo '['.date('Y-m-d H:i:s').'] First Reminder End';
     }
 }

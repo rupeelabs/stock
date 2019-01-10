@@ -40,6 +40,8 @@ class Spider extends Command
      */
     public function handle()
     {
+        echo '['.date('Y-m-d H:i:s').'] Spider Start';
         $this->service->getStockList();
+        echo '['.date('Y-m-d H:i:s').'] Spider End';
     }
 }
