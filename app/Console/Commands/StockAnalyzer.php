@@ -41,6 +41,8 @@ class StockAnalyzer extends Command
      */
     public function handle()
     {
+        echo '['.date('Y-m-d H:i:s').'] Stock Analyzer Start';
         $this->service->analyze();
+        echo '['.date('Y-m-d H:i:s').'] Stock Analyzer End';
     }
 }
