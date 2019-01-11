@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Service\StockAnalyzerService;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 
 class StockAnalyzer extends Command
 {

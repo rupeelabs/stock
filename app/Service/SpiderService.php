@@ -33,7 +33,8 @@ class SpiderService
             if (empty($stocks['Data'][0]['Datas']))
                 break;
             foreach ($stocks['Data'][0]['Datas'] as $stock) {
-                if (!\DB::select("SELECT id From stock where code='?'", [$stock['Code']])) {
+                $result = \DB::select(sprintf("SELECT id From stock where code='%s'", $stock['Code']));
+                if (!$result) {
                     \DB::insert(
                         "INSERT INTO stock(code,name,outer_code,jys,market_type,mkt_num,security_type,created_at) VALUE(?,?,?,?,?,?,?,?)",
                         [

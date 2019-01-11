@@ -12,6 +12,7 @@ class StockAnalyzerService
 {
     public function analyze()
     {
+        return $this->getKDJ();
         $today = date('Y-m-d');
         $stocks = \DB::select("select code from stock");
         foreach ($stocks as $stock) {
@@ -36,5 +37,38 @@ class StockAnalyzerService
             ->orderBy('date', 'desc')
             ->limit($limit)->avg('close');
         return $ave;
+    }
+
+    public function getKDJ()
+    {
+        $code = 002230;
+        $flows = \DB::select("select * from stock_flow where code=? order by id asc", [$code]);
+        foreach ($flows as $key => $flow) {
+            var_dump($flow);exit;
+            $index = $key;
+            $lowest = $flow['lowest'];
+            $highest = $flow['highest'];
+            while ($index >= 0 && ($key - $index + 1) <= 9) {
+                if ($flow['lowest'] < $lowest) {
+                    $lowest = $flow['lowest'];
+                }
+                if ($flow['highest'] > $highest) {
+                    $highest = $flow['highest'];
+                }
+                $index --;
+            }
+            $rsv = (($flow['close'] - $lowest)/($highest - $lowest)) * 100;
+            if ($key == 0) {//上市第一天K=RSV
+                $k = $d = $j = $rsv;
+            } else {
+                $k = ($flow[$key - 1]['kdj_k'] * 2) / 3 + $rsv / 3;
+                $d = ($flow[$key - 1]['kdj_d'] * 2) / 3 + $k / 3;
+                $j = 3 * $k - 2 * $d;
+            }
+            \DB::update(
+                "update stock_flow set kdj_k=?, kdj_d=?, kdj_j=? where id=?",
+                [$k, $d, $j, $flow['id']]
+            );
+        }
     }
 }
