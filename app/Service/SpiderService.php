@@ -57,14 +57,19 @@ class SpiderService
     {
         $stocks = \DB::select("select * from stock");
         foreach ($stocks as $stock) {
-            $code = $stock->code;
+            $code =  '000001';
             $url = "http://pdfm.eastmoney.com/EM_UBG_PDTI_Fast/api/js?token=4f1862fc3b5e77c150a2b985b12db0fd&rtntype=6&id={$code}{$stock->market_type}&type=k&authorityType=fa&cb=jsonp1546755196396";
+            $url = "http://pdfm.eastmoney.com/EM_UBG_PDTI_Fast/api/js?token=4f1862fc3b5e77c150a2b985b12db0fd&rtntype=6&id=0000012&type=k&authorityType=fa&cb=jsonp1547206180243";
             $stock = json_decode($this->grab($url), true);
             $flows = $stock['data'];
 
             foreach ($flows as $flow) {
                 list($date, $open, $close, $highest, $lowest, $vol, $turnover, $amplitude) = explode(',', $flow);
-                if (\DB::select("select id from stock_flow where code=? and date=?", [$code, $date]))
+                $result = \DB::select(sprintf(
+                    "select id from stock_flow where code='%s' and date='%s'",
+                    $code, $date
+                ));
+                if ($result)
                     continue;
                 $amplitude = rtrim($amplitude, '%');
                 \DB::insert(
