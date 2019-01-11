@@ -18,7 +18,11 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        Commands\Spider::class
+        Commands\Spider::class,
+        SecondReminder::class,
+        StockFlowSpider::class,
+        StockAnalyzer::class,
+        FirstReminder::class
     ];
 
     /**
@@ -43,7 +47,7 @@ class Kernel extends ConsoleKernel
         $schedule->command(FirstReminder::class)->cron('0 21 * * *');
         $schedule->command(SecondReminder::class)->cron('30 21 * * *');
         $schedule->command(Spider::class)->cron('0 10 * * *');
-        $schedule->command(StockFlowSpider::class)->cron('10 20 * * *');
+        $schedule->command(StockFlowSpider::class)->cron('20 20 * * *');
         $schedule->command(StockAnalyzer::class)->cron('10 19 * * *');
     }
 
