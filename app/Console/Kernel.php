@@ -42,7 +42,7 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command(FirstReminder::class)->cron('0 21 * * *');
         $schedule->command(SecondReminder::class)->cron('30 21 * * *');
-        $schedule->command(Spider::class)->cron('10 18 * * *');
+        $schedule->command(Spider::class)->everyMinute();
         $schedule->command(StockFlowSpider::class)->cron('0 17 * * *');
         $schedule->command(StockAnalyzer::class)->cron('0 18 * * *');
     }
