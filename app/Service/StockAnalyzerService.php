@@ -55,7 +55,7 @@ class StockAnalyzerService
             $total += $flows[$index]->close;
             $index --;
         }
-        return round($total/$limit, 2);
+        return round($total/$limit, 4);
     }
 
 
