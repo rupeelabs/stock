@@ -2,33 +2,32 @@
 
 namespace App\Console\Commands;
 
-use App\Service\KDJService;
+use App\Service\BuyingPointService;
 use Illuminate\Console\Command;
 
-class KDJ extends Command
+class BP extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'KDJ {code?}';
+    protected $signature = 'BP {code?}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'KDJ';
+    protected $description = 'Command description';
 
     private $service;
-
     /**
      * Create a new command instance.
      *
      * @return void
      */
-    public function __construct(KDJService $service)
+    public function __construct(BuyingPointService $service)
     {
         parent::__construct();
         $this->service = $service;
@@ -42,6 +41,6 @@ class KDJ extends Command
     public function handle()
     {
         $code = $this->argument('code');
-        $this->service->getKDJ($code);
+        $this->service->run($code);
     }
 }

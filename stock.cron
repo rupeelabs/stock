@@ -1,0 +1,1 @@
+* * * * * cd /Users/hello/wwwroot/stock && php artisan schedule:run >>  /Users/hello/wwwroot/stock/log 2>&1

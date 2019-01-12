@@ -13,7 +13,7 @@ class StockAnalyzer extends Command
      *
      * @var string
      */
-    protected $signature = 'StockAnalyzer';
+    protected $signature = 'StockAnalyzer {code?}';
 
     /**
      * The console command description.
@@ -41,6 +41,7 @@ class StockAnalyzer extends Command
      */
     public function handle()
     {
-        $this->service->analyze();
+        $code = $this->argument('code');
+        $this->service->analyze($code);
     }
 }

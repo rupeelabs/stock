@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use App\Console\Commands\FirstReminder;
+use App\Console\Commands\KDJ;
 use App\Console\Commands\SecondReminder;
 use App\Console\Commands\Spider;
 use App\Console\Commands\StockAnalyzer;
@@ -44,11 +45,12 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command(FirstReminder::class)->cron('0 21 * * *');
-        $schedule->command(SecondReminder::class)->cron('30 21 * * *');
-        $schedule->command(Spider::class)->cron('0 10 * * *');
-        $schedule->command(StockFlowSpider::class)->cron('20 20 * * *');
-        $schedule->command(StockAnalyzer::class)->cron('10 19 * * *');
+        $schedule->command(FirstReminder::class)->timezone('Asia/Chongqing')->cron('30 22 * * *');
+        $schedule->command(SecondReminder::class)->timezone('Asia/Chongqing')->cron('30 22 * * *');
+        $schedule->command(Spider::class)->timezone('Asia/Chongqing')->cron('0 10 * * *');
+        $schedule->command(StockFlowSpider::class)->timezone('Asia/Chongqing')->cron('0 17 * * *');
+        $schedule->command(StockAnalyzer::class)->timezone('Asia/Chongqing')->cron('0 19 * * *');
+        $schedule->command(KDJ::class)->timezone('Asia/Chongqing')->cron('0 21 * * *');
     }
 
     /**

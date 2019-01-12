@@ -10,36 +10,52 @@ namespace App\Service;
 
 class StockAnalyzerService
 {
-    public function analyze()
+    public function analyze($code = '')
     {
         $today = date('Y-m-d');
-        $stocks = \DB::select("select code from stock");
+        if ($code) {
+            $sql = sprintf("select code from stock where code='%s'", $code);
+        } else {
+            $sql = "select code from stock";
+        }
+        $stocks = \DB::select($sql);
         foreach ($stocks as $stock) {
-            $fiveAve = $this->getAve($stock->code, 5);
-            $tenAve = $this->getAve($stock->code, 10);
-            $twentyAve = $this->getAve($stock->code, 20);
-            $sixtyAve = $this->getAve($stock->code, 60);
-            if (!\DB::select("select id from stock_flow where code=? and date=?", [$stock->code, $today]))
+            $flows = \DB::select(sprintf(
+                "SELECT * from stock_flow where code = '%s' order by id asc",
+                $stock->code
+            ));
+            if (empty($flows))
                 continue;
-            \DB::update(
-                "update stock_flow set five_ave=?, ten_ave=?, twenty_ave=?, sixty_ave=? where code=? and date=?",
-                [$fiveAve, $tenAve, $twentyAve, $sixtyAve, $stock->code, $today]
-            );
+            foreach ($flows as $flow) {
+                $fiveAve = $this->getAve($flows, 5, $flow->date);
+                $tenAve = $this->getAve($flows, 10, $flow->date);
+                $twentyAve = $this->getAve($flows, 20, $flow->date);
+                $sixtyAve = $this->getAve($flows, 60, $flow->date);
+//                if (!\DB::select("select id from stock_flow where code=? and date=?", [$stock->code, $today]))
+//                    continue;
+                \DB::update(
+                    "update stock_flow set five_ave=?, ten_ave=?, twenty_ave=?, sixty_ave=? where id=?",
+                    [$fiveAve, $tenAve, $twentyAve, $sixtyAve, $flow->id]
+                );
+            }
         }
 
     }
 
-    public function getAve($code, $limit)
+    public function getAve(&$flows, $limit, $date)
     {
-        $flows = \DB::select(sprintf(
-            "select * from stock_flow where code='%s' and date<'%s' order by date desc limit %d",
-            $code, date('Y-m-d'), $limit
-        ));
-        $total = 0;
-        foreach ($flows as $flow) {
-            $total += $flow->close;
+        foreach ($flows as $key => $flow) {
+            if ($flow->date == $date) {
+                break;
+            }
         }
-        return $total/$limit;
+        $index = $key;
+        $total = 0;
+        while ($index >= 0 && ($key - $index) < $limit) {
+            $total += $flows[$index]->close;
+            $index --;
+        }
+        return round($total/$limit, 2);
     }
 
 
