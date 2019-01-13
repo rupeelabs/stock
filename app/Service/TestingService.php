@@ -7,6 +7,7 @@
 
 namespace App\Service;
 
+use App\Mail\NiceStock;
 use App\Mail\Stock;
 use Illuminate\Support\Facades\Mail;
 
@@ -36,51 +37,57 @@ value(?,?)",
 
     public function macd($code = '')
     {
-        $goodStock = [];
+        $goodStockCode = [];
         $today = date('Y-m-d');
-        $flows = \DB::select(sprintf(
-            "select * from stock_flow where code='%s' order by id asc",
-            $code
-        ));
-        foreach ($flows as $key => $flow) {
-            if ($key < 1) continue;
-            if (
-                $flow->diff > $flow->dea &&
-                $flows[$key-1]->diff < $flows[$key-1]->dea &&
-                $flow->diff < 0 &&
-                $flow->dea < 0 &&
-                $flow->macd > -0.05 &&
-                $flow->diff < -0.07 &&
-                $flow->dea < -0.07
-            ) {
-                if (!$this->hasAveGolden($flows, $flow->date, 13)) {
-                    continue;
-                }
-                if (!$this->hasKDJGolden($flows, $flow->date, 13)) {
-                    continue;
-                }
-                \DB::insert(
-                    "insert into macd_testing (code, date) 
+        if ($code) {
+            $sql = sprintf("select code from stock where code='%s'", $code);
+        } else {
+            $sql = "select code from stock";
+        }
+        $stocks = \DB::select($sql);
+        foreach ($stocks as $stock) {
+            $flows = \DB::select(sprintf(
+                "select * from stock_flow where code='%s' order by id asc",
+                $code
+            ));
+            foreach ($flows as $key => $flow) {
+                if ($key < 1) continue;
+                if (
+                    $flow->diff > $flow->dea &&
+                    $flows[$key - 1]->diff < $flows[$key - 1]->dea &&
+                    $flow->diff < 0 &&
+                    $flow->dea < 0 &&
+                    $flow->macd > -0.05 &&
+                    $flow->diff < -0.07 &&
+                    $flow->dea < -0.07
+                ) {
+                    if (!$this->hasAveGolden($flows, $flow->date, 13)) {
+                        continue;
+                    }
+                    if (!$this->hasKDJGolden($flows, $flow->date, 13)) {
+                        continue;
+                    }
+                    \DB::insert(
+                        "insert into macd_testing (code, date) 
 value(?,?)",
-                    [
-                        $flow->code,
-                        $flow->date
-                    ]
-                );
-                if ($flow >= $today) {
-                    $goodStock[] = $flow->code;
+                        [
+                            $flow->code,
+                            $flow->date
+                        ]
+                    );
+                    if ($flow->date >= $today) {
+                        $goodStockCode[] = $flow->code;
+                    }
                 }
             }
         }
-        $goodStock = [234, 46456];
-        $content = '';
-        foreach ($goodStock as $item) {
-            $content .= "{$item}\r\n";
+        if ($goodStockCode) {
+            $goodStocks = \DB::select(sprintf(
+                "select * from stock where code in(%s)",
+                implode(',', $goodStockCode)
+            ));
+            Mail::send(new NiceStock($goodStocks));
         }
-        Mail::raw($content, function ($message) {
-            $to = '396444855@qq.com';
-            $message ->to($to)->subject('买入');
-        });
     }
 
     /**
