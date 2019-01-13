@@ -36,6 +36,8 @@ value(?,?)",
 
     public function macd($code = '')
     {
+        $goodStock = [];
+        $today = date('Y-m-d');
         $flows = \DB::select(sprintf(
             "select * from stock_flow where code='%s' order by id asc",
             $code
@@ -65,8 +67,20 @@ value(?,?)",
                         $flow->date
                     ]
                 );
+                if ($flow >= $today) {
+                    $goodStock[] = $flow->code;
+                }
             }
         }
+        $goodStock = [234, 46456];
+        $content = '';
+        foreach ($goodStock as $item) {
+            $content .= "{$item}\r\n";
+        }
+        Mail::raw($content, function ($message) {
+            $to = '396444855@qq.com';
+            $message ->to($to)->subject('买入');
+        });
     }
 
     /**

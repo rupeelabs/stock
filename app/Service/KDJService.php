@@ -33,7 +33,11 @@ class KDJService
                 }
                 $index --;
             }
-            $rsv = round((($flow->close - $lowest)/($highest - $lowest)) * 100, 4);
+            if ($highest == $lowest) {
+                $rsv = 0;
+            } else {
+                $rsv = round((($flow->close - $lowest) / ($highest - $lowest)) * 100, 4);
+            }
             if ($key == 0) {//上市第一天K=RSV
                 $k = $d = $j = round($rsv, 2);
                 $yestodayK = $k;
