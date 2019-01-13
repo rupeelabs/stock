@@ -53,9 +53,14 @@ class SpiderService
         }
     }
 
-    public function getStockFlow()
+    public function getStockFlow($code = '')
     {
-        $stocks = \DB::select("select * from stock");
+        if ($code) {
+            $sql = sprintf("select * from stock where code='%s'", $code);
+        } else {
+            $sql = "select * from stock";
+        }
+        $stocks = \DB::select($sql);
         foreach ($stocks as $stock) {
             $code =  $stock->code;
             $url = "http://pdfm.eastmoney.com/EM_UBG_PDTI_Fast/api/js?token=4f1862fc3b5e77c150a2b985b12db0fd&rtntype=6&id={$code}{$stock->market_type}&type=k&authorityType=fa&cb=jsonp1546755196396";
