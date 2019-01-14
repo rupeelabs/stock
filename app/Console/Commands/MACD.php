@@ -12,7 +12,7 @@ class MACD extends Command
      *
      * @var string
      */
-    protected $signature = 'MACD {code?}';
+    protected $signature = 'MACD {code?} {all=no}';
 
     /**
      * The console command description.
@@ -41,7 +41,8 @@ class MACD extends Command
      */
     public function handle()
     {
+        $isAll = $this->argument('all');
         $code = $this->argument('code');
-        $this->service->handle($code);
+        $this->service->handle($code, $isAll);
     }
 }

@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Mail;
 
 class KDJService
 {
-    public function getKDJ($code = '')
+    public function getKDJ($code = '', $isAll = 'no')
     {
         if ($code) {
             $sql = sprintf("select code from stock where code='%s'", $code);
@@ -28,6 +28,9 @@ class KDJService
             ));
             $yestodayK = $yestodayD = $yestodayJ = 0;
             foreach ($flows as $key => $flow) {
+                if ($isAll == 'no' && $flow->date < date('Y-m-d')) {
+                    continue;
+                }
                 $index = $key;
                 $lowest = $flow->lowest;
                 $highest = $flow->highest;
@@ -57,6 +60,11 @@ class KDJService
                         $d = $yestodayD;
                         $j = $yestodayJ;
                     } else {
+                        if ($isAll == 'no') {
+                            $yestodayK = $flows[$key-1]->kdj_k;
+                            $yestodayD = $flows[$key-1]->kdj_d;
+                            $yestodayJ = $flows[$key-1]->kdj_j;
+                        }
                         $k = round(($yestodayK * 2) / 3 + $rsv / 3, 2);
                         $d = round(($yestodayD * 2) / 3 + $k / 3, 2);
                         $j = round(3 * $k - 2 * $d, 2);

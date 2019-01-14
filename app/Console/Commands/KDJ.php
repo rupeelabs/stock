@@ -12,7 +12,7 @@ class KDJ extends Command
      *
      * @var string
      */
-    protected $signature = 'KDJ {code?}';
+    protected $signature = 'KDJ {code?} {all=no}';
 
     /**
      * The console command description.
@@ -41,7 +41,8 @@ class KDJ extends Command
      */
     public function handle()
     {
+        $isAll = $this->argument('all');
         $code = $this->argument('code');
-        $this->service->getKDJ($code);
+        $this->service->getKDJ($code, $isAll);
     }
 }

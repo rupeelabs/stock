@@ -37,8 +37,6 @@ value(?,?)",
 
     public function macd($code = '')
     {
-        $goodStockCode = [];
-        $today = date('Y-m-d');
         if ($code) {
             $sql = sprintf("select code from stock where code='%s'", $code);
         } else {
@@ -73,6 +71,13 @@ value(?,?)",
                     if ($this->hasAveDeadTwenty($flows, $flow->date)) {
                         continue;
                     }
+                    if (\DB::select(sprintf(
+                        "select id from macd_testing where code='%s' and date='%s'",
+                        $flow->code,
+                        $flow->date
+                    ))) {
+                        continue;
+                    }
                     \DB::insert(
                         "insert into macd_testing (code, date) 
 value(?,?)",
@@ -81,18 +86,8 @@ value(?,?)",
                             $flow->date
                         ]
                     );
-                    if ($flow->date >= $today) {
-                        $goodStockCode[] = $flow->code;
-                    }
                 }
             }
-        }
-        if ($goodStockCode) {
-            $goodStocks = \DB::select(sprintf(
-                "select * from stock where code in(%s)",
-                implode(',', $goodStockCode)
-            ));
-            Mail::send(new NiceStock($goodStocks));
         }
     }
 

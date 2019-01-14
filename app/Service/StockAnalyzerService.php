@@ -10,7 +10,7 @@ namespace App\Service;
 
 class StockAnalyzerService
 {
-    public function analyze($code = '')
+    public function analyze($code = '', $isAll = 'no')
     {
         $today = date('Y-m-d');
         if ($code) {
@@ -26,7 +26,11 @@ class StockAnalyzerService
             ));
             if (empty($flows))
                 continue;
-            foreach ($flows as $flow) {
+            if ($isAll == 'no') {
+                $temp = [];
+                $temp[] = last($flows);
+            }
+            foreach ($temp as $flow) {
                 $fiveAve = $this->getAve($flows, 5, $flow->date);
                 $tenAve = $this->getAve($flows, 10, $flow->date);
                 $twentyAve = $this->getAve($flows, 20, $flow->date);
