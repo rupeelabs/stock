@@ -50,12 +50,12 @@ class Kernel extends ConsoleKernel
 
         $schedule->command(Spider::class)->timezone('Asia/Chongqing')->cron('0 10 * * *');
         $schedule->command(StockFlowSpider::class)->timezone('Asia/Chongqing')->cron('0 16 * * *');
-        $schedule->command(StockAnalyzer::class)->timezone('Asia/Chongqing')->cron('0 19 * * *');
+        $schedule->command(StockAnalyzer::class)->timezone('Asia/Chongqing')->cron('0 18 * * *');
         $schedule->command(KDJ::class)->timezone('Asia/Chongqing')->cron('0 19 * * *');
-        $schedule->command(MACD::class)->timezone('Asia/Chongqing')->cron('0 19 * * *');
+        $schedule->command(MACD::class)->timezone('Asia/Chongqing')->cron('0 20 * * *');
 
-        $schedule->command(FirstReminder::class)->timezone('Asia/Chongqing')->cron('30 22 * * *');
-        $schedule->command(SecondReminder::class)->timezone('Asia/Chongqing')->cron('30 22 * * *');
+        $schedule->command(FirstReminder::class)->timezone('Asia/Chongqing')->cron('10 22 * * *');
+        $schedule->command(SecondReminder::class)->timezone('Asia/Chongqing')->cron('20 22 * * *');
         $schedule->command(BuyingReminder::class)->timezone('Asia/Chongqing')->cron('30 22 * * *');
     }
 
