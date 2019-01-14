@@ -75,6 +75,7 @@ class SpiderService
                 try {
                     list($date, $open, $close, $highest, $lowest, $vol, $turnover, $amplitude) = explode(',', $flow);
                 } catch (\Exception $e) {
+                    echo $e->getMessage();
                     echo $flow;exit;
                 }
                 $result = \DB::select(sprintf(
