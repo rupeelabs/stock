@@ -214,8 +214,32 @@ value(?,?)",
     public function assert()
     {
         $data = \DB::select("select * from macd_testing");
+        $limit = 30;
         foreach ($data as $item) {
+            $flows = \DB::select(sprintf(
+                "select * from stock_flow where code='%s' and date>='%s' order by date asc limit %d",
+                $item->code,
+                $item->date,
+                $limit
+            ));
+//            var_dump($flows);exit;
+            $close = $highest = $flows[0]->close;
+            foreach ($flows as $key => $flow) {
+                if ($flow->close > $highest) {
+                    $highest = $flow->close;
+                }
+            }
 
+            $growthRate = round(($highest - $close) / $close, 4) * 100;
+
+            \DB::update(sprintf(
+                "update macd_testing set growth_rate='%s',highest='%s',
+close='%s' where id=%d",
+                $growthRate,
+                $highest,
+                $close,
+                $item->id
+            ));
         }
 
     }

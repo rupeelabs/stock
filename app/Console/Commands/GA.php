@@ -2,24 +2,24 @@
 
 namespace App\Console\Commands;
 
-use App\Service\SpiderService;
+use App\Service\TestingService;
 use Illuminate\Console\Command;
 
-class StockFlowSpider extends Command
+class GA extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'StockFlowSpider {code?} {all=no}';
+    protected $signature = 'GA';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Stock Flow Spider';
+    protected $description = 'Growth Assert';
 
     private $service;
     /**
@@ -27,7 +27,7 @@ class StockFlowSpider extends Command
      *
      * @return void
      */
-    public function __construct(SpiderService $service)
+    public function __construct(TestingService $service)
     {
         parent::__construct();
         $this->service = $service;
@@ -40,8 +40,6 @@ class StockFlowSpider extends Command
      */
     public function handle()
     {
-        $code = $this->argument('code');
-        $isAll = $this->argument('all');
-        $this->service->getStockFlow($code, $isAll);
+        $this->service->assert();
     }
 }
