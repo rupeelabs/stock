@@ -12,7 +12,7 @@ class StockFlowSpider extends Command
      *
      * @var string
      */
-    protected $signature = 'StockFlowSpider {code?}';
+    protected $signature = 'StockFlowSpider {code} {all=no}';
 
     /**
      * The console command description.
@@ -41,6 +41,7 @@ class StockFlowSpider extends Command
     public function handle()
     {
         $code = $this->argument('code');
-        $this->service->getStockFlow($code);
+        $isAll = $this->argument('all');
+        $this->service->getStockFlow($code, $isAll);
     }
 }

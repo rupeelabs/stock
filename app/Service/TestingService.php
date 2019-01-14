@@ -67,6 +67,12 @@ value(?,?)",
                     if (!$this->hasKDJGolden($flows, $flow->date, 13)) {
                         continue;
                     }
+                    if ($this->hasAveDeadSixty($flows, $flow->date, 20)) {
+                        continue;
+                    }
+                    if ($this->hasAveDeadTwenty($flows, $flow->date)) {
+                        continue;
+                    }
                     \DB::insert(
                         "insert into macd_testing (code, date) 
 value(?,?)",
@@ -136,6 +142,46 @@ value(?,?)",
         return false;
     }
 
+    public function hasAveDeadSixty(&$flows, $curDate, $past = 13)
+    {
+        foreach ($flows as $key => $flow) {
+            if ($flow->date == $curDate) {
+                break;
+            }
+        }
+        $index = $key;
+        while (($key - $index) < $past && ($index - 1) > 0) {
+            if (
+                $flows[$index]->five_ave <= $flows[$index]->sixty_ave &&
+                $flows[$index - 1]->five_ave > $flows[$index - 1]->sixty_ave
+            ) {
+                return true;
+            }
+            $index --;
+        }
+        return false;
+    }
+
+    public function hasAveDeadTwenty(&$flows, $curDate, $past = 8)
+    {
+        foreach ($flows as $key => $flow) {
+            if ($flow->date == $curDate) {
+                break;
+            }
+        }
+        $index = $key;
+        while (($key - $index) < $past && ($index - 1) > 0) {
+            if (
+                $flows[$index]->five_ave <= $flows[$index]->twenty_ave &&
+                $flows[$index - 1]->five_ave > $flows[$index - 1]->twenty_ave
+            ) {
+                return true;
+            }
+            $index --;
+        }
+        return false;
+    }
+
     /**
      * 计算过去的交易日有无日KDJ的金叉
      * @param $flows
@@ -162,6 +208,16 @@ value(?,?)",
             $index --;
         }
         return false;
+    }
+
+
+    public function assert()
+    {
+        $data = \DB::select("select * from macd_testing");
+        foreach ($data as $item) {
+
+        }
+
     }
 
 }
