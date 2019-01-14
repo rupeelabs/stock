@@ -2389,3 +2389,38 @@ No scheduled commands are ready to run.
 No scheduled commands are ready to run.
 No scheduled commands are ready to run.
 No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+
+   ReflectionException  : Class App\Console\Commands\StockFlowSpider does not exist
+
+  at /Users/hello/wwwroot/stock/vendor/laravel/framework/src/Illuminate/Container/Container.php:779
+    775|         if ($concrete instanceof Closure) {
+    776|             return $concrete($this, $this->getLastParameterOverride());
+    777|         }
+    778| 
+  > 779|         $reflector = new ReflectionClass($concrete);
+    780| 
+    781|         // If the type is not instantiable, the developer is attempting to resolve
+    782|         // an abstract type such as an Interface or Abstract Class and there is
+    783|         // no binding registered for the abstractions so we need to bail out.
+
+  Exception trace:
+
+  1   ReflectionClass::__construct("App\Console\Commands\StockFlowSpider")
+      /Users/hello/wwwroot/stock/vendor/laravel/framework/src/Illuminate/Container/Container.php:779
+
+  2   Illuminate\Container\Container::build("App\Console\Commands\StockFlowSpider")
+      /Users/hello/wwwroot/stock/vendor/laravel/framework/src/Illuminate/Container/Container.php:658
+
+  Please use the argument -v to see more details.
+
+Fatal error: Cannot use App\Console\Commands\StockFlowSpider as StockFlowSpider because the name is already in use in /Users/hello/wwwroot/stock/app/Console/Kernel.php on line 13
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.

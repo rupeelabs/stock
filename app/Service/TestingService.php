@@ -229,8 +229,11 @@ value(?,?)",
                     $highest = $flow->close;
                 }
             }
-
-            $growthRate = round(($highest - $close) / $close, 4) * 100;
+            if ($close != 0) {
+                $growthRate = round(($highest - $close) / $close, 4) * 100;
+            } else {
+                $growthRate = $highest * 100;
+            }
 
             \DB::update(sprintf(
                 "update macd_testing set growth_rate='%s',highest='%s',

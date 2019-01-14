@@ -7,9 +7,9 @@ use App\Console\Commands\FirstReminder;
 use App\Console\Commands\KDJ;
 use App\Console\Commands\MACD;
 use App\Console\Commands\SecondReminder;
+use App\Console\Commands\StockFlowSpider;
 use App\Console\Commands\Spider;
 use App\Console\Commands\StockAnalyzer;
-use App\Console\Commands\StockFlowSpider;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
