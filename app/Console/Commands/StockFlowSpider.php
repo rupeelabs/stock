@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Service\SpiderService;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 
 class StockFlowSpider extends Command
 {
@@ -40,8 +41,10 @@ class StockFlowSpider extends Command
      */
     public function handle()
     {
+        Log::info("Stock flow spider start");
         $code = $this->argument('code');
         $isAll = $this->argument('all');
         $this->service->getStockFlow($code, $isAll);
+        Log::info("Stock flow spider end");
     }
 }

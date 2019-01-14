@@ -4,7 +4,7 @@ namespace App\Console\Commands;
 
 use App\Service\MailReminderService;
 use Illuminate\Console\Command;
-
+use Illuminate\Support\Facades\Log;
 
 
 class BuyingReminder extends Command
@@ -43,6 +43,8 @@ class BuyingReminder extends Command
      */
     public function handle()
     {
+        Log::info("Buying remind start");
         $this->service->buyingSigRemind();
+        Log::info("Buying remind end");
     }
 }

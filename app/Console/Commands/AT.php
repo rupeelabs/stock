@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Service\TestingService;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 
 class AT extends Command
 {

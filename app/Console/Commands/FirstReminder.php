@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Mail\OrderShipped;
 use App\Service\MailReminderService;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 
@@ -44,6 +45,8 @@ class FirstReminder extends Command
      */
     public function handle()
     {
+        Log::info('First Remind start');
         $this->service->fiveAveRiseRemind();
+        Log::info('First Remind end');
     }
 }

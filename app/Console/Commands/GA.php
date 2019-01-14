@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Service\TestingService;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 
 class GA extends Command
 {
@@ -40,6 +41,8 @@ class GA extends Command
      */
     public function handle()
     {
+        Log::info("Growth assert start");
         $this->service->assert();
+        Log::info("Growth assert End");
     }
 }

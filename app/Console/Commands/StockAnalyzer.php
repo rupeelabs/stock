@@ -41,8 +41,10 @@ class StockAnalyzer extends Command
      */
     public function handle()
     {
+        Log::info("Stock analyzer start");
         $isAll = $this->argument('all');
         $code = $this->argument('code');
         $this->service->analyze($code, $isAll);
+        Log::info("Stock analyzer end");
     }
 }

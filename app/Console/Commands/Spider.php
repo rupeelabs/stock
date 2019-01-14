@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Service\SpiderService;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 
 class Spider extends Command
 {
@@ -40,8 +41,9 @@ class Spider extends Command
      */
     public function handle()
     {
-        echo '['.date('Y-m-d H:i:s').'] Spider Start';
+        Log::info("Spider start");
         $this->service->getStockList();
         echo '['.date('Y-m-d H:i:s').'] Spider End';
+        Log::info("Spider end");
     }
 }

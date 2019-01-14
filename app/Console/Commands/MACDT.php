@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Service\TestingService;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 
 class MACDT extends Command
 {
@@ -40,7 +41,9 @@ class MACDT extends Command
      */
     public function handle()
     {
+        Log::info("MACDT start");
         $code = $this->argument('code');
         $this->service->macd($code);
+        Log::info("MACDT end");
     }
 }

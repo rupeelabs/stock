@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Service\MACDService;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 
 class MACD extends Command
 {
@@ -41,8 +42,10 @@ class MACD extends Command
      */
     public function handle()
     {
+        Log::info("MACD start");
         $isAll = $this->argument('all');
         $code = $this->argument('code');
         $this->service->handle($code, $isAll);
+        Log::info("MACD end");
     }
 }

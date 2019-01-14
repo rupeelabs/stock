@@ -4,7 +4,7 @@ namespace App\Console\Commands;
 
 use App\Service\MailReminderService;
 use Illuminate\Console\Command;
-
+use Illuminate\Support\Facades\Log;
 
 
 class SecondReminder extends Command
@@ -43,6 +43,8 @@ class SecondReminder extends Command
      */
     public function handle()
     {
+        Log::info('Second remind start');
         $this->service->brandistockRemind();
+        Log::info('Second remind end');
     }
 }

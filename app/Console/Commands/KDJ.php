@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Service\KDJService;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 
 class KDJ extends Command
 {
@@ -41,8 +42,10 @@ class KDJ extends Command
      */
     public function handle()
     {
+        Log::info("KDJ start");
         $isAll = $this->argument('all');
         $code = $this->argument('code');
         $this->service->getKDJ($code, $isAll);
+        Log::info("KDJ end");
     }
 }
