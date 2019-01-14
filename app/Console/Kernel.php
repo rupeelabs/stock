@@ -50,13 +50,13 @@ class Kernel extends ConsoleKernel
 
         $schedule->command(Spider::class)->cron('0 10 * * *');
         $schedule->command(StockFlowSpider::class)->cron('0 16 * * *');
-        $schedule->command(StockAnalyzer::class)->cron('0 18 * * *');
-        $schedule->command(KDJ::class)->cron('0 19 * * *');
-        $schedule->command(MACD::class)->cron('0 20 * * *');
+        $schedule->command(StockAnalyzer::class)->cron('0 17 * * *');
+        $schedule->command(KDJ::class)->cron('0 18 * * *');
+        $schedule->command(MACD::class)->cron('30 18 * * *');
 
-        $schedule->command(FirstReminder::class)->cron('10 22 * * *');
-        $schedule->command(SecondReminder::class)->cron('20 22 * * *');
-        $schedule->command(BuyingReminder::class)->cron('30 22 * * *');
+        $schedule->command(FirstReminder::class)->cron('10 20 * * *');
+        $schedule->command(SecondReminder::class)->cron('20 20 * * *');
+        $schedule->command(BuyingReminder::class)->cron('30 20 * * *');
     }
 
     /**

@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0da30504-7a91-4c15-ae80-972d4e540780" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Console/Kernel.php" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,21 +13,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="StockAnalyzer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Console/Commands/StockAnalyzer.php">
+      <file leaf-file-name="StockAnalyzerService.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Service/StockAnalyzerService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="736">
-              <caret line="47" column="37" lean-forward="false" selection-start-line="47" selection-start-column="37" selection-end-line="47" selection-end-column="37" />
-              <folding />
+            <state relative-caret-position="68">
+              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding>
+                <marker date="1547462442293" expanded="true" signature="269:291" ph="select code stock" />
+                <marker date="1547462442293" expanded="true" signature="269:307" ph="select code stock" />
+                <marker date="1547462442293" expanded="true" signature="355:377" ph="select code stock" />
+                <marker date="1547462442293" expanded="true" signature="524:582" ph="SELECT * fro... stock_flow" />
+                <marker date="1547462442293" expanded="true" signature="1147:1196" ph="select id fr... stock_flow" />
+                <marker date="1547462442293" expanded="true" signature="1306:1387" ph="update stock... " />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Spider.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Console/Commands/Spider.php">
+      <file leaf-file-name="StockAnalyzer.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Console/Commands/StockAnalyzer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="39" column="20" lean-forward="true" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+            <state relative-caret-position="535">
+              <caret line="46" column="27" lean-forward="true" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -38,7 +44,7 @@
         <entry file="file://$PROJECT_DIR$/app/Console/Commands/StockFlowSpider.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="535">
-              <caret line="46" column="27" lean-forward="true" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
+              <caret line="46" column="31" lean-forward="false" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -47,8 +53,8 @@
       <file leaf-file-name="SpiderService.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Service/SpiderService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="103" column="29" lean-forward="true" selection-start-line="103" selection-start-column="29" selection-end-line="103" selection-end-column="29" />
+            <state relative-caret-position="213">
+              <caret line="55" column="49" lean-forward="true" selection-start-line="55" selection-start-column="49" selection-end-line="55" selection-end-column="49" />
               <folding>
                 <marker date="1547461557673" expanded="true" signature="1020:1056" ph="SELECT id Fr... stock" />
                 <marker date="1547461557673" expanded="true" signature="1167:1278" ph="INSERT INTO stock... " />
@@ -105,11 +111,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Kernel.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Kernel.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="59" column="5" lean-forward="true" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
+            <state relative-caret-position="370">
+              <caret line="58" column="62" lean-forward="false" selection-start-line="58" selection-start-column="62" selection-end-line="58" selection-end-column="62" />
               <folding>
                 <element signature="e#31#71#0#PHP" expanded="true" />
               </folding>
@@ -117,7 +123,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="laravel-2019-01-14.log" pinned="false" current-in-tab="true">
+      <file leaf-file-name="laravel-2019-01-14.log" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-01-14.log">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="506">
@@ -263,6 +269,19 @@
             <path>
               <item name="stock" type="b2602c69:ProjectViewProjectNode" />
               <item name="stock" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Console" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Commands" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="stock" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stock" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Service" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="stock" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stock" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -341,12 +360,12 @@
       <workItem from="1547255301085" duration="30903000" />
       <workItem from="1547427264223" duration="2595000" />
       <workItem from="1547447390658" duration="2397000" />
-      <workItem from="1547453918687" duration="10691000" />
+      <workItem from="1547453918687" duration="11150000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99433000" />
+    <option name="totallyTimeSpent" value="99892000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="81" y="23" width="1359" height="877" extended-state="0" />
@@ -585,21 +604,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Service/StockAnalyzerService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-59">
-          <caret line="28" column="12" lean-forward="true" selection-start-line="28" selection-start-column="12" selection-end-line="31" selection-end-column="13" />
-          <folding>
-            <marker date="1547462442293" expanded="true" signature="269:291" ph="select code stock" />
-            <marker date="1547462442293" expanded="true" signature="269:307" ph="select code stock" />
-            <marker date="1547462442293" expanded="true" signature="355:377" ph="select code stock" />
-            <marker date="1547462442293" expanded="true" signature="524:582" ph="SELECT * fro... stock_flow" />
-            <marker date="1547462442293" expanded="true" signature="1147:1196" ph="select id fr... stock_flow" />
-            <marker date="1547462442293" expanded="true" signature="1306:1387" ph="update stock... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Service/BuyingPointService.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="638">
@@ -723,14 +727,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Console/Commands/StockAnalyzer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
-          <caret line="47" column="37" lean-forward="false" selection-start-line="47" selection-start-column="37" selection-end-line="47" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Console/Commands/Spider.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -755,33 +751,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Console/Commands/StockFlowSpider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="46" column="27" lean-forward="true" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Service/SpiderService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="103" column="29" lean-forward="true" selection-start-line="103" selection-start-column="29" selection-end-line="103" selection-end-column="29" />
-          <folding>
-            <marker date="1547461557673" expanded="true" signature="1020:1056" ph="SELECT id Fr... stock" />
-            <marker date="1547461557673" expanded="true" signature="1167:1278" ph="INSERT INTO stock... " />
-            <marker date="1547461557673" expanded="true" signature="1929:1964" ph="select * fro... stock" />
-            <marker date="1547461557673" expanded="true" signature="2012:2031" ph="select * fro... stock" />
-            <marker date="1547461557673" expanded="true" signature="2876:2927" ph="select id fr... stock_flow" />
-            <marker date="1547461557673" expanded="true" signature="2876:2931" ph="select id fr... stock_flow" />
-            <marker date="1547461557673" expanded="true" signature="3149:3269" ph="INSERT INTO stock_flow... " />
-            <marker date="1547461557673" expanded="true" signature="3801:3823" ph="select code stock" />
-            <marker date="1547461557673" expanded="true" signature="4444:4493" ph="select id fr... stock_flow" />
-            <marker date="1547461557673" expanded="true" signature="4630:4750" ph="INSERT INTO stock_flow... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -798,21 +767,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="59" column="5" lean-forward="true" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
-          <folding>
-            <element signature="e#31#71#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-01-14.log">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
           <caret line="23" column="53" lean-forward="true" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Console/Commands/StockFlowSpider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="46" column="31" lean-forward="false" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Service/SpiderService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="55" column="49" lean-forward="true" selection-start-line="55" selection-start-column="49" selection-end-line="55" selection-end-column="49" />
+          <folding>
+            <marker date="1547461557673" expanded="true" signature="1020:1056" ph="SELECT id Fr... stock" />
+            <marker date="1547461557673" expanded="true" signature="1167:1278" ph="INSERT INTO stock... " />
+            <marker date="1547461557673" expanded="true" signature="1929:1964" ph="select * fro... stock" />
+            <marker date="1547461557673" expanded="true" signature="2012:2031" ph="select * fro... stock" />
+            <marker date="1547461557673" expanded="true" signature="2876:2927" ph="select id fr... stock_flow" />
+            <marker date="1547461557673" expanded="true" signature="2876:2931" ph="select id fr... stock_flow" />
+            <marker date="1547461557673" expanded="true" signature="3149:3269" ph="INSERT INTO stock_flow... " />
+            <marker date="1547461557673" expanded="true" signature="3801:3823" ph="select code stock" />
+            <marker date="1547461557673" expanded="true" signature="4444:4493" ph="select id fr... stock_flow" />
+            <marker date="1547461557673" expanded="true" signature="4630:4750" ph="INSERT INTO stock_flow... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Console/Commands/StockAnalyzer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="46" column="27" lean-forward="true" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Service/StockAnalyzerService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <marker date="1547462442293" expanded="true" signature="269:291" ph="select code stock" />
+            <marker date="1547462442293" expanded="true" signature="269:307" ph="select code stock" />
+            <marker date="1547462442293" expanded="true" signature="355:377" ph="select code stock" />
+            <marker date="1547462442293" expanded="true" signature="524:582" ph="SELECT * fro... stock_flow" />
+            <marker date="1547462442293" expanded="true" signature="1147:1196" ph="select id fr... stock_flow" />
+            <marker date="1547462442293" expanded="true" signature="1306:1387" ph="update stock... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="58" column="62" lean-forward="false" selection-start-line="58" selection-start-column="62" selection-end-line="58" selection-end-column="62" />
+          <folding>
+            <element signature="e#31#71#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
