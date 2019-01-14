@@ -2,8 +2,10 @@
 
 namespace App\Console;
 
+use App\Console\Commands\BuyingReminder;
 use App\Console\Commands\FirstReminder;
 use App\Console\Commands\KDJ;
+use App\Console\Commands\MACD;
 use App\Console\Commands\SecondReminder;
 use App\Console\Commands\Spider;
 use App\Console\Commands\StockAnalyzer;
@@ -45,12 +47,16 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+
+        $schedule->command(Spider::class)->timezone('Asia/Chongqing')->cron('0 10 * * *');
+        $schedule->command(StockFlowSpider::class)->timezone('Asia/Chongqing')->cron('0 16 * * *');
+        $schedule->command(StockAnalyzer::class)->timezone('Asia/Chongqing')->cron('0 19 * * *');
+        $schedule->command(KDJ::class)->timezone('Asia/Chongqing')->cron('0 19 * * *');
+        $schedule->command(MACD::class)->timezone('Asia/Chongqing')->cron('0 19 * * *');
+
         $schedule->command(FirstReminder::class)->timezone('Asia/Chongqing')->cron('30 22 * * *');
         $schedule->command(SecondReminder::class)->timezone('Asia/Chongqing')->cron('30 22 * * *');
-        $schedule->command(Spider::class)->timezone('Asia/Chongqing')->cron('0 10 * * *');
-        $schedule->command(StockFlowSpider::class)->timezone('Asia/Chongqing')->cron('0 17 * * *');
-        $schedule->command(StockAnalyzer::class)->timezone('Asia/Chongqing')->cron('0 19 * * *');
-        $schedule->command(KDJ::class)->timezone('Asia/Chongqing')->cron('0 21 * * *');
+        $schedule->command(BuyingReminder::class)->timezone('Asia/Chongqing')->cron('30 22 * * *');
     }
 
     /**
