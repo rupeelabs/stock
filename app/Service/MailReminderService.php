@@ -56,7 +56,7 @@ class MailReminderService
     {
         $today = date('Y-m-d');
         $data = [];
-        $stocks = \DB::select("select code from stock");
+        $stocks = \DB::select("select * from stock");
         foreach ($stocks as $stock) {
             $code = $stock->code;
             $flows = \DB::select("select * from stock_flow where code=? ORDER by date desc limit 2", [$code]);
@@ -70,14 +70,7 @@ class MailReminderService
         if (empty($data)) {
             return;
         }
-        $content = '';
-        foreach ($data as $item) {
-            $content .= "代码：{$item['code']} 名称：{$item['name']} 昨收：{$item['yesterday_close']} 今收：{$item['today_close']}\r\n";
-        }
-        Mail::raw($content, function ($message) {
-            $to = '396444855@qq.com';
-            $message ->to($to)->subject('金叉股票');
-        });
+        Mail::send(new NiceStock($data));
     }
 
     public function buyingSigRemind()

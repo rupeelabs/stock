@@ -6,6 +6,7 @@ use App\Console\Commands\BuyingReminder;
 use App\Console\Commands\FirstReminder;
 use App\Console\Commands\KDJ;
 use App\Console\Commands\MACD;
+use App\Console\Commands\MACDT;
 use App\Console\Commands\SecondReminder;
 use App\Console\Commands\StockFlowSpider;
 use App\Console\Commands\Spider;
@@ -53,6 +54,7 @@ class Kernel extends ConsoleKernel
         $schedule->command(StockAnalyzer::class)->cron('0 17 * * *');
         $schedule->command(KDJ::class)->cron('0 18 * * *');
         $schedule->command(MACD::class)->cron('30 18 * * *');
+        $schedule->command(MACDT::class)->cron('30 19 * * *');
 
         $schedule->command(FirstReminder::class)->cron('10 20 * * *');
         $schedule->command(SecondReminder::class)->cron('20 20 * * *');
