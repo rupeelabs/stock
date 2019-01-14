@@ -48,7 +48,7 @@ value(?,?)",
         foreach ($stocks as $stock) {
             $flows = \DB::select(sprintf(
                 "select * from stock_flow where code='%s' order by id asc",
-                $code
+                $stock->code
             ));
             foreach ($flows as $key => $flow) {
                 if ($key < 1) continue;
