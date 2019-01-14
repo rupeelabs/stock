@@ -13,7 +13,7 @@ class MACD extends Command
      *
      * @var string
      */
-    protected $signature = 'MACD {code?} {all=no}';
+    protected $signature = 'MACD {all=no} {code?}';
 
     /**
      * The console command description.

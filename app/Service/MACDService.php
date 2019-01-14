@@ -27,6 +27,7 @@ class MACDService
                 $stock->code
             ));
             $yestodayEMA12 = $yestodayEMA26 = $yestodayDEA = 0;
+            $ema12 = $ema26 = 0;
             foreach ($flows as $key => $flow) {
                 if ($isAll == 'no' && $flow->date < date('Y-m-d')) {
                     continue;
