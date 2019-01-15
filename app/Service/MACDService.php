@@ -52,10 +52,7 @@ class MACDService
                     "update stock_flow set diff='%s', dea='%s', macd='%s',ema12='%s',ema26='%s' where id=%d",
                     $diff, $dea, $macd, $ema12, $ema26, $flow->id
                 );
-                $result = \DB::update($sql);
-                if (!$result) {
-                    Log::error($sql);
-                }
+                \DB::update($sql);
             }
         }
     }

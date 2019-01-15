@@ -71,6 +71,9 @@ value(?,?)",
                     if ($this->hasAveDeadTwenty($flows, $flow->date)) {
                         continue;
                     }
+                    if (!$this->isTurnoverRateBThan($flows, $flow->date, 1, 5)) {
+                        continue;
+                    }
                     if (\DB::select(sprintf(
                         "select id from macd_testing where code='%s' and date='%s'",
                         $flow->code,
@@ -155,6 +158,28 @@ value(?,?)",
             $index --;
         }
         return false;
+    }
+
+    /**
+     * 过去$past日的平均换手率是否大于$a
+     * @param $a
+     * @param $past
+     */
+    public function isTurnoverRateBThan(&$flows, $curDate, $a, $past)
+    {
+        foreach ($flows as $key => $flow) {
+            if ($flow->date == $curDate) {
+                break;
+            }
+        }
+        $index = $key;
+        $turnoverRate = $turnover = 0;
+        while (($key - $index) < $past && ($index - 1) > 0) {
+            $turnover += $flow->turnover_rate;
+            $index --;
+        }
+        $turnoverRate = round($turnover/($key-$index), 2);
+        return $turnoverRate >= $a;
     }
 
     public function hasAveDeadTwenty(&$flows, $curDate, $past = 8)

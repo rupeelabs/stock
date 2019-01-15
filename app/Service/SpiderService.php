@@ -101,6 +101,37 @@ class SpiderService
         }
     }
 
+    public function getPublishRecord()
+    {
+        $sql = "select * from stock";
+        $stocks = \DB::select($sql);
+        foreach ($stocks as $stock) {
+            $code =  $stock->code;
+            $url = "http://pdfm.eastmoney.com/EM_UBG_PDTI_Fast/api/js?token=4f1862fc3b5e77c150a2b985b12db0fd&rtntype=6&id={$code}{$stock->market_type}&type=k&authorityType=fa&cb=jsonp1546755196396";
+            $stock = json_decode($this->grab($url), true);
+            $flows = $stock['flow'];
+
+            foreach ($flows as $flow) {
+                $date = date('Y-m-d', strtotime($flow['time']));
+                $quantity = $flow['ltg'];
+                $result = \DB::select(sprintf(
+                    "select id from publish_record where code='%s' and date='%s'",
+                    $code, $date
+                ));
+                if ($result)
+                    continue;
+                \DB::insert(
+                    "INSERT INTO publish_record(code,date,quantity) VALUE(?,?,?)",
+                    [
+                        $code,
+                        $date,
+                        $quantity
+                    ]
+                );
+            }
+        }
+    }
+
     public function getTodayStockFlow()
     {
         $stocks = \DB::select("select code from stock");

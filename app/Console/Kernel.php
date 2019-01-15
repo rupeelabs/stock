@@ -11,6 +11,7 @@ use App\Console\Commands\SecondReminder;
 use App\Console\Commands\StockFlowSpider;
 use App\Console\Commands\Spider;
 use App\Console\Commands\StockAnalyzer;
+use App\Console\Commands\TR;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -54,10 +55,12 @@ class Kernel extends ConsoleKernel
         $schedule->command(StockAnalyzer::class)->cron('0 17 * * *');
         $schedule->command(KDJ::class)->cron('0 18 * * *');
         $schedule->command(MACD::class)->cron('30 18 * * *');
+        $schedule->command(TR::class)->cron('00 19 * * *');
         $schedule->command(MACDT::class)->cron('30 19 * * *');
 
-        $schedule->command(FirstReminder::class)->cron('10 20 * * *');
-        $schedule->command(SecondReminder::class)->cron('20 20 * * *');
+
+        //$schedule->command(FirstReminder::class)->cron('10 20 * * *');
+        //$schedule->command(SecondReminder::class)->cron('20 20 * * *');
         $schedule->command(BuyingReminder::class)->cron('30 20 * * *');
     }
 
