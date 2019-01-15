@@ -7,6 +7,7 @@ use App\Console\Commands\FirstReminder;
 use App\Console\Commands\KDJ;
 use App\Console\Commands\MACD;
 use App\Console\Commands\MACDT;
+use App\Console\Commands\PS;
 use App\Console\Commands\SecondReminder;
 use App\Console\Commands\StockFlowSpider;
 use App\Console\Commands\Spider;
@@ -51,6 +52,7 @@ class Kernel extends ConsoleKernel
     {
 
         $schedule->command(Spider::class)->cron('0 10 * * *');
+        $schedule->command(PS::class)->cron('0 11 * * *');
         $schedule->command(StockFlowSpider::class)->cron('0 16 * * *');
         $schedule->command(StockAnalyzer::class)->cron('0 17 * * *');
         $schedule->command(KDJ::class)->cron('0 18 * * *');
