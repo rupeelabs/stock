@@ -8,6 +8,7 @@
 namespace App\Service;
 
 use App\Mail\Stock;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 
@@ -52,6 +53,9 @@ class MACDService
                     $diff, $dea, $macd, $ema12, $ema26, $flow->id
                 );
                 $result = \DB::update($sql);
+                if (!$result) {
+                    Log::error($sql);
+                }
             }
         }
     }
