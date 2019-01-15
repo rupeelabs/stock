@@ -14,7 +14,7 @@ class BuyingReminder extends Command
      *
      * @var string
      */
-    protected $signature = 'BuyingReminder';
+    protected $signature = 'BuyingReminder {date?}';
 
     /**
      * The console command description.
@@ -44,7 +44,8 @@ class BuyingReminder extends Command
     public function handle()
     {
         Log::info("Buying remind start");
-        $this->service->buyingSigRemind();
+        $date = $this->argument('date');
+        $this->service->buyingSigRemind($date);
         Log::info("Buying remind end");
     }
 }

@@ -73,12 +73,13 @@ class MailReminderService
         Mail::send(new NiceStock($data));
     }
 
-    public function buyingSigRemind()
+    public function buyingSigRemind($date)
     {
+        $date = $date ?: date('Y-m-d');
         $stocks = \DB::select(sprintf(
             "select a.code, a.name  from stock as a INNER JOIN macd_testing as b on a.code=b.code
 where b.date='%s'",
-            date('Y-m-d')
+            $date
         ));
         if ($stocks) {
             Mail::send(new NiceStock($stocks));
