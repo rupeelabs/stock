@@ -47,10 +47,11 @@ class MACDService
                     $yestodayDEA = $dea = round($yestodayDEA * 8 / 10 + $diff * 2 / 10, 3);
                     $macd = round(2 * ($diff - $dea), 3);
                 }
-                \DB::update(
-                    "update stock_flow set diff=?, dea=?, macd=?,ema12=?,ema26=? where id=?",
-                    [$diff, $dea, $macd, $flow->id, $ema12, $ema26]
+                $sql = sprintf(
+                    "update stock_flow set diff='%s', dea='%s', macd='%s',ema12='%s',ema26='%s' where id=%d",
+                    $diff, $dea, $macd, $ema12, $ema26, $flow->id
                 );
+                $result = \DB::update($sql);
             }
         }
     }
