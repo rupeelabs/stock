@@ -7,7 +7,7 @@
 
 namespace App\Service;
 
-use App\Mail\Stock;
+use App\Mail\NiceStock;
 use Illuminate\Support\Facades\Mail;
 
 

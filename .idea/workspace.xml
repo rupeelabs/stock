@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0da30504-7a91-4c15-ae80-972d4e540780" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Console/Commands/BuyingReminder.php" afterPath="$PROJECT_DIR$/app/Console/Commands/BuyingReminder.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Service/MailReminderService.php" afterPath="$PROJECT_DIR$/app/Service/MailReminderService.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,14 +28,14 @@
       <file leaf-file-name="MailReminderService.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Service/MailReminderService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="77" column="39" lean-forward="false" selection-start-line="77" selection-start-column="39" selection-end-line="77" selection-end-column="39" />
+            <state relative-caret-position="-1107">
+              <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
               <folding>
-                <marker date="1547515203889" expanded="true" signature="345:367" ph="select code stock" />
-                <marker date="1547515203889" expanded="true" signature="477:541" ph="select * fro... stock_flow" />
-                <marker date="1547515203889" expanded="true" signature="1451:1470" ph="select code stock" />
-                <marker date="1547515203889" expanded="true" signature="1580:1644" ph="select * fro... stock_flow" />
-                <marker date="1547515203889" expanded="true" signature="2141:2243" ph="select a.cod... stock" />
+                <marker date="1547515620303" expanded="true" signature="349:371" ph="select code stock" />
+                <marker date="1547515620303" expanded="true" signature="481:545" ph="select * fro... stock_flow" />
+                <marker date="1547515620303" expanded="true" signature="1455:1474" ph="select code stock" />
+                <marker date="1547515620303" expanded="true" signature="1584:1648" ph="select * fro... stock_flow" />
+                <marker date="1547515620303" expanded="true" signature="2145:2247" ph="select a.cod... stock" />
               </folding>
             </state>
           </provider>
@@ -370,12 +369,12 @@
       <workItem from="1547447390658" duration="2397000" />
       <workItem from="1547453918687" duration="12097000" />
       <workItem from="1547469030969" duration="1273000" />
-      <workItem from="1547514222413" duration="980000" />
+      <workItem from="1547514222413" duration="1395000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103092000" />
+    <option name="totallyTimeSpent" value="103507000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="81" y="23" width="1359" height="877" extended-state="6" />
@@ -815,14 +814,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Service/MailReminderService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="77" column="39" lean-forward="false" selection-start-line="77" selection-start-column="39" selection-end-line="77" selection-end-column="39" />
+        <state relative-caret-position="-1107">
+          <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
           <folding>
-            <marker date="1547515203889" expanded="true" signature="345:367" ph="select code stock" />
-            <marker date="1547515203889" expanded="true" signature="477:541" ph="select * fro... stock_flow" />
-            <marker date="1547515203889" expanded="true" signature="1451:1470" ph="select code stock" />
-            <marker date="1547515203889" expanded="true" signature="1580:1644" ph="select * fro... stock_flow" />
-            <marker date="1547515203889" expanded="true" signature="2141:2243" ph="select a.cod... stock" />
+            <marker date="1547515620303" expanded="true" signature="349:371" ph="select code stock" />
+            <marker date="1547515620303" expanded="true" signature="481:545" ph="select * fro... stock_flow" />
+            <marker date="1547515620303" expanded="true" signature="1455:1474" ph="select code stock" />
+            <marker date="1547515620303" expanded="true" signature="1584:1648" ph="select * fro... stock_flow" />
+            <marker date="1547515620303" expanded="true" signature="2145:2247" ph="select a.cod... stock" />
           </folding>
         </state>
       </provider>
