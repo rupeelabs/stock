@@ -13,7 +13,7 @@ class KDJ extends Command
      *
      * @var string
      */
-    protected $signature = 'KDJ {code?} {all=no}';
+    protected $signature = 'KDJ {all=no} {code?}';
 
     /**
      * The console command description.

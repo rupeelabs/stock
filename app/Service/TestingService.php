@@ -71,7 +71,7 @@ value(?,?)",
                     if ($this->hasAveDeadTwenty($flows, $flow->date)) {
                         continue;
                     }
-                    if (!$this->isTurnoverRateBThan($flows, $flow->date, 1, 5)) {
+                    if (!$this->isTurnoverRateBThan($flows, $flow->date, 1, 3)) {
                         continue;
                     }
                     if (\DB::select(sprintf(

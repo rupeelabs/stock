@@ -13,7 +13,7 @@ class StockFlowSpider extends Command
      *
      * @var string
      */
-    protected $signature = 'StockFlowSpider {code?} {all=no}';
+    protected $signature = 'StockFlowSpider {all=no} {code?}';
 
     /**
      * The console command description.

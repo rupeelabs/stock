@@ -13,7 +13,7 @@ class StockAnalyzer extends Command
      *
      * @var string
      */
-    protected $signature = 'StockAnalyzer {code?} {all=no}';
+    protected $signature = 'StockAnalyzer {all=no} {code?}';
 
     /**
      * The console command description.
