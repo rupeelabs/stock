@@ -21,9 +21,6 @@ class TRService
         } else {
             $sql = "select code from stock";
         }
-        $publishRecords = \DB::select(sprintf(
-            "select * from publish_record order by code,date"
-        ));
         $stocks = \DB::select($sql);
         foreach ($stocks as $stock) {
             $flows = \DB::select(sprintf(
@@ -35,7 +32,6 @@ class TRService
                     continue;
                 }
                 $publishQuantity = $this->getCurPublishQuantity(
-                    $publishRecords,
                     $flow->code,
                     $flow->date
                 );
@@ -49,13 +45,24 @@ class TRService
         }
     }
 
-    public function getCurPublishQuantity(&$publishRecords, $code, $date)
+    public static $publishRecords = [];
+
+    public function getCurPublishQuantity($code, $date)
     {
+        if (!isset(self::$publishRecords[$code])) {
+            $records = \DB::select(sprintf(
+                "select * from publish_record where code='%s' order by date asc",
+                $code
+            ));
+            self::$publishRecords[$code] = $records;
+        }
         $quantity = 1;
-        foreach ($publishRecords as $key => $record) {
+        foreach (self::$publishRecords[$code] as $record) {
             if ($record->code == $code) {
                 if ($record->date < $date) {
                     $quantity = $record->quantity;
+                } else {
+                    break;
                 }
             }
         }

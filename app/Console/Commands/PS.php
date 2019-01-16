@@ -43,6 +43,6 @@ class PS extends Command
     {
         Log::info("Publish record spider start");
         $this->service->getPublishRecord();
-        Log::info("Publish record spider start End");
+        Log::info("Publish record spider End");
     }
 }
