@@ -71,9 +71,9 @@ value(?,?)",
                     if ($this->hasAveDeadTwenty($flows, $flow->date)) {
                         continue;
                     }
-                    if (!$this->isTurnoverRateBThan($flows, $flow->date, 1, 3)) {
-                        continue;
-                    }
+//                    if (!$this->isTurnoverRateBThan($flows, $flow->date, 1, 3)) {
+//                        continue;
+//                    }
                     if (\DB::select(sprintf(
                         "select id from macd_testing where code='%s' and date='%s'",
                         $flow->code,
