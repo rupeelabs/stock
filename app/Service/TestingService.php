@@ -52,12 +52,12 @@ value(?,?)",
                 if ($key < 1) continue;
                 if (
                     $flow->diff > $flow->dea &&
-                    $flows[$key - 1]->diff < $flows[$key - 1]->dea &&
-                    $flow->diff < 0 &&
-                    $flow->dea < 0 &&
-                    $flow->macd > -0.05 &&
-                    $flow->diff < -0.07 &&
-                    $flow->dea < -0.07
+                    $flows[$key - 1]->diff < $flows[$key - 1]->dea
+//                    $flow->diff < 0 &&
+//                    $flow->dea < 0 &&
+//                    $flow->macd > -0.05 &&
+//                    $flow->diff < -0.07 &&
+//                    $flow->dea < -0.07
                 ) {
                     if (!$this->hasAveGolden($flows, $flow->date, 13)) {
                         continue;
@@ -71,9 +71,9 @@ value(?,?)",
                     if ($this->hasAveDeadTwenty($flows, $flow->date)) {
                         continue;
                     }
-//                    if (!$this->isTurnoverRateBThan($flows, $flow->date, 1, 3)) {
-//                        continue;
-//                    }
+                    if (!$this->isTurnoverRateBThan($flows, $flow->date, 1, 3)) {
+                        continue;
+                    }
                     if (\DB::select(sprintf(
                         "select id from macd_testing where code='%s' and date='%s'",
                         $flow->code,
@@ -264,6 +264,11 @@ close='%s' where id=%d",
                 $item->id
             ));
         }
+
+    }
+
+    public function isSidewayInPastDays(&$flows, $code, $date)
+    {
 
     }
 
