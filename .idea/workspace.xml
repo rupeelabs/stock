@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0da30504-7a91-4c15-ae80-972d4e540780" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Console/Commands/FirstReminder.php" afterPath="$PROJECT_DIR$/app/Console/Commands/FirstReminder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Console/Kernel.php" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Service/MailReminderService.php" afterPath="$PROJECT_DIR$/app/Service/MailReminderService.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Service/TestingService.php" afterPath="$PROJECT_DIR$/app/Service/TestingService.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,34 +16,105 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TestingService.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TestingService.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Service/TestingService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4871">
-              <caret line="267" column="5" lean-forward="true" selection-start-line="267" selection-start-column="5" selection-end-line="267" selection-end-column="5" />
+            <state relative-caret-position="627">
+              <caret line="39" column="21" lean-forward="true" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
               <folding>
                 <element signature="e#97#120#0#PHP" expanded="true" />
-                <marker date="1547815677105" expanded="true" signature="300:356" ph="select * fro... stock_flow" />
-                <marker date="1547815677105" expanded="true" signature="625:673" ph="insert into ave_testing... " />
-                <marker date="1547815677105" expanded="true" signature="935:973" ph="select code stock" />
-                <marker date="1547815677105" expanded="true" signature="1021:1043" ph="select code stock" />
-                <marker date="1547815677105" expanded="true" signature="1190:1246" ph="select * fro... stock_flow" />
-                <marker date="1547815677105" expanded="true" signature="2475:2513" ph="select id fr... macd_testing" />
-                <marker date="1547815677105" expanded="true" signature="2475:2532" ph="select id fr... macd_testing" />
-                <marker date="1547815677105" expanded="true" signature="2748:2797" ph="insert into macd_testing... " />
-                <marker date="1547815677105" expanded="true" signature="6791:6817" ph="select * fro... macd_testing" />
-                <marker date="1547815677105" expanded="true" signature="6936:7018" ph="select * fro... stock_flow" />
-                <marker date="1547815677105" expanded="true" signature="7616:7693" ph="update macd_... " />
+                <marker date="1547884468205" expanded="true" signature="298:354" ph="select code stock" />
+                <marker date="1547884468205" expanded="true" signature="402:444" ph="select code stock" />
+                <marker date="1547884468205" expanded="true" signature="625:681" ph="select * fro... stock_flow" />
+                <marker date="1547884468205" expanded="true" signature="994:1050" ph="select id fr... ave_testing" />
+                <marker date="1547884468205" expanded="true" signature="1266:1314" ph="insert into ave_testing... " />
+                <marker date="1547884468205" expanded="true" signature="1614:1652" ph="select code stock" />
+                <marker date="1547884468205" expanded="true" signature="1700:1722" ph="select code stock" />
+                <marker date="1547884468205" expanded="true" signature="1869:1925" ph="select * fro... stock_flow" />
+                <marker date="1547884468205" expanded="true" signature="3154:3192" ph="select id fr... macd_testing" />
+                <marker date="1547884468205" expanded="true" signature="3154:3211" ph="select id fr... macd_testing" />
+                <marker date="1547884468205" expanded="true" signature="3427:3476" ph="insert into macd_testing... " />
+                <marker date="1547884468205" expanded="true" signature="7470:7496" ph="select * fro... macd_testing" />
+                <marker date="1547884468205" expanded="true" signature="7615:7697" ph="select * fro... stock_flow" />
+                <marker date="1547884468205" expanded="true" signature="8295:8372" ph="update macd_... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GA.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Console/Commands/GA.php">
+      <file leaf-file-name="FirstReminder.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Console/Commands/FirstReminder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="924">
-              <caret line="44" column="33" lean-forward="false" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="33" />
+            <state relative-caret-position="535">
+              <caret line="49" column="29" lean-forward="false" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MailReminderService.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Service/MailReminderService.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+              <folding>
+                <element signature="e#97#114#0#PHP" expanded="true" />
+                <marker date="1547884663495" expanded="true" signature="381:482" ph="select a.cod... stock" />
+                <marker date="1547884663495" expanded="true" signature="755:774" ph="select code stock" />
+                <marker date="1547884663495" expanded="true" signature="884:948" ph="select * fro... stock_flow" />
+                <marker date="1547884663495" expanded="true" signature="1445:1547" ph="select a.cod... stock" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AVE.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Mail/AVE.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="579">
+              <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BuyingReminder.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Console/Commands/BuyingReminder.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="535">
+              <caret line="47" column="32" lean-forward="true" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Kernel.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="64" column="41" lean-forward="true" selection-start-line="64" selection-start-column="41" selection-end-line="64" selection-end-column="41" />
+              <folding>
+                <element signature="e#31#71#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SecondReminder.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Console/Commands/SecondReminder.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="557">
+              <caret line="46" column="32" lean-forward="false" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NiceStock.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Mail/NiceStock.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="513">
+              <caret line="32" column="8" lean-forward="false" selection-start-line="32" selection-start-column="8" selection-end-line="34" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -50,100 +123,18 @@
       <file leaf-file-name="MACDT.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Console/Commands/MACDT.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="946">
+            <state relative-caret-position="711">
               <caret line="45" column="26" lean-forward="false" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TRService.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Service/TRService.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1100">
-              <caret line="56" column="46" lean-forward="false" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
-              <folding>
-                <element signature="e#97#116#0#PHP" expanded="true" />
-                <marker date="1547619671291" expanded="true" signature="319:357" ph="select code stock" />
-                <marker date="1547619671291" expanded="true" signature="405:427" ph="select code stock" />
-                <marker date="1547619671291" expanded="true" signature="574:632" ph="select * fro... stock_flow" />
-                <marker date="1547619671291" expanded="true" signature="1126:1178" ph="update stock... " />
-                <marker date="1547619671291" expanded="true" signature="1527:1589" ph="select * fro... publish_record" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Kernel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="946">
-              <caret line="55" column="32" lean-forward="false" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
-              <folding>
-                <element signature="e#31#71#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MACDService.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Service/MACDService.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1056">
-              <caret line="54" column="16" lean-forward="false" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
-              <folding>
-                <marker date="1547552178091" expanded="true" signature="321:359" ph="select code stock" />
-                <marker date="1547552178091" expanded="true" signature="407:429" ph="select code stock" />
-                <marker date="1547552178091" expanded="true" signature="576:632" ph="select * fro... stock_flow" />
-                <marker date="1547552178091" expanded="true" signature="1832:1918" ph="update stock... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BOLLService.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Service/BOLLService.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="63" column="23" lean-forward="false" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
-              <folding>
-                <element signature="e#97#116#0#PHP" expanded="true" />
-                <marker date="1547815450596" expanded="true" signature="358:396" ph="select code stock" />
-                <marker date="1547815450596" expanded="true" signature="444:466" ph="select code stock" />
-                <marker date="1547815450596" expanded="true" signature="613:669" ph="select * fro... stock_flow" />
-                <marker date="1547815450596" expanded="true" signature="1325:1411" ph="update stock... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MACD.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Console/Commands/MACD.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="733">
-              <caret line="47" column="28" lean-forward="false" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BOLL.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Console/Commands/BOLL.php">
+      <file leaf-file-name="AVET.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Console/Commands/AVET.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="535">
-              <caret line="48" column="28" lean-forward="false" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
-              <folding>
-                <element signature="e#40#68#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="standard_8.php" pinned="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_8.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24530">
-              <caret line="1115" column="42" lean-forward="false" selection-start-line="1115" selection-start-column="34" selection-end-line="1115" selection-end-column="42" />
+              <caret line="45" column="28" lean-forward="true" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -162,8 +153,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/Readme" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/Spider.php" />
         <option value="$PROJECT_DIR$/config.php" />
@@ -193,18 +182,15 @@
         <option value="$PROJECT_DIR$/app/Console/Commands/AT.php" />
         <option value="$PROJECT_DIR$/app/Console/Commands/MACDT.php" />
         <option value="$PROJECT_DIR$/app/Console/Commands/Spider.php" />
-        <option value="$PROJECT_DIR$/app/Console/Commands/FirstReminder.php" />
         <option value="$PROJECT_DIR$/app/Console/Commands/SecondReminder.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/app/Console/Commands/MACD.php" />
         <option value="$PROJECT_DIR$/storage/logs/laravel-2019-01-14.log" />
         <option value="$PROJECT_DIR$/app/Console/Commands/BuyingReminder.php" />
-        <option value="$PROJECT_DIR$/app/Service/MailReminderService.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/app/Service/SpiderService.php" />
         <option value="$PROJECT_DIR$/app/Console/Commands/TR.php" />
         <option value="$PROJECT_DIR$/app/Service/MACDService.php" />
-        <option value="$PROJECT_DIR$/app/Console/Kernel.php" />
         <option value="$PROJECT_DIR$/app/Console/Commands/KDJ.php" />
         <option value="$PROJECT_DIR$/app/Console/Commands/StockFlowSpider.php" />
         <option value="$PROJECT_DIR$/app/Console/Commands/StockAnalyzer.php" />
@@ -212,7 +198,12 @@
         <option value="$PROJECT_DIR$/app/Console/Commands/PS.php" />
         <option value="$PROJECT_DIR$/app/Console/Commands/BOLL.php" />
         <option value="$PROJECT_DIR$/app/Service/BOLLService.php" />
+        <option value="$PROJECT_DIR$/app/Console/Commands/AVET.php" />
         <option value="$PROJECT_DIR$/app/Service/TestingService.php" />
+        <option value="$PROJECT_DIR$/app/Console/Commands/FirstReminder.php" />
+        <option value="$PROJECT_DIR$/app/Mail/AVE.php" />
+        <option value="$PROJECT_DIR$/app/Service/MailReminderService.php" />
+        <option value="$PROJECT_DIR$/app/Console/Kernel.php" />
       </list>
     </option>
   </component>
@@ -293,6 +284,12 @@
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Console" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Commands" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="stock" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stock" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Mail" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="stock" type="b2602c69:ProjectViewProjectNode" />
@@ -401,12 +398,12 @@
       <workItem from="1547617885097" duration="3285000" />
       <workItem from="1547633244033" duration="2259000" />
       <workItem from="1547686344637" duration="2324000" />
-      <workItem from="1547812367933" duration="2653000" />
+      <workItem from="1547812367933" duration="4188000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126107000" />
+    <option name="totallyTimeSpent" value="127642000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="81" y="23" width="1359" height="877" extended-state="6" />
@@ -442,20 +439,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Providers/AuthServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/vendor/mail/markdown/button.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -587,13 +570,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-01-05.log" />
-    <entry file="file://$PROJECT_DIR$/app/Console/Commands/FirstReminder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="623">
-          <caret line="49" column="35" lean-forward="false" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="331">
@@ -616,20 +592,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Console/Commands/BuyingReminder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="47" column="31" lean-forward="false" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Console/Commands/SecondReminder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="46" column="31" lean-forward="false" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Console/Commands/Spider.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="535">
@@ -648,21 +610,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="733">
           <caret line="43" column="35" lean-forward="false" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Service/MailReminderService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1518">
-          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-          <folding>
-            <element signature="e#97#120#0#PHP" expanded="false" />
-            <marker date="1547515620303" expanded="true" signature="349:371" ph="select code stock" />
-            <marker date="1547515620303" expanded="true" signature="481:545" ph="select * fro... stock_flow" />
-            <marker date="1547515620303" expanded="true" signature="1455:1474" ph="select code stock" />
-            <marker date="1547515620303" expanded="true" signature="1584:1648" ph="select * fro... stock_flow" />
-            <marker date="1547515620303" expanded="true" signature="2145:2247" ph="select a.cod... stock" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -706,13 +653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Mail/NiceStock.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="33" column="27" lean-forward="false" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -771,29 +711,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Console/Commands/MACDT.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="946">
-          <caret line="45" column="26" lean-forward="false" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Console/Commands/GA.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="924">
           <caret line="44" column="33" lean-forward="false" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="33" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="946">
-          <caret line="55" column="32" lean-forward="false" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
-          <folding>
-            <element signature="e#31#71#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -850,23 +772,106 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Console/Commands/MACDT.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="711">
+          <caret line="45" column="26" lean-forward="false" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Console/Commands/AVET.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="45" column="28" lean-forward="true" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Service/TestingService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4871">
-          <caret line="267" column="5" lean-forward="true" selection-start-line="267" selection-start-column="5" selection-end-line="267" selection-end-column="5" />
+        <state relative-caret-position="627">
+          <caret line="39" column="21" lean-forward="true" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
           <folding>
             <element signature="e#97#120#0#PHP" expanded="true" />
-            <marker date="1547815677105" expanded="true" signature="300:356" ph="select * fro... stock_flow" />
-            <marker date="1547815677105" expanded="true" signature="625:673" ph="insert into ave_testing... " />
-            <marker date="1547815677105" expanded="true" signature="935:973" ph="select code stock" />
-            <marker date="1547815677105" expanded="true" signature="1021:1043" ph="select code stock" />
-            <marker date="1547815677105" expanded="true" signature="1190:1246" ph="select * fro... stock_flow" />
-            <marker date="1547815677105" expanded="true" signature="2475:2513" ph="select id fr... macd_testing" />
-            <marker date="1547815677105" expanded="true" signature="2475:2532" ph="select id fr... macd_testing" />
-            <marker date="1547815677105" expanded="true" signature="2748:2797" ph="insert into macd_testing... " />
-            <marker date="1547815677105" expanded="true" signature="6791:6817" ph="select * fro... macd_testing" />
-            <marker date="1547815677105" expanded="true" signature="6936:7018" ph="select * fro... stock_flow" />
-            <marker date="1547815677105" expanded="true" signature="7616:7693" ph="update macd_... " />
+            <marker date="1547884468205" expanded="true" signature="298:354" ph="select code stock" />
+            <marker date="1547884468205" expanded="true" signature="402:444" ph="select code stock" />
+            <marker date="1547884468205" expanded="true" signature="625:681" ph="select * fro... stock_flow" />
+            <marker date="1547884468205" expanded="true" signature="994:1050" ph="select id fr... ave_testing" />
+            <marker date="1547884468205" expanded="true" signature="1266:1314" ph="insert into ave_testing... " />
+            <marker date="1547884468205" expanded="true" signature="1614:1652" ph="select code stock" />
+            <marker date="1547884468205" expanded="true" signature="1700:1722" ph="select code stock" />
+            <marker date="1547884468205" expanded="true" signature="1869:1925" ph="select * fro... stock_flow" />
+            <marker date="1547884468205" expanded="true" signature="3154:3192" ph="select id fr... macd_testing" />
+            <marker date="1547884468205" expanded="true" signature="3154:3211" ph="select id fr... macd_testing" />
+            <marker date="1547884468205" expanded="true" signature="3427:3476" ph="insert into macd_testing... " />
+            <marker date="1547884468205" expanded="true" signature="7470:7496" ph="select * fro... macd_testing" />
+            <marker date="1547884468205" expanded="true" signature="7615:7697" ph="select * fro... stock_flow" />
+            <marker date="1547884468205" expanded="true" signature="8295:8372" ph="update macd_... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Mail/NiceStock.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="32" column="8" lean-forward="false" selection-start-line="32" selection-start-column="8" selection-end-line="34" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Mail/AVE.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="579">
+          <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Console/Commands/BuyingReminder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="47" column="32" lean-forward="true" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Console/Commands/FirstReminder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="49" column="29" lean-forward="false" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="64" column="41" lean-forward="true" selection-start-line="64" selection-start-column="41" selection-end-line="64" selection-end-column="41" />
+          <folding>
+            <element signature="e#31#71#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Console/Commands/SecondReminder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="557">
+          <caret line="46" column="32" lean-forward="false" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Service/MailReminderService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+          <folding>
+            <element signature="e#97#114#0#PHP" expanded="true" />
+            <marker date="1547884663495" expanded="true" signature="381:482" ph="select a.cod... stock" />
+            <marker date="1547884663495" expanded="true" signature="755:774" ph="select code stock" />
+            <marker date="1547884663495" expanded="true" signature="884:948" ph="select * fro... stock_flow" />
+            <marker date="1547884663495" expanded="true" signature="1445:1547" ph="select a.cod... stock" />
           </folding>
         </state>
       </provider>

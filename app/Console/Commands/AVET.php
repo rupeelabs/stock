@@ -2,37 +2,33 @@
 
 namespace App\Console\Commands;
 
-use App\Mail\OrderShipped;
-use App\Service\MailReminderService;
+use App\Service\TestingService;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Mail;
 
-
-class FirstReminder extends Command
+class AVET extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'FirstReminder {date?}';
+    protected $signature = 'AVET {code?}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Five Rise Reminder';
+    protected $description = 'AVET Loopback testing';
 
     private $service;
-
     /**
      * Create a new command instance.
      *
      * @return void
      */
-    public function __construct(MailReminderService $service)
+    public function __construct(TestingService $service)
     {
         parent::__construct();
         $this->service = $service;
@@ -45,9 +41,9 @@ class FirstReminder extends Command
      */
     public function handle()
     {
-        Log::info('First Remind start');
-        $date = $this->argument('date');
-        $this->service->fiveAveRiseRemind($date);
-        Log::info('First Remind end');
+        Log::info("AVET start");
+        $code = $this->argument('code');
+        $this->service->average($code);
+        Log::info("AVET end");
     }
 }

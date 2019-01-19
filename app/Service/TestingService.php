@@ -16,21 +16,37 @@ class TestingService
 {
     public function average($code = '')
     {
-        $flows = \DB::select(sprintf(
-            "select * from stock_flow where code='%s' order by id asc",
-            $code
-        ));
-        foreach ($flows as $key => $flow) {
-            if ($key < 1) continue;
-            if ($flow->five_ave > $flow->ten_ave && $flows[$key-1]->five_ave < $flows[$key-1]->ten_ave) {
-                \DB::insert(
-                    "insert into ave_testing (code, date) 
-value(?,?)",
-                    [
+        if ($code) {
+            $sql = sprintf("select code from stock where market_type=1 and code='%s'", $code);
+        } else {
+            $sql = "select code from stock where market_type=1";
+        }
+        $stocks = \DB::select($sql);
+        foreach ($stocks as $stock) {
+            $code = $stock->code;
+            $flows = \DB::select(sprintf(
+                "select * from stock_flow where code='%s' order by id asc",
+                $code
+            ));
+            foreach ($flows as $key => $flow) {
+                if ($key < 1) continue;
+                if ($flow->five_ave > $flow->ten_ave && $flows[$key - 1]->five_ave < $flows[$key - 1]->ten_ave) {
+                    if (\DB::select(sprintf(
+                        "select id from ave_testing where code='%s' and date='%s'",
                         $flow->code,
                         $flow->date
-                    ]
-                );
+                    ))) {
+                        continue;
+                    }
+                    \DB::insert(
+                        "insert into ave_testing (code, date) 
+value(?,?)",
+                        [
+                            $flow->code,
+                            $flow->date
+                        ]
+                    );
+                }
             }
         }
     }

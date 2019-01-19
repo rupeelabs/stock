@@ -7,6 +7,7 @@
 
 namespace App\Service;
 
+use App\Mail\AVE;
 use App\Mail\NiceStock;
 use Illuminate\Support\Facades\Mail;
 
@@ -16,36 +17,17 @@ class MailReminderService
     /**
      * 五日均线上升提醒
      */
-    public function fiveAveRiseRemind()
+    public function fiveAveRiseRemind($date)
     {
-        $today = date('Y-m-d');
-        $data = [];
-        $stocks = \DB::select("select code from stock");
-        foreach ($stocks as $stock) {
-            $code = $stock->code;
-            $flows = \DB::select("select * from stock_flow where code=? ORDER by date desc limit 2", [$code]);
-            if (empty($flows))
-                continue;
-            if ($flows[0]->date != $today)
-                continue;
-            if ($flows[0]->five_ave > $flows[1]->five_ave) {
-                $stock['today_close'];
-                $stock['yesterday_close'];
-                $data[] = $stock;
-            }
+        $date = $date ?: date('Y-m-d');
+        $stocks = \DB::select(sprintf(
+            "select a.code, a.name  from stock as a INNER JOIN ave_testing as b on a.code=b.code
+where b.date='%s'",
+            $date
+        ));
+        if ($stocks) {
+            Mail::send(new AVE($stocks));
         }
-        if (empty($data)) {
-            return;
-        }
-        $content = '';
-        foreach ($data as $item) {
-            $content .= "代码：{$item['code']} 名称：{$item['name']} 昨收：{$item['yesterday_close']} 今收：{$item['today_close']}\r\n";
-        }
-        Mail::raw($content, function ($message) {
-            $to = '396444855@qq.com';
-            $message ->to($to)->subject('五日均线上升股票');
-        });
-
 
     }
 
