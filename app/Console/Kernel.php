@@ -4,6 +4,7 @@ namespace App\Console;
 
 use App\Console\Commands\AVET;
 use App\Console\Commands\BuyingReminder;
+use App\Console\Commands\FART;
 use App\Console\Commands\FirstReminder;
 use App\Console\Commands\KDJ;
 use App\Console\Commands\MACD;
@@ -57,6 +58,7 @@ class Kernel extends ConsoleKernel
         $schedule->command(StockFlowSpider::class)->cron('0 16 * * *');
         $schedule->command(StockAnalyzer::class)->cron('0 17 * * *');
         $schedule->command(AVET::class)->cron('30 17 * * *');
+        $schedule->command(FART::class)->cron('40 17 * * *');
         $schedule->command(KDJ::class)->cron('0 18 * * *');
         $schedule->command(MACD::class)->cron('30 18 * * *');
         $schedule->command(TR::class)->cron('00 19 * * *');
@@ -64,7 +66,7 @@ class Kernel extends ConsoleKernel
 
 
         $schedule->command(FirstReminder::class)->cron('10 20 * * *');
-        //$schedule->command(SecondReminder::class)->cron('20 20 * * *');
+        $schedule->command(SecondReminder::class)->cron('20 20 * * *');
         $schedule->command(BuyingReminder::class)->cron('30 20 * * *');
     }
 

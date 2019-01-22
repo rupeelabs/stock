@@ -47,7 +47,7 @@ class FirstReminder extends Command
     {
         Log::info('First Remind start');
         $date = $this->argument('date');
-        $this->service->fiveAveRiseRemind($date);
+        $this->service->brandistockRemind($date);
         Log::info('First Remind end');
     }
 }

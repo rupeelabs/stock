@@ -8,6 +8,7 @@
 namespace App\Service;
 
 use App\Mail\AVE;
+use App\Mail\FAR;
 use App\Mail\NiceStock;
 use Illuminate\Support\Facades\Mail;
 
@@ -21,12 +22,12 @@ class MailReminderService
     {
         $date = $date ?: date('Y-m-d');
         $stocks = \DB::select(sprintf(
-            "select a.code, a.name  from stock as a INNER JOIN ave_testing as b on a.code=b.code
+            "select a.code, a.name  from stock as a INNER JOIN five_ave_rise as b on a.code=b.code
 where b.date='%s'",
             $date
         ));
         if ($stocks) {
-            Mail::send(new AVE($stocks));
+            Mail::send(new FAR($stocks));
         }
 
     }
@@ -34,25 +35,17 @@ where b.date='%s'",
     /**
      * 金叉提醒
      */
-    public function brandistockRemind()
+    public function brandistockRemind($date)
     {
-        $today = date('Y-m-d');
-        $data = [];
-        $stocks = \DB::select("select * from stock");
-        foreach ($stocks as $stock) {
-            $code = $stock->code;
-            $flows = \DB::select("select * from stock_flow where code=? ORDER by date desc limit 2", [$code]);
-            if ($flows[0]->date != $today)
-                continue;
-            if ($flows[0]->five_ave > $flows[0]->sixty_ave && $flows[1]->five_ave < $flows[1]->sixty_ave) {
-                $data[] = $stock;
-            }
+        $date = $date ?: date('Y-m-d');
+        $stocks = \DB::select(sprintf(
+            "select a.code, a.name  from stock as a INNER JOIN ave_testing as b on a.code=b.code
+where b.date='%s'",
+            $date
+        ));
+        if ($stocks) {
+            Mail::send(new AVE($stocks));
         }
-
-        if (empty($data)) {
-            return;
-        }
-        Mail::send(new NiceStock($data));
     }
 
     public function buyingSigRemind($date)
