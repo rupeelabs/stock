@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Console\Commands\AVET;
 use App\Console\Commands\BuyingReminder;
 use App\Console\Commands\FirstReminder;
 use App\Console\Commands\KDJ;
@@ -55,6 +56,7 @@ class Kernel extends ConsoleKernel
         $schedule->command(PS::class)->cron('0 11 * * *');
         $schedule->command(StockFlowSpider::class)->cron('0 16 * * *');
         $schedule->command(StockAnalyzer::class)->cron('0 17 * * *');
+        $schedule->command(AVET::class)->cron('30 17 * * *');
         $schedule->command(KDJ::class)->cron('0 18 * * *');
         $schedule->command(MACD::class)->cron('30 18 * * *');
         $schedule->command(TR::class)->cron('00 19 * * *');
