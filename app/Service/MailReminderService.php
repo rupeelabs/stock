@@ -9,6 +9,7 @@ namespace App\Service;
 
 use App\Mail\AVE;
 use App\Mail\FAR;
+use App\Mail\NewStock;
 use App\Mail\NiceStock;
 use Illuminate\Support\Facades\Mail;
 
@@ -58,6 +59,17 @@ where b.date='%s'",
         ));
         if ($stocks) {
             Mail::send(new NiceStock($stocks));
+        }
+    }
+
+    public function newStockRemind($date)
+    {
+        $date = $date ?: date('Y-m-d');
+        $sql = "select *  from stock 
+where DATE_FORMAT(created_at,'%Y-%m-%d') ='{$date}'";
+        $stocks = \DB::select($sql);
+        if ($stocks) {
+            Mail::send(new NewStock($stocks));
         }
     }
 }
