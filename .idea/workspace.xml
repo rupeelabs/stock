@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0da30504-7a91-4c15-ae80-972d4e540780" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Service/TestingService.php" afterPath="$PROJECT_DIR$/app/Service/TestingService.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,32 +13,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TestingService.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TestingService.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Service/TestingService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="35" column="55" lean-forward="false" selection-start-line="35" selection-start-column="55" selection-end-line="35" selection-end-column="55" />
+            <state relative-caret-position="269">
+              <caret line="316" column="107" lean-forward="true" selection-start-line="316" selection-start-column="107" selection-end-line="316" selection-end-column="107" />
               <folding>
                 <element signature="e#97#120#0#PHP" expanded="true" />
-                <marker date="1548332248937" expanded="true" signature="298:354" ph="select code stock" />
-                <marker date="1548332248937" expanded="true" signature="402:444" ph="select code stock" />
-                <marker date="1548332248937" expanded="true" signature="625:681" ph="select * fro... stock_flow" />
-                <marker date="1548332248937" expanded="true" signature="1111:1167" ph="select id fr... ave_testing" />
-                <marker date="1548332248937" expanded="true" signature="1383:1431" ph="insert into ave_testing... " />
-                <marker date="1548332248937" expanded="true" signature="1731:1769" ph="select code stock" />
-                <marker date="1548332248937" expanded="true" signature="1817:1839" ph="select code stock" />
-                <marker date="1548332248937" expanded="true" signature="1986:2042" ph="select * fro... stock_flow" />
-                <marker date="1548332248937" expanded="true" signature="3272:3310" ph="select id fr... macd_testing" />
-                <marker date="1548332248937" expanded="true" signature="3272:3329" ph="select id fr... macd_testing" />
-                <marker date="1548332248937" expanded="true" signature="3545:3594" ph="insert into macd_testing... " />
-                <marker date="1548332248937" expanded="true" signature="7588:7614" ph="select * fro... macd_testing" />
-                <marker date="1548332248937" expanded="true" signature="7733:7815" ph="select * fro... stock_flow" />
-                <marker date="1548332248937" expanded="true" signature="8413:8490" ph="update macd_... " />
-                <marker date="1548332248937" expanded="true" signature="8809:8865" ph="select code stock" />
-                <marker date="1548332248937" expanded="true" signature="8913:8955" ph="select code stock" />
-                <marker date="1548332248937" expanded="true" signature="9136:9192" ph="select * fro... stock_flow" />
-                <marker date="1548332248937" expanded="true" signature="9801:9859" ph="select id fr... five_ave_rise" />
-                <marker date="1548332248937" expanded="true" signature="10075:10125" ph="insert into five_ave_rise... " />
+                <marker date="1548332596090" expanded="true" signature="298:354" ph="select code stock" />
+                <marker date="1548332596090" expanded="true" signature="402:444" ph="select code stock" />
+                <marker date="1548332596090" expanded="true" signature="625:681" ph="select * fro... stock_flow" />
+                <marker date="1548332596090" expanded="true" signature="1111:1167" ph="select id fr... ave_testing" />
+                <marker date="1548332596090" expanded="true" signature="1383:1431" ph="insert into ave_testing... " />
+                <marker date="1548332596090" expanded="true" signature="1731:1769" ph="select code stock" />
+                <marker date="1548332596090" expanded="true" signature="1817:1839" ph="select code stock" />
+                <marker date="1548332596090" expanded="true" signature="1986:2042" ph="select * fro... stock_flow" />
+                <marker date="1548332596090" expanded="true" signature="3272:3310" ph="select id fr... macd_testing" />
+                <marker date="1548332596090" expanded="true" signature="3272:3329" ph="select id fr... macd_testing" />
+                <marker date="1548332596090" expanded="true" signature="3545:3594" ph="insert into macd_testing... " />
+                <marker date="1548332596090" expanded="true" signature="7588:7614" ph="select * fro... macd_testing" />
+                <marker date="1548332596090" expanded="true" signature="7733:7815" ph="select * fro... stock_flow" />
+                <marker date="1548332596090" expanded="true" signature="8413:8490" ph="update macd_... " />
+                <marker date="1548332596090" expanded="true" signature="8809:8865" ph="select code stock" />
+                <marker date="1548332596090" expanded="true" signature="8913:8955" ph="select code stock" />
+                <marker date="1548332596090" expanded="true" signature="9136:9192" ph="select * fro... stock_flow" />
+                <marker date="1548332596090" expanded="true" signature="9801:9859" ph="select id fr... five_ave_rise" />
+                <marker date="1548332596090" expanded="true" signature="10075:10125" ph="insert into five_ave_rise... " />
               </folding>
             </state>
           </provider>
@@ -112,11 +111,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AVET.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AVET.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Console/Commands/AVET.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="535">
-              <caret line="45" column="28" lean-forward="false" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
+            <state relative-caret-position="579">
+              <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -406,17 +405,18 @@
       <workItem from="1548118722945" duration="741000" />
       <workItem from="1548168461302" duration="3683000" />
       <workItem from="1548246291028" duration="716000" />
-      <workItem from="1548332120531" duration="187000" />
+      <workItem from="1548332120531" duration="451000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134739000" />
+    <option name="totallyTimeSpent" value="135003000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="79" y="23" width="1361" height="877" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2483468" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2483468" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -840,35 +840,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Service/TestingService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="35" column="55" lean-forward="false" selection-start-line="35" selection-start-column="55" selection-end-line="35" selection-end-column="55" />
-          <folding>
-            <element signature="e#97#120#0#PHP" expanded="true" />
-            <marker date="1548332248937" expanded="true" signature="298:354" ph="select code stock" />
-            <marker date="1548332248937" expanded="true" signature="402:444" ph="select code stock" />
-            <marker date="1548332248937" expanded="true" signature="625:681" ph="select * fro... stock_flow" />
-            <marker date="1548332248937" expanded="true" signature="1111:1167" ph="select id fr... ave_testing" />
-            <marker date="1548332248937" expanded="true" signature="1383:1431" ph="insert into ave_testing... " />
-            <marker date="1548332248937" expanded="true" signature="1731:1769" ph="select code stock" />
-            <marker date="1548332248937" expanded="true" signature="1817:1839" ph="select code stock" />
-            <marker date="1548332248937" expanded="true" signature="1986:2042" ph="select * fro... stock_flow" />
-            <marker date="1548332248937" expanded="true" signature="3272:3310" ph="select id fr... macd_testing" />
-            <marker date="1548332248937" expanded="true" signature="3272:3329" ph="select id fr... macd_testing" />
-            <marker date="1548332248937" expanded="true" signature="3545:3594" ph="insert into macd_testing... " />
-            <marker date="1548332248937" expanded="true" signature="7588:7614" ph="select * fro... macd_testing" />
-            <marker date="1548332248937" expanded="true" signature="7733:7815" ph="select * fro... stock_flow" />
-            <marker date="1548332248937" expanded="true" signature="8413:8490" ph="update macd_... " />
-            <marker date="1548332248937" expanded="true" signature="8809:8865" ph="select code stock" />
-            <marker date="1548332248937" expanded="true" signature="8913:8955" ph="select code stock" />
-            <marker date="1548332248937" expanded="true" signature="9136:9192" ph="select * fro... stock_flow" />
-            <marker date="1548332248937" expanded="true" signature="9801:9859" ph="select id fr... five_ave_rise" />
-            <marker date="1548332248937" expanded="true" signature="10075:10125" ph="insert into five_ave_rise... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Console/Commands/BuyingReminder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="535">
@@ -879,9 +850,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Console/Commands/AVET.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="45" column="28" lean-forward="false" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
+        <state relative-caret-position="579">
+          <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Service/TestingService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="316" column="107" lean-forward="true" selection-start-line="316" selection-start-column="107" selection-end-line="316" selection-end-column="107" />
+          <folding>
+            <element signature="e#97#120#0#PHP" expanded="true" />
+            <marker date="1548332596090" expanded="true" signature="298:354" ph="select code stock" />
+            <marker date="1548332596090" expanded="true" signature="402:444" ph="select code stock" />
+            <marker date="1548332596090" expanded="true" signature="625:681" ph="select * fro... stock_flow" />
+            <marker date="1548332596090" expanded="true" signature="1111:1167" ph="select id fr... ave_testing" />
+            <marker date="1548332596090" expanded="true" signature="1383:1431" ph="insert into ave_testing... " />
+            <marker date="1548332596090" expanded="true" signature="1731:1769" ph="select code stock" />
+            <marker date="1548332596090" expanded="true" signature="1817:1839" ph="select code stock" />
+            <marker date="1548332596090" expanded="true" signature="1986:2042" ph="select * fro... stock_flow" />
+            <marker date="1548332596090" expanded="true" signature="3272:3310" ph="select id fr... macd_testing" />
+            <marker date="1548332596090" expanded="true" signature="3272:3329" ph="select id fr... macd_testing" />
+            <marker date="1548332596090" expanded="true" signature="3545:3594" ph="insert into macd_testing... " />
+            <marker date="1548332596090" expanded="true" signature="7588:7614" ph="select * fro... macd_testing" />
+            <marker date="1548332596090" expanded="true" signature="7733:7815" ph="select * fro... stock_flow" />
+            <marker date="1548332596090" expanded="true" signature="8413:8490" ph="update macd_... " />
+            <marker date="1548332596090" expanded="true" signature="8809:8865" ph="select code stock" />
+            <marker date="1548332596090" expanded="true" signature="8913:8955" ph="select code stock" />
+            <marker date="1548332596090" expanded="true" signature="9136:9192" ph="select * fro... stock_flow" />
+            <marker date="1548332596090" expanded="true" signature="9801:9859" ph="select id fr... five_ave_rise" />
+            <marker date="1548332596090" expanded="true" signature="10075:10125" ph="insert into five_ave_rise... " />
+          </folding>
         </state>
       </provider>
     </entry>

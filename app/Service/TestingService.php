@@ -314,7 +314,7 @@ close='%s' where id=%d",
                     $flows[$key - 1]->five_ave < $flows[$key - 2]->five_ave &&
                     $flow->five_ave < $flow->ten_ave &&
                     $flows[$key - 1]->five_ave > 0 &&
-                    (($flows[$key - 1]->ten_ave-$flows[$key - 1]->five_ave)/$flows[$key - 1]->five_ave*100)>20
+                    (($flows[$key - 1]->ten_ave-$flows[$key - 1]->five_ave)/$flows[$key - 1]->five_ave*100)>10
                 ) {
                     if (\DB::select(sprintf(
                         "select id from five_ave_rise where code='%s' and date='%s'",
