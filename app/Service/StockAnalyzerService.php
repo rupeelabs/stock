@@ -26,6 +26,7 @@ class StockAnalyzerService
             ));
             if (empty($flows))
                 continue;
+            $temp = $flows;
             if ($isAll == 'no') {
                 $temp = [];
                 $temp[] = last($flows);
