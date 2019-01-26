@@ -71,7 +71,7 @@ value(?,?)",
             foreach ($flows as $key => $flow) {
                 if ($key < 1) continue;
                 if (
-                    $flow->diff > $flow->dea &&
+                    $flow->diff >= $flow->dea &&
                     $flows[$key - 1]->diff < $flows[$key - 1]->dea &&
                     $flow->diff < 0 &&
                     $flow->dea < 0
@@ -79,7 +79,7 @@ value(?,?)",
 //                    $flow->diff < -0.07 &&
 //                    $flow->dea < -0.07
                 ) {
-                    if (!$this->hasAveGolden($flows, $flow->date, 2)) {
+                    if (!$this->hasAveGolden($flows, $flow->date, 5)) {
                         continue;
                     }
                     if (!$this->hasKDJGolden($flows, $flow->date, 13)) {
