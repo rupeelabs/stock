@@ -66,7 +66,7 @@ class Kernel extends ConsoleKernel
         $schedule->command(MACDT::class)->cron('30 19 * * *');
 
 
-        $schedule->command(ThirdReminder::class)->cron('10 9 * * *');
+        $schedule->command(ThirdReminder::class)->cron('10 10 * * *');
         $schedule->command(FirstReminder::class)->cron('10 20 * * *');
         $schedule->command(SecondReminder::class)->cron('20 20 * * *');
         $schedule->command(BuyingReminder::class)->cron('30 20 * * *');
