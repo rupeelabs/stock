@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0da30504-7a91-4c15-ae80-972d4e540780" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Service/MailReminderService.php" afterPath="$PROJECT_DIR$/app/Service/MailReminderService.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Console/Kernel.php" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -64,16 +64,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AVET.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Console/Commands/AVET.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="733">
-              <caret line="47" column="5" lean-forward="false" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CROSS.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Console/Commands/CROSS.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -111,6 +101,18 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Kernel.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="373">
+              <caret line="75" column="57" lean-forward="false" selection-start-line="75" selection-start-column="57" selection-end-line="75" selection-end-column="57" />
+              <folding>
+                <element signature="e#31#61#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="CrossStock.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Mail/CrossStock.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -131,7 +133,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ForthReminder.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ForthReminder.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Console/Commands/ForthReminder.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="264">
@@ -212,7 +214,6 @@
         <option value="$PROJECT_DIR$/app/Mail/NewStock.php" />
         <option value="$PROJECT_DIR$/app/Console/Commands/ThirdReminder.php" />
         <option value="$PROJECT_DIR$/app/Service/StockAnalyzerService.php" />
-        <option value="$PROJECT_DIR$/app/Console/Kernel.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/Console/Commands/FS.php" />
         <option value="$PROJECT_DIR$/app/Console/Commands/CROSS.php" />
@@ -220,6 +221,7 @@
         <option value="$PROJECT_DIR$/app/Mail/CrossStock.php" />
         <option value="$PROJECT_DIR$/app/Service/MailReminderService.php" />
         <option value="$PROJECT_DIR$/app/Console/Commands/ForthReminder.php" />
+        <option value="$PROJECT_DIR$/app/Console/Kernel.php" />
       </list>
     </option>
   </component>
@@ -401,17 +403,18 @@
       <workItem from="1548981082571" duration="577000" />
       <workItem from="1550028202347" duration="43000" />
       <workItem from="1550065679995" duration="1539000" />
-      <workItem from="1550146106602" duration="4444000" />
+      <workItem from="1550146106602" duration="4784000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144169000" />
+    <option name="totallyTimeSpent" value="144509000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="81" y="23" width="1359" height="877" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24797645" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24797645" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -577,7 +580,7 @@
         <state relative-caret-position="535">
           <caret line="48" column="28" lean-forward="false" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
           <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
+            <element signature="e#40#68#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -744,16 +747,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="69" column="33" lean-forward="true" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
-          <folding>
-            <element signature="e#31#61#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Console/Commands/KDJ.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
@@ -878,6 +871,16 @@
           <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
           <folding>
             <element signature="e#40#66#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="75" column="57" lean-forward="false" selection-start-line="75" selection-start-column="57" selection-end-line="75" selection-end-column="57" />
+          <folding>
+            <element signature="e#31#61#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

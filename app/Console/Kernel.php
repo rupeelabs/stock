@@ -4,8 +4,10 @@ namespace App\Console;
 
 use App\Console\Commands\AVET;
 use App\Console\Commands\BuyingReminder;
+use App\Console\Commands\CROSS;
 use App\Console\Commands\FART;
 use App\Console\Commands\FirstReminder;
+use App\Console\Commands\ForthReminder;
 use App\Console\Commands\KDJ;
 use App\Console\Commands\MACD;
 use App\Console\Commands\MACDT;
@@ -64,12 +66,14 @@ class Kernel extends ConsoleKernel
         $schedule->command(MACD::class)->cron('30 18 * * *');
         $schedule->command(TR::class)->cron('00 19 * * *');
         $schedule->command(MACDT::class)->cron('30 19 * * *');
+        $schedule->command(CROSS::class)->cron('40 19 * * *');
 
 
         $schedule->command(ThirdReminder::class)->cron('10 10 * * *');
         $schedule->command(FirstReminder::class)->cron('10 20 * * *');
         $schedule->command(SecondReminder::class)->cron('20 20 * * *');
         $schedule->command(BuyingReminder::class)->cron('30 20 * * *');
+        $schedule->command(ForthReminder::class)->cron('40 20 * * *');
     }
 
     /**
