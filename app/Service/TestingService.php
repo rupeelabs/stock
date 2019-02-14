@@ -86,7 +86,8 @@ value(?,?)",
                     $flow->open > 0 &&
                     $flow->close > $flow->open &&
                     (($flow->highest/$flow->lowest - 1)*100 >8) &&
-                    (($flow->close/$flow->open - 1)*100 <0.3)
+                    (($flow->close/$flow->open - 1)*100 <0.3) &&
+                    (($flow->open/$flow->lowest - 1)*100 >8)
                 ) {
                     if (\DB::select(sprintf(
                         "select id from `cross` where code='%s' and date='%s'",
