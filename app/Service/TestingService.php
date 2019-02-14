@@ -89,14 +89,14 @@ value(?,?)",
                     (($flow->close/$flow->open - 1)*100 <0.3)
                 ) {
                     if (\DB::select(sprintf(
-                        "select id from cross where code='%s' and date='%s'",
+                        "select id from `cross` where code='%s' and date='%s'",
                         $flow->code,
                         $flow->date
                     ))) {
                         continue;
                     }
                     \DB::insert(
-                        "insert into cross (code, date) 
+                        "insert into `cross` (code, date) 
 value(?,?)",
                         [
                             $flow->code,
