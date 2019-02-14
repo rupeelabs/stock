@@ -16,39 +16,39 @@
       <file leaf-file-name="TestingService.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Service/TestingService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="84" column="37" lean-forward="true" selection-start-line="84" selection-start-column="37" selection-end-line="84" selection-end-column="37" />
+            <state relative-caret-position="300">
+              <caret line="89" column="60" lean-forward="false" selection-start-line="89" selection-start-column="60" selection-end-line="89" selection-end-column="60" />
               <folding>
                 <element signature="e#97#120#0#PHP" expanded="true" />
-                <marker date="1550149825949" expanded="true" signature="358:414" ph="select code stock" />
-                <marker date="1550149825949" expanded="true" signature="462:504" ph="select code stock" />
-                <marker date="1550149825949" expanded="true" signature="685:741" ph="select * fro... stock_flow" />
-                <marker date="1550149825949" expanded="true" signature="1171:1227" ph="select id fr... ave_testing" />
-                <marker date="1550149825949" expanded="true" signature="1443:1491" ph="insert into ave_testing... " />
-                <marker date="1550149825949" expanded="true" signature="1851:1907" ph="select code stock" />
-                <marker date="1550149825949" expanded="true" signature="1955:1997" ph="select code stock" />
-                <marker date="1550149825949" expanded="true" signature="2178:2234" ph="select * fro... stock_flow" />
-                <marker date="1550149825949" expanded="true" signature="2802:2854" ph="select id fr... cross" />
-                <marker date="1550149825949" expanded="true" signature="3070:3114" ph="insert into `cross`... " />
-                <marker date="1550149825949" expanded="true" signature="3487:3543" ph="select code stock" />
-                <marker date="1550149825949" expanded="true" signature="3591:3633" ph="select code stock" />
-                <marker date="1550149825949" expanded="true" signature="3814:3870" ph="select * fro... stock_flow" />
-                <marker date="1550149825949" expanded="true" signature="4245:4300" ph="select id fr... five_sixty" />
-                <marker date="1550149825949" expanded="true" signature="4516:4563" ph="insert into ave_testing... " />
-                <marker date="1550149825949" expanded="true" signature="4863:4901" ph="select code stock" />
-                <marker date="1550149825949" expanded="true" signature="4949:4971" ph="select code stock" />
-                <marker date="1550149825949" expanded="true" signature="5118:5174" ph="select * fro... stock_flow" />
-                <marker date="1550149825949" expanded="true" signature="6405:6443" ph="select id fr... macd_testing" />
-                <marker date="1550149825949" expanded="true" signature="6405:6462" ph="select id fr... macd_testing" />
-                <marker date="1550149825949" expanded="true" signature="6678:6727" ph="insert into macd_testing... " />
-                <marker date="1550149825949" expanded="true" signature="10721:10747" ph="select * fro... macd_testing" />
-                <marker date="1550149825949" expanded="true" signature="10866:10948" ph="select * fro... stock_flow" />
-                <marker date="1550149825949" expanded="true" signature="11546:11623" ph="update macd_... " />
-                <marker date="1550149825949" expanded="true" signature="11942:11998" ph="select code stock" />
-                <marker date="1550149825949" expanded="true" signature="12046:12088" ph="select code stock" />
-                <marker date="1550149825949" expanded="true" signature="12269:12325" ph="select * fro... stock_flow" />
-                <marker date="1550149825949" expanded="true" signature="12934:12992" ph="select id fr... five_ave_rise" />
-                <marker date="1550149825949" expanded="true" signature="13208:13258" ph="insert into five_ave_rise... " />
+                <marker date="1550150097277" expanded="true" signature="358:414" ph="select code stock" />
+                <marker date="1550150097277" expanded="true" signature="462:504" ph="select code stock" />
+                <marker date="1550150097277" expanded="true" signature="685:741" ph="select * fro... stock_flow" />
+                <marker date="1550150097277" expanded="true" signature="1171:1227" ph="select id fr... ave_testing" />
+                <marker date="1550150097277" expanded="true" signature="1443:1491" ph="insert into ave_testing... " />
+                <marker date="1550150097277" expanded="true" signature="1851:1907" ph="select code stock" />
+                <marker date="1550150097277" expanded="true" signature="1955:1997" ph="select code stock" />
+                <marker date="1550150097277" expanded="true" signature="2178:2234" ph="select * fro... stock_flow" />
+                <marker date="1550150097277" expanded="true" signature="2802:2854" ph="select id fr... cross" />
+                <marker date="1550150097277" expanded="true" signature="3070:3114" ph="insert into `cross`... " />
+                <marker date="1550150097277" expanded="true" signature="3487:3543" ph="select code stock" />
+                <marker date="1550150097277" expanded="true" signature="3591:3633" ph="select code stock" />
+                <marker date="1550150097277" expanded="true" signature="3814:3870" ph="select * fro... stock_flow" />
+                <marker date="1550150097277" expanded="true" signature="4245:4300" ph="select id fr... five_sixty" />
+                <marker date="1550150097277" expanded="true" signature="4516:4563" ph="insert into ave_testing... " />
+                <marker date="1550150097277" expanded="true" signature="4863:4901" ph="select code stock" />
+                <marker date="1550150097277" expanded="true" signature="4949:4971" ph="select code stock" />
+                <marker date="1550150097277" expanded="true" signature="5118:5174" ph="select * fro... stock_flow" />
+                <marker date="1550150097277" expanded="true" signature="6405:6443" ph="select id fr... macd_testing" />
+                <marker date="1550150097277" expanded="true" signature="6405:6462" ph="select id fr... macd_testing" />
+                <marker date="1550150097277" expanded="true" signature="6678:6727" ph="insert into macd_testing... " />
+                <marker date="1550150097277" expanded="true" signature="10721:10747" ph="select * fro... macd_testing" />
+                <marker date="1550150097277" expanded="true" signature="10866:10948" ph="select * fro... stock_flow" />
+                <marker date="1550150097277" expanded="true" signature="11546:11623" ph="update macd_... " />
+                <marker date="1550150097277" expanded="true" signature="11942:11998" ph="select code stock" />
+                <marker date="1550150097277" expanded="true" signature="12046:12088" ph="select code stock" />
+                <marker date="1550150097277" expanded="true" signature="12269:12325" ph="select * fro... stock_flow" />
+                <marker date="1550150097277" expanded="true" signature="12934:12992" ph="select id fr... five_ave_rise" />
+                <marker date="1550150097277" expanded="true" signature="13208:13258" ph="insert into five_ave_rise... " />
               </folding>
             </state>
           </provider>
@@ -394,12 +394,12 @@
       <workItem from="1548981082571" duration="577000" />
       <workItem from="1550028202347" duration="43000" />
       <workItem from="1550065679995" duration="1539000" />
-      <workItem from="1550146106602" duration="3396000" />
+      <workItem from="1550146106602" duration="3638000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143121000" />
+    <option name="totallyTimeSpent" value="143363000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="81" y="23" width="1359" height="877" extended-state="0" />
@@ -833,39 +833,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Service/TestingService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="84" column="37" lean-forward="true" selection-start-line="84" selection-start-column="37" selection-end-line="84" selection-end-column="37" />
+        <state relative-caret-position="300">
+          <caret line="89" column="60" lean-forward="false" selection-start-line="89" selection-start-column="60" selection-end-line="89" selection-end-column="60" />
           <folding>
             <element signature="e#97#120#0#PHP" expanded="true" />
-            <marker date="1550149825949" expanded="true" signature="358:414" ph="select code stock" />
-            <marker date="1550149825949" expanded="true" signature="462:504" ph="select code stock" />
-            <marker date="1550149825949" expanded="true" signature="685:741" ph="select * fro... stock_flow" />
-            <marker date="1550149825949" expanded="true" signature="1171:1227" ph="select id fr... ave_testing" />
-            <marker date="1550149825949" expanded="true" signature="1443:1491" ph="insert into ave_testing... " />
-            <marker date="1550149825949" expanded="true" signature="1851:1907" ph="select code stock" />
-            <marker date="1550149825949" expanded="true" signature="1955:1997" ph="select code stock" />
-            <marker date="1550149825949" expanded="true" signature="2178:2234" ph="select * fro... stock_flow" />
-            <marker date="1550149825949" expanded="true" signature="2802:2854" ph="select id fr... cross" />
-            <marker date="1550149825949" expanded="true" signature="3070:3114" ph="insert into `cross`... " />
-            <marker date="1550149825949" expanded="true" signature="3487:3543" ph="select code stock" />
-            <marker date="1550149825949" expanded="true" signature="3591:3633" ph="select code stock" />
-            <marker date="1550149825949" expanded="true" signature="3814:3870" ph="select * fro... stock_flow" />
-            <marker date="1550149825949" expanded="true" signature="4245:4300" ph="select id fr... five_sixty" />
-            <marker date="1550149825949" expanded="true" signature="4516:4563" ph="insert into ave_testing... " />
-            <marker date="1550149825949" expanded="true" signature="4863:4901" ph="select code stock" />
-            <marker date="1550149825949" expanded="true" signature="4949:4971" ph="select code stock" />
-            <marker date="1550149825949" expanded="true" signature="5118:5174" ph="select * fro... stock_flow" />
-            <marker date="1550149825949" expanded="true" signature="6405:6443" ph="select id fr... macd_testing" />
-            <marker date="1550149825949" expanded="true" signature="6405:6462" ph="select id fr... macd_testing" />
-            <marker date="1550149825949" expanded="true" signature="6678:6727" ph="insert into macd_testing... " />
-            <marker date="1550149825949" expanded="true" signature="10721:10747" ph="select * fro... macd_testing" />
-            <marker date="1550149825949" expanded="true" signature="10866:10948" ph="select * fro... stock_flow" />
-            <marker date="1550149825949" expanded="true" signature="11546:11623" ph="update macd_... " />
-            <marker date="1550149825949" expanded="true" signature="11942:11998" ph="select code stock" />
-            <marker date="1550149825949" expanded="true" signature="12046:12088" ph="select code stock" />
-            <marker date="1550149825949" expanded="true" signature="12269:12325" ph="select * fro... stock_flow" />
-            <marker date="1550149825949" expanded="true" signature="12934:12992" ph="select id fr... five_ave_rise" />
-            <marker date="1550149825949" expanded="true" signature="13208:13258" ph="insert into five_ave_rise... " />
+            <marker date="1550150097277" expanded="true" signature="358:414" ph="select code stock" />
+            <marker date="1550150097277" expanded="true" signature="462:504" ph="select code stock" />
+            <marker date="1550150097277" expanded="true" signature="685:741" ph="select * fro... stock_flow" />
+            <marker date="1550150097277" expanded="true" signature="1171:1227" ph="select id fr... ave_testing" />
+            <marker date="1550150097277" expanded="true" signature="1443:1491" ph="insert into ave_testing... " />
+            <marker date="1550150097277" expanded="true" signature="1851:1907" ph="select code stock" />
+            <marker date="1550150097277" expanded="true" signature="1955:1997" ph="select code stock" />
+            <marker date="1550150097277" expanded="true" signature="2178:2234" ph="select * fro... stock_flow" />
+            <marker date="1550150097277" expanded="true" signature="2802:2854" ph="select id fr... cross" />
+            <marker date="1550150097277" expanded="true" signature="3070:3114" ph="insert into `cross`... " />
+            <marker date="1550150097277" expanded="true" signature="3487:3543" ph="select code stock" />
+            <marker date="1550150097277" expanded="true" signature="3591:3633" ph="select code stock" />
+            <marker date="1550150097277" expanded="true" signature="3814:3870" ph="select * fro... stock_flow" />
+            <marker date="1550150097277" expanded="true" signature="4245:4300" ph="select id fr... five_sixty" />
+            <marker date="1550150097277" expanded="true" signature="4516:4563" ph="insert into ave_testing... " />
+            <marker date="1550150097277" expanded="true" signature="4863:4901" ph="select code stock" />
+            <marker date="1550150097277" expanded="true" signature="4949:4971" ph="select code stock" />
+            <marker date="1550150097277" expanded="true" signature="5118:5174" ph="select * fro... stock_flow" />
+            <marker date="1550150097277" expanded="true" signature="6405:6443" ph="select id fr... macd_testing" />
+            <marker date="1550150097277" expanded="true" signature="6405:6462" ph="select id fr... macd_testing" />
+            <marker date="1550150097277" expanded="true" signature="6678:6727" ph="insert into macd_testing... " />
+            <marker date="1550150097277" expanded="true" signature="10721:10747" ph="select * fro... macd_testing" />
+            <marker date="1550150097277" expanded="true" signature="10866:10948" ph="select * fro... stock_flow" />
+            <marker date="1550150097277" expanded="true" signature="11546:11623" ph="update macd_... " />
+            <marker date="1550150097277" expanded="true" signature="11942:11998" ph="select code stock" />
+            <marker date="1550150097277" expanded="true" signature="12046:12088" ph="select code stock" />
+            <marker date="1550150097277" expanded="true" signature="12269:12325" ph="select * fro... stock_flow" />
+            <marker date="1550150097277" expanded="true" signature="12934:12992" ph="select id fr... five_ave_rise" />
+            <marker date="1550150097277" expanded="true" signature="13208:13258" ph="insert into five_ave_rise... " />
           </folding>
         </state>
       </provider>
