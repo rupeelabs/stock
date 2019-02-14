@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Mail;
 
 class TestingService
 {
+
+    /**
+     * 5日与10日金叉
+     * @param string $code
+     */
     public function average($code = '')
     {
         if ($code) {
@@ -44,6 +49,96 @@ class TestingService
                     }
                     \DB::insert(
                         "insert into ave_testing (code, date) 
+value(?,?)",
+                        [
+                            $flow->code,
+                            $flow->date
+                        ]
+                    );
+                }
+            }
+        }
+    }
+
+
+    /**
+     * 十字架 K线图
+     * @param string $code
+     */
+    public function cross($code = '')
+    {
+        if ($code) {
+            $sql = sprintf("select code from stock where market_type=1 and code='%s'", $code);
+        } else {
+            $sql = "select code from stock where market_type=1";
+        }
+        $stocks = \DB::select($sql);
+        foreach ($stocks as $stock) {
+            $code = $stock->code;
+            $flows = \DB::select(sprintf(
+                "select * from stock_flow where code='%s' order by id asc",
+                $code
+            ));
+            foreach ($flows as $key => $flow) {
+                if ($key < 1) continue;
+                if (
+                    $flow->close > $flow->open &&
+                    (($flow->highest/$flow->lowest - 1)*100 >8) &&
+                    (($flow->close/$flow->open - 1)*100 <0.3)
+                ) {
+                    if (\DB::select(sprintf(
+                        "select id from crose where code='%s' and date='%s'",
+                        $flow->code,
+                        $flow->date
+                    ))) {
+                        continue;
+                    }
+                    \DB::insert(
+                        "insert into crose (code, date) 
+value(?,?)",
+                        [
+                            $flow->code,
+                            $flow->date
+                        ]
+                    );
+                }
+            }
+        }
+    }
+
+    /**
+     * 5日与60日金叉
+     * @param string $code
+     */
+    public function fiveAndSixtyGolden($code = '')
+    {
+        if ($code) {
+            $sql = sprintf("select code from stock where market_type=1 and code='%s'", $code);
+        } else {
+            $sql = "select code from stock where market_type=1";
+        }
+        $stocks = \DB::select($sql);
+        foreach ($stocks as $stock) {
+            $code = $stock->code;
+            $flows = \DB::select(sprintf(
+                "select * from stock_flow where code='%s' order by id asc",
+                $code
+            ));
+            foreach ($flows as $key => $flow) {
+                if ($key < 1) continue;
+                if (
+                    $flow->five_ave > $flow->sixty_ave &&
+                    $flows[$key - 1]->five_ave < $flows[$key - 1]->sixty_ave
+                ) {
+                    if (\DB::select(sprintf(
+                        "select id from five_sixty where code='%s' and date='%s'",
+                        $flow->code,
+                        $flow->date
+                    ))) {
+                        continue;
+                    }
+                    \DB::insert(
+                        "insert into five_sixty (code, date) 
 value(?,?)",
                         [
                             $flow->code,
@@ -335,5 +430,6 @@ value(?,?)",
             }
         }
     }
+
 
 }
