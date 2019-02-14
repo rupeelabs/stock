@@ -82,8 +82,8 @@ value(?,?)",
             foreach ($flows as $key => $flow) {
                 if ($key < 1) continue;
                 if (
-                    $flow->lowest > 0 &&
-                    $flow->open > 0 &&
+                    $flow->lowest > 2 &&
+                    $flow->open > 2 &&
                     $flow->close > $flow->open &&
 //                    (($flow->highest/$flow->lowest - 1)*100 >8) &&
 //                    (($flow->close/$flow->open - 1)*100 <0.3) &&
