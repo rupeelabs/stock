@@ -6,6 +6,7 @@ use App\Console\Commands\AVET;
 use App\Console\Commands\BuyingReminder;
 use App\Console\Commands\CROSS;
 use App\Console\Commands\FART;
+use App\Console\Commands\FifthReminder;
 use App\Console\Commands\FirstReminder;
 use App\Console\Commands\ForthReminder;
 use App\Console\Commands\KDJ;
@@ -16,6 +17,7 @@ use App\Console\Commands\SecondReminder;
 use App\Console\Commands\StockFlowSpider;
 use App\Console\Commands\Spider;
 use App\Console\Commands\StockAnalyzer;
+use App\Console\Commands\TGT;
 use App\Console\Commands\ThirdReminder;
 use App\Console\Commands\TR;
 use Illuminate\Console\Scheduling\Schedule;
@@ -67,6 +69,7 @@ class Kernel extends ConsoleKernel
         $schedule->command(TR::class)->cron('00 19 * * *');
         $schedule->command(MACDT::class)->cron('30 19 * * *');
         $schedule->command(CROSS::class)->cron('40 19 * * *');
+        $schedule->command(TGT::class)->cron('55 19 * * *');
 
 
         $schedule->command(ThirdReminder::class)->cron('10 10 * * *');
@@ -74,6 +77,7 @@ class Kernel extends ConsoleKernel
         $schedule->command(SecondReminder::class)->cron('20 20 * * *');
         $schedule->command(BuyingReminder::class)->cron('30 20 * * *');
         $schedule->command(ForthReminder::class)->cron('40 20 * * *');
+        $schedule->command(FifthReminder::class)->cron('45 20 * * *');
     }
 
     /**

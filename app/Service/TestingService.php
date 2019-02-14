@@ -212,6 +212,66 @@ value(?,?)",
         }
     }
 
+    public function macdTwiceGolden($code = '')
+    {
+        if ($code) {
+            $sql = sprintf("select code from stock where code='%s'", $code);
+        } else {
+            $sql = "select code from stock WHERE market_type=1";
+        }
+        $stocks = \DB::select($sql);
+        foreach ($stocks as $stock) {
+            $flows = \DB::select(sprintf(
+                "select * from stock_flow where code='%s' order by id asc",
+                $stock->code
+            ));
+            foreach ($flows as $key => $flow) {
+                if ($key < 50) continue;
+                $slice = array_slice($flows, $key-8, 8);
+                if (
+                    $this->hasTwiceMacdGolden($slice)
+                ) {
+                    if (\DB::select(sprintf(
+                        "select id from macd_twice_gold where code='%s' and date='%s'",
+                        $flow->code,
+                        $flow->date
+                    ))) {
+                        continue;
+                    }
+                    \DB::insert(
+                        "insert into macd_twice_gold (code, date) 
+value(?,?)",
+                        [
+                            $flow->code,
+                            $flow->date
+                        ]
+                    );
+                }
+            }
+        }
+    }
+
+    /**
+     * 是否含有两次macd在零轴下的金叉
+     * @param $flows
+     */
+    public function hasTwiceMacdGolden(&$flows)
+    {
+        $times = 0;
+        foreach ($flows as $key => $flow) {
+            if (!isset($flows[$key - 1])) {
+                continue;
+            }
+            if ($flow->diff < -0.2 && $flow->dea < -0.2) {
+                if ($flow->diff >= $flow->dea &&
+                    $flows[$key - 1]->diff < $flows[$key - 1]->dea) {
+                    $times ++;
+                }
+            }
+        }
+        return $times >= 2;
+    }
+
     /**
      * 计算过去的交易日有无日均线的金叉
      * @param $flows

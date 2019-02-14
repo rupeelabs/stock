@@ -10,6 +10,7 @@ namespace App\Service;
 use App\Mail\AVE;
 use App\Mail\CrossStock;
 use App\Mail\FAR;
+use App\Mail\MacdThiceGlodStock;
 use App\Mail\NewStock;
 use App\Mail\NiceStock;
 use Illuminate\Support\Facades\Mail;
@@ -84,6 +85,19 @@ where DATE_FORMAT(created_at,'%Y-%m-%d') ='{$date}'";
         $stocks = \DB::select($sql);
         if ($stocks) {
             Mail::send(new NewStock($stocks));
+        }
+    }
+
+    public function macdTwiceGlodenRemind($date)
+    {
+        $date = $date ?: date('Y-m-d');
+        $stocks = \DB::select(sprintf(
+            "select a.code, a.name  from stock as a INNER JOIN `macd_twice_gold` as b on a.code=b.code
+where b.date='%s'",
+            $date
+        ));
+        if ($stocks) {
+            Mail::send(new MacdThiceGlodStock($stocks));
         }
     }
 }
