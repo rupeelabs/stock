@@ -41,6 +41,7 @@ class MACDService
                     if ($isAll == 'no') {
                         $yestodayEMA12 = $flows[$key-1]->ema12;
                         $yestodayEMA26 = $flows[$key-1]->ema26;
+                        $yestodayDEA = $flows[$key-1]->dea;
                     }
                     $yestodayEMA12 = $ema12 = round($yestodayEMA12 * 11 / 13 + $flow->close * 2 / 13, 5);
                     $yestodayEMA26 = $ema26 = round($yestodayEMA26 * 25 / 27 + $flow->close * 2 / 27, 5);
