@@ -36,9 +36,8 @@ class TestingService
             foreach ($flows as $key => $flow) {
                 if ($key < 1) continue;
                 if (
-                    $flow->five_ave > $flow->ten_ave &&
-                    $flows[$key - 1]->five_ave < $flows[$key - 1]->ten_ave &&
-                    $flow->five_ave < $flow->twenty_ave
+                    $flow->five_ave >= $flow->sixty_ave &&
+                    $flows[$key - 1]->five_ave < $flows[$key - 1]->sixty_ave
                 ) {
                     if (\DB::select(sprintf(
                         "select id from ave_testing where code='%s' and date='%s'",
