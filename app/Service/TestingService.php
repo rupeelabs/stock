@@ -22,9 +22,9 @@ class TestingService
     public function average($code = '')
     {
         if ($code) {
-            $sql = sprintf("select code from stock where market_type=1 and code='%s'", $code);
+            $sql = sprintf("select code,net_interest from stock where market_type=1 and code='%s'", $code);
         } else {
-            $sql = "select code from stock where market_type=1";
+            $sql = "select code,net_interest from stock where market_type=1";
         }
         $stocks = \DB::select($sql);
         foreach ($stocks as $stock) {
@@ -34,14 +34,18 @@ class TestingService
                 $code
             ));
             foreach ($flows as $key => $flow) {
-                if ($key < 1) continue;
+                if ($key < 80) continue;
                 if (
-                    $flow->five_ave >= $flow->twenty_ave &&
-                    $flows[$key - 1]->five_ave < $flows[$key - 1]->ten_ave &&
-                    (($flow->turnover + $flows[$key - 1]->ten_ave + $flows[$key - 2]->turnover) >
+                    $flow->five_ave >= $flow->sixty_ave &&
+                    $flows[$key - 1]->five_ave < $flows[$key - 1]->sixty_ave &&
+                    (($flow->turnover + $flows[$key - 1]->turnover + $flows[$key - 2]->turnover) >
                     ($flows[$key - 3]->turnover + $flows[$key - 4]->turnover + $flows[$key - 5]->turnover)*2) &&
                     $stock->net_interest > 8
                 ) {
+                    $slice = array_slice($flows, $key-61, 60);
+                    if (!$this->lowerThanSixtyInPast($slice)) {
+                        continue;
+                    }
                     if (\DB::select(sprintf(
                         "select id from ave_testing where code='%s' and date='%s'",
                         $flow->code,
@@ -60,6 +64,16 @@ value(?,?)",
                 }
             }
         }
+    }
+
+    public function lowerThanSixtyInPast($flows)
+    {
+        foreach ($flows as $flow) {
+            if ($flow->five_ave > $flow->sixty_ave) {
+                return false;
+            }
+        }
+        return true;
     }
 
 

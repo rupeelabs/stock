@@ -44,9 +44,8 @@ where b.date='%s'",
         $stocks = \DB::select(sprintf(
             "select a.code, a.name  from stock as a 
 INNER JOIN ave_testing as b on a.code=b.code
-inner join tape as c on a.code = c.code and c.date='%s'
-where b.date='%s' and c.tape_z>0.60",
-            $date, $date
+where b.date='%s'",
+            $date
         ));
         if ($stocks) {
             Mail::send(new AVE($stocks));
