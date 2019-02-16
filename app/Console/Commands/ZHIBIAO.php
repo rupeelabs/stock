@@ -2,33 +2,35 @@
 
 namespace App\Console\Commands;
 
-use App\Service\TestingService;
+use App\Service\KDJService;
+use App\Service\SpiderService;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
 
-class AT extends Command
+class ZHIBIAO extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'AT {code?}';
+    protected $signature = 'ZHIBIAO';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Average Loopback testing';
+    protected $description = '主要指标';
 
     private $service;
+
     /**
      * Create a new command instance.
      *
      * @return void
      */
-    public function __construct(TestingService $service)
+    public function __construct(SpiderService $service)
     {
         parent::__construct();
         $this->service = $service;
@@ -41,9 +43,8 @@ class AT extends Command
      */
     public function handle()
     {
-        Log::info("AT start");
-        $code = $this->argument('code');
-        $this->service->average($code);
-        Log::info("AT end");
+        Log::info("ZHIBIAO start");
+        $this->service->getZhuYaoZhiBiao();
+        Log::info("ZHIBIAO end");
     }
 }

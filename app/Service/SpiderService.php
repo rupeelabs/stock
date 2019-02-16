@@ -9,6 +9,7 @@ namespace App\Service;
 
 use App\Util\JsonPResolver;
 use GuzzleHttp\Client;
+use GuzzleHttp\RequestOptions;
 
 class SpiderService
 {
@@ -162,6 +163,86 @@ class SpiderService
                     $amplitude > 0 ? $amplitude : 0,
                     date('Y-m-d H:i:s')
                 ]
+            );
+        }
+    }
+
+    /**
+     * 盘口数据
+     */
+    public function getTape()
+    {
+        $sql = "select * from stock where market_type=1";
+        $stocks = \DB::select($sql);
+        foreach ($stocks as $stock) {
+            $code =  $stock->code;
+            $url = "https://emdcuserdata.eastmoney.com/UserData/GetTapeData?code=sh{$code}";
+            $response = json_decode($this->grab($url), true);
+            $tape = $response['Data'];
+
+            $result = \DB::select(sprintf(
+                "select id from tape where code='%s' and date='%s'",
+                $code, $tape['Date']
+            ));
+//            var_dump($result);exit;
+            if ($result) {
+                \DB::update(
+                    "update tape set tape_z=?, tape_d=? where id=?",
+                    [$tape['TapeZ'], $tape['TapeD'], $result[0]->id]
+                );
+            } else {
+                \DB::insert(
+                    "INSERT INTO tape(code,date,tape_z,tape_d) VALUE(?,?,?,?)",
+                    [
+                        $code,
+                        $tape['Date'],
+                        $tape['TapeZ'],
+                        $tape['TapeD']
+                    ]
+                );
+            }
+        }
+    }
+
+
+    public function getZhuYaoZhiBiao()
+    {
+        $sql = "select * from stock where market_type=1";
+        $stocks = \DB::select($sql);
+        foreach ($stocks as $stock) {
+            $code =  $stock->code;
+            $url = "http://emh5.securities.eastmoney.com/api/CaiWuFenXi/GetZhuYaoZhiBiaoList";
+
+
+            $param['fc'] = $code.'01';
+            $param['platform'] = 'ios';
+            $param['fn'] = '%E5%8D%8E%E4%B8%BD%E5%AE%B6%E6%97%8F';
+            $param['stockMarketID'] = '1';
+            $param['stockTypeID'] = '2';
+            $param['color'] = 'w';
+            $param['Sys'] = 'ios';
+            $param['ProductType'] = 'cft';
+            $param['Version'] = '7.9';
+            $param['DeviceType'] = 'iOS 11.4.1';
+            $param['UniqueID'] = 'A85e71CBF794-7BDF-4BFE-BF4E-F2D437DA2EFe7455';
+            $param['Version'] = '7.9';
+            $param['corpType'] = '4';
+            $param['reportDateType'] = 0;
+            $param['latestCount'] = 4;
+            $response = (string)$this->httpClient->request(
+                'POST',
+                $url,
+                [
+                    'headers' => ['Content-Type' => 'application/json;charset=UTF-8'],
+                    RequestOptions::JSON => $param
+                ]
+            )->getBody();
+            $response = json_decode($response, true);
+            $netInterest = trim($response['Result']['ZhuYaoZhiBiaoList_QiYe'][0]['Netinterest'], '%');
+            $netInterest = $netInterest == '--' ? 0 : $netInterest;
+            \DB::update(
+                "update stock set net_interest=? where code=?",
+                [$netInterest, $code]
             );
         }
     }

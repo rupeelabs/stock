@@ -17,9 +17,11 @@ use App\Console\Commands\SecondReminder;
 use App\Console\Commands\StockFlowSpider;
 use App\Console\Commands\Spider;
 use App\Console\Commands\StockAnalyzer;
+use App\Console\Commands\TAPE;
 use App\Console\Commands\TGT;
 use App\Console\Commands\ThirdReminder;
 use App\Console\Commands\TR;
+use App\Console\Commands\ZHIBIAO;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -70,6 +72,8 @@ class Kernel extends ConsoleKernel
         $schedule->command(MACDT::class)->cron('30 19 * * *');
         $schedule->command(CROSS::class)->cron('40 19 * * *');
         $schedule->command(TGT::class)->cron('55 19 * * *');
+        $schedule->command(TAPE::class)->cron('0 11 * * *');
+        $schedule->command(ZHIBIAO::class)->cron('30 11 * * *');
 
 
         $schedule->command(ThirdReminder::class)->cron('10 10 * * *');

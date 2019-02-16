@@ -42,8 +42,10 @@ where b.date='%s'",
     {
         $date = $date ?: date('Y-m-d');
         $stocks = \DB::select(sprintf(
-            "select a.code, a.name  from stock as a INNER JOIN ave_testing as b on a.code=b.code
-where b.date='%s'",
+            "select a.code, a.name  from stock as a 
+INNER JOIN ave_testing as b on a.code=b.code
+inner join tape as c on a.code = c.code 
+where b.date='%s' and c.tape_z>0.60",
             $date
         ));
         if ($stocks) {
