@@ -40,7 +40,7 @@ class TestingService
                     $flows[$key - 1]->five_ave < $flows[$key - 1]->sixty_ave &&
                     (($flow->turnover + $flows[$key - 1]->turnover + $flows[$key - 2]->turnover) >
                     ($flows[$key - 3]->turnover + $flows[$key - 4]->turnover + $flows[$key - 5]->turnover)*2) &&
-                    $stock->net_interest > 8
+                    $stock->net_interest > 5
                 ) {
                     $slice = array_slice($flows, $key-61, 60);
                     if (!$this->lowerThanSixtyInPast($slice)) {
