@@ -172,9 +172,9 @@ value(?,?)",
     public function macd($code = '')
     {
         if ($code) {
-            $sql = sprintf("select code from stock where code='%s'", $code);
+            $sql = sprintf("select code,net_interest from stock where market_type=1 and  code='%s'", $code);
         } else {
-            $sql = "select code from stock";
+            $sql = "select code,net_interest from stock where market_type=1";
         }
         $stocks = \DB::select($sql);
         foreach ($stocks as $stock) {
@@ -188,7 +188,8 @@ value(?,?)",
                     $flow->diff >= $flow->dea &&
                     $flows[$key - 1]->diff < $flows[$key - 1]->dea &&
                     $flow->diff < 0 &&
-                    $flow->dea < 0
+                    $flow->dea < 0 &&
+                    $stock->net_interest > 3
 //                    $flow->macd > -0.05 &&
 //                    $flow->diff < -0.07 &&
 //                    $flow->dea < -0.07
