@@ -10,6 +10,7 @@ namespace App\Service;
 use App\Util\JsonPResolver;
 use GuzzleHttp\Client;
 use GuzzleHttp\RequestOptions;
+use Illuminate\Support\Facades\Log;
 
 class SpiderService
 {
@@ -229,14 +230,19 @@ class SpiderService
             $param['corpType'] = '4';
             $param['reportDateType'] = 0;
             $param['latestCount'] = 4;
-            $response = (string)$this->httpClient->request(
-                'POST',
-                $url,
-                [
-                    'headers' => ['Content-Type' => 'application/json;charset=UTF-8'],
-                    RequestOptions::JSON => $param
-                ]
-            )->getBody();
+            try {
+                $response = (string)$this->httpClient->request(
+                    'POST',
+                    $url,
+                    [
+                        'headers' => ['Content-Type' => 'application/json;charset=UTF-8'],
+                        RequestOptions::JSON => $param
+                    ]
+                )->getBody();
+            } catch (\Exception $e) {
+                Log::error("zhibiao spider error:{$code}");
+                throw $e;
+            }
             $response = json_decode($response, true);
             $netInterest = trim($response['Result']['ZhuYaoZhiBiaoList_QiYe'][0]['Netinterest'], '%');
             $netInterest = $netInterest == '--' ? 0 : $netInterest;
