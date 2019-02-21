@@ -16,7 +16,7 @@ class TestingService
 {
 
     /**
-     * 5日与10日金叉
+     * 5日与20日金叉,过去N天都低于60均线
      * @param string $code
      */
     public function average($code = '')
@@ -36,10 +36,8 @@ class TestingService
             foreach ($flows as $key => $flow) {
                 if ($key < 80) continue;
                 if (
-                    $flow->five_ave >= $flow->sixty_ave &&
-                    $flows[$key - 1]->five_ave < $flows[$key - 1]->sixty_ave &&
-                    (($flow->turnover + $flows[$key - 1]->turnover + $flows[$key - 2]->turnover) >
-                    ($flows[$key - 3]->turnover + $flows[$key - 4]->turnover + $flows[$key - 5]->turnover)*2) &&
+                    $flow->five_ave >= $flow->twenty_ave &&
+                    $flows[$key - 1]->five_ave < $flows[$key - 1]->twenty_ave &&
                     $stock->net_interest > 5
                 ) {
                     $slice = array_slice($flows, $key-61, 60);
@@ -55,6 +53,53 @@ class TestingService
                     }
                     \DB::insert(
                         "insert into ave_testing (code, date) 
+value(?,?)",
+                        [
+                            $flow->code,
+                            $flow->date
+                        ]
+                    );
+                }
+            }
+        }
+    }
+
+    /**
+     * 5日与20日金叉,在60均线之上
+     * @param string $code
+     */
+    public function goldenAboveSixty($code = '')
+    {
+        if ($code) {
+            $sql = sprintf("select code,net_interest from stock where market_type=1 and code='%s'", $code);
+        } else {
+            $sql = "select code,net_interest from stock where market_type=1";
+        }
+        $stocks = \DB::select($sql);
+        foreach ($stocks as $stock) {
+            $code = $stock->code;
+            $flows = \DB::select(sprintf(
+                "select * from stock_flow where code='%s' order by id asc",
+                $code
+            ));
+            foreach ($flows as $key => $flow) {
+                if ($key < 80) continue;
+                if (
+                    $flow->five_ave >= $flow->twenty_ave &&
+                    $flows[$key - 1]->five_ave < $flows[$key - 1]->twenty_ave &&
+                    $stock->net_interest > 5 &&
+                    $flow->five_ave > $flow->sixty_ave &&
+                    $flow->twenty_ave > $flow->sixty_ave
+                ) {
+                    if (\DB::select(sprintf(
+                        "select id from golden_above where code='%s' and date='%s'",
+                        $flow->code,
+                        $flow->date
+                    ))) {
+                        continue;
+                    }
+                    \DB::insert(
+                        "insert into golden_above (code, date) 
 value(?,?)",
                         [
                             $flow->code,

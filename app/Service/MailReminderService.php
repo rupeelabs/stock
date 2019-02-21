@@ -10,6 +10,7 @@ namespace App\Service;
 use App\Mail\AVE;
 use App\Mail\CrossStock;
 use App\Mail\FAR;
+use App\Mail\GoldenAboveSixtyStock;
 use App\Mail\MacdThiceGlodStock;
 use App\Mail\NewStock;
 use App\Mail\NiceStock;
@@ -99,6 +100,19 @@ where b.date='%s'",
         ));
         if ($stocks) {
             Mail::send(new MacdThiceGlodStock($stocks));
+        }
+    }
+
+    public function goldenAboveSixtyRemind($date)
+    {
+        $date = $date ?: date('Y-m-d');
+        $stocks = \DB::select(sprintf(
+            "select a.code, a.name  from stock as a INNER JOIN `golden_above` as b on a.code=b.code
+where b.date='%s'",
+            $date
+        ));
+        if ($stocks) {
+            Mail::send(new GoldenAboveSixtyStock($stocks));
         }
     }
 }

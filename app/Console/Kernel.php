@@ -9,11 +9,13 @@ use App\Console\Commands\FART;
 use App\Console\Commands\FifthReminder;
 use App\Console\Commands\FirstReminder;
 use App\Console\Commands\ForthReminder;
+use App\Console\Commands\GAT;
 use App\Console\Commands\KDJ;
 use App\Console\Commands\MACD;
 use App\Console\Commands\MACDT;
 use App\Console\Commands\PS;
 use App\Console\Commands\SecondReminder;
+use App\Console\Commands\SixthReminder;
 use App\Console\Commands\StockFlowSpider;
 use App\Console\Commands\Spider;
 use App\Console\Commands\StockAnalyzer;
@@ -74,6 +76,7 @@ class Kernel extends ConsoleKernel
         $schedule->command(TGT::class)->cron('55 19 * * *');
         $schedule->command(TAPE::class)->cron('0 11 * * *');
         $schedule->command(ZHIBIAO::class)->cron('30 11 * * *');
+        $schedule->command(GAT::class)->cron('10 19 * * *');
 
 
         $schedule->command(ThirdReminder::class)->cron('10 10 * * *');
@@ -82,6 +85,7 @@ class Kernel extends ConsoleKernel
         $schedule->command(BuyingReminder::class)->cron('30 20 * * *');
         $schedule->command(ForthReminder::class)->cron('40 20 * * *');
         $schedule->command(FifthReminder::class)->cron('45 20 * * *');
+        $schedule->command(SixthReminder::class)->cron('50 20 * * *');
     }
 
     /**
