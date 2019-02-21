@@ -85,13 +85,13 @@ value(?,?)",
             foreach ($flows as $key => $flow) {
                 if ($key < 80) continue;
                 if (
-                    $flow->five_ave >= $flow->twenty_ave &&
-                    $flows[$key - 1]->five_ave < $flows[$key - 1]->twenty_ave &&
+                    $flow->five_ave >= $flow->ten_ave &&
+                    $flows[$key - 1]->five_ave < $flows[$key - 1]->ten_ave &&
                     $stock->net_interest > 5 &&
                     $flow->five_ave > $flow->sixty_ave &&
                     $flow->twenty_ave > $flow->sixty_ave
                 ) {
-                    $slice = array_slice($flows, $key-31, 30);
+                    $slice = array_slice($flows, $key-51, 50);
                     if (!$this->greaterThanSixtyInPast($slice)) {
                         continue;
                     }
