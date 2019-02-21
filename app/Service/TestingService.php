@@ -91,6 +91,10 @@ value(?,?)",
                     $flow->five_ave > $flow->sixty_ave &&
                     $flow->twenty_ave > $flow->sixty_ave
                 ) {
+                    $slice = array_slice($flows, $key-31, 30);
+                    if (!$this->greaterThanSixtyInPast($slice)) {
+                        continue;
+                    }
                     if (\DB::select(sprintf(
                         "select id from golden_above where code='%s' and date='%s'",
                         $flow->code,
@@ -115,6 +119,16 @@ value(?,?)",
     {
         foreach ($flows as $flow) {
             if ($flow->five_ave > $flow->sixty_ave) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public function greaterThanSixtyInPast($flows)
+    {
+        foreach ($flows as $flow) {
+            if ($flow->five_ave < $flow->sixty_ave) {
                 return false;
             }
         }
