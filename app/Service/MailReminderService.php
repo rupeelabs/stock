@@ -14,6 +14,7 @@ use App\Mail\GoldenAboveSixtyStock;
 use App\Mail\MacdThiceGlodStock;
 use App\Mail\NewStock;
 use App\Mail\NiceStock;
+use App\Mail\VolRiseStock;
 use Illuminate\Support\Facades\Mail;
 
 
@@ -113,6 +114,19 @@ where b.date='%s'",
         ));
         if ($stocks) {
             Mail::send(new GoldenAboveSixtyStock($stocks));
+        }
+    }
+
+    public function volRiseRemind($date)
+    {
+        $date = $date ?: date('Y-m-d');
+        $stocks = \DB::select(sprintf(
+            "select a.code, a.name  from stock as a INNER JOIN `vol_rise` as b on a.code=b.code
+where b.date='%s'",
+            $date
+        ));
+        if ($stocks) {
+            Mail::send(new VolRiseStock($stocks));
         }
     }
 }

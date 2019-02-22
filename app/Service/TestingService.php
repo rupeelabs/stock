@@ -38,7 +38,7 @@ class TestingService
                 if (
                     $flow->five_ave >= $flow->twenty_ave &&
                     $flows[$key - 1]->five_ave < $flows[$key - 1]->twenty_ave &&
-                    $stock->net_interest > 5
+                    $stock->net_interest > 3
                 ) {
                     $slice = array_slice($flows, $key-61, 60);
                     if (!$this->lowerThanSixtyInPast($slice)) {
@@ -63,6 +63,57 @@ value(?,?)",
             }
         }
     }
+
+    /**
+     * 量价齐升
+     * @param string $code
+     */
+    public function volRise($code = '')
+    {
+        if ($code) {
+            $sql = sprintf("select code,net_interest from stock where market_type=1 and code='%s'", $code);
+        } else {
+            $sql = "select code,net_interest from stock where market_type=1";
+        }
+        $stocks = \DB::select($sql);
+        foreach ($stocks as $stock) {
+            $code = $stock->code;
+            $flows = \DB::select(sprintf(
+                "select * from stock_flow where code='%s' order by id asc",
+                $code
+            ));
+            foreach ($flows as $key => $flow) {
+                if ($key < 80) continue;
+                if (
+                    $flow->close > $flows[$key - 1]->close &&
+                    $stock->net_interest > 3
+                ) {
+                    $slice = array_slice($flows, $key-31, 30);
+                    if (!$this->volGreaterThanPastDays($slice, $flow->vol)) {
+                        continue;
+                    }
+                    if (\DB::select(sprintf(
+                        "select id from vol_rise where code='%s' and date='%s'",
+                        $flow->code,
+                        $flow->date
+                    ))) {
+                        continue;
+                    }
+                    \DB::insert(
+                        "insert into vol_rise (code, date) 
+value(?,?)",
+                        [
+                            $flow->code,
+                            $flow->date
+                        ]
+                    );
+                }
+            }
+        }
+    }
+
+
+
 
     /**
      * 5日与20日金叉,在60均线之上
@@ -119,6 +170,16 @@ value(?,?)",
     {
         foreach ($flows as $flow) {
             if ($flow->five_ave > $flow->sixty_ave) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public function volGreaterThanPastDays($flows, $todayVol)
+    {
+        foreach ($flows as $flow) {
+            if ($todayVol < ($flow->vol * 3)) {
                 return false;
             }
         }
