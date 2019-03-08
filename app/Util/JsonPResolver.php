@@ -20,4 +20,10 @@ class JsonPResolver
         return $matchs[1];
     }
 
+    public static function resolve2($jsonp)
+    {
+        preg_match('/var aff_data=\((.*)\)/', $jsonp, $matchs);
+        return json_decode($matchs[1], true);
+    }
+
 }

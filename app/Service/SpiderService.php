@@ -7,6 +7,7 @@
 
 namespace App\Service;
 
+use App\Mail\ZhuLiZiJinStock;
 use App\Util\JsonPResolver;
 use GuzzleHttp\Client;
 use GuzzleHttp\RequestOptions;
@@ -250,6 +251,57 @@ class SpiderService
                 "update stock set net_interest=? where code=?",
                 [$netInterest, $code]
             );
+        }
+    }
+
+
+    public function getZhuLiZiJin()
+    {
+        $niceStocks = [];
+        $sql = "select * from stock where market_type=1";
+        $stocks = \DB::select($sql);
+        $today = date('Y-m-d');
+        foreach ($stocks as $stock) {
+            $code =  $stock->code;
+            $url = "http://ff.eastmoney.com//EM_CapitalFlowInterface/api/js?type=hff&rtntype=2&cb=var%20aff_data=&check=TMLBMSPROCR&acces_token=1942f5da9b46b069953c873404aad4b5&id={$code}1";
+            try {
+                $response = (string)$this->httpClient->get($url)->getBody();
+            } catch (\Exception $e) {
+                sleep(1);
+                continue;
+            }
+            $data = JsonPResolver::resolve2($response);
+
+            if (empty($data)) {
+                Log::error("zhu li zi jin({$code}) wu shuju");
+                continue;
+            }
+            $slice = array_slice($data, count($data) - 2);
+//            var_dump($slice);exit;
+            list($date1, $amount1) = explode(',', $slice[0]);
+            list($date2, $amount2) = explode(',', $slice[1]);
+
+            if ($amount1 > 0 && $amount1 < 1000 && $amount2 > 1000) {
+                $niceStocks[] = $stock;
+                if (!\DB::select(sprintf(
+                    "select id from zhili where code='%s' and date='%s'",
+                    $code,
+                    $today
+                ))) {
+                    \DB::insert(
+                        "insert into zhuli (code, date) 
+value(?,?)",
+                        [
+                            $code,
+                            $today
+                        ]
+                    );
+                }
+
+            }
+        }
+        if ($niceStocks) {
+            Mail::send(new ZhuLiZiJinStock($niceStocks));
         }
     }
 }

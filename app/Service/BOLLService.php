@@ -21,9 +21,9 @@ class BOLLService
     public function handle($code = '', $isAll = 'no')
     {
         if ($code) {
-            $sql = sprintf("select code from stock where code='%s'", $code);
+            $sql = sprintf("select code from stock where market_type=1 and  code='%s'", $code);
         } else {
-            $sql = "select code from stock";
+            $sql = "select code from stock where market_type=1";
         }
         $stocks = \DB::select($sql);
         foreach ($stocks as $stock) {
@@ -61,8 +61,13 @@ class BOLLService
         foreach ($flows as $flow) {
             $sum += $flow->close;
         }
-        echo $sum;exit;
+//        echo $sum;exit;
         return $sum;
+    }
+
+    public function getMD(&$flows, $MA)
+    {
+        
     }
 
     public function getMA(&$flows, $key, $length)
