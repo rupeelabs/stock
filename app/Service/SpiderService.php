@@ -284,7 +284,7 @@ class SpiderService
             if ($amount1 > 0 && $amount1 < 1000 && $amount2 > 1000) {
                 $niceStocks[] = $stock;
                 if (!\DB::select(sprintf(
-                    "select id from zhili where code='%s' and date='%s'",
+                    "select id from zhuli where code='%s' and date='%s'",
                     $code,
                     $today
                 ))) {
