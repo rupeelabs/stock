@@ -282,7 +282,8 @@ class SpiderService
             list($date1, $amount1) = explode(',', $slice[0]);
             list($date2, $amount2) = explode(',', $slice[1]);
             if ($date2 < $today) {
-                break;
+                Log::error("未开市({$code})");
+                continue;
             }
             if ($amount1 > 0 && $amount1 < 1000 && $amount2 > 1000) {
                 if (!\DB::select(sprintf(
