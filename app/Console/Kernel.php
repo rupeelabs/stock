@@ -26,6 +26,7 @@ use App\Console\Commands\ThirdReminder;
 use App\Console\Commands\TR;
 use App\Console\Commands\VRT;
 use App\Console\Commands\ZHIBIAO;
+use App\Console\Commands\ZLZJ;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -80,6 +81,7 @@ class Kernel extends ConsoleKernel
 //        $schedule->command(ZHIBIAO::class)->cron('30 11 * * *');
         $schedule->command(GAT::class)->cron('10 19 * * *');
         $schedule->command(VRT::class)->cron('22 19 * * *');
+        $schedule->command(ZLZJ::class)->cron('30 * * * *');
 
 
         $schedule->command(ThirdReminder::class)->cron('10 10 * * *');

@@ -12,6 +12,7 @@ use App\Util\JsonPResolver;
 use GuzzleHttp\Client;
 use GuzzleHttp\RequestOptions;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 
 class SpiderService
 {
@@ -280,14 +281,16 @@ class SpiderService
 //            var_dump($slice);exit;
             list($date1, $amount1) = explode(',', $slice[0]);
             list($date2, $amount2) = explode(',', $slice[1]);
-
+            if ($date2 < $today) {
+                break;
+            }
             if ($amount1 > 0 && $amount1 < 1000 && $amount2 > 1000) {
-                $niceStocks[] = $stock;
                 if (!\DB::select(sprintf(
                     "select id from zhuli where code='%s' and date='%s'",
                     $code,
                     $today
                 ))) {
+                    $niceStocks[] = $stock;
                     \DB::insert(
                         "insert into zhuli (code, date) 
 value(?,?)",
