@@ -268,7 +268,7 @@ class SpiderService
             try {
                 $response = (string)$this->httpClient->get($url)->getBody();
             } catch (\Exception $e) {
-                sleep(1);
+                usleep(1000);
                 continue;
             }
             $data = JsonPResolver::resolve2($response);
@@ -282,7 +282,7 @@ class SpiderService
             list($date1, $amount1) = explode(',', $slice[0]);
             list($date2, $amount2) = explode(',', $slice[1]);
             if ($date2 < $today) {
-                Log::error("未开市({$code})");
+//                Log::error("未开市({$code})");
                 continue;
             }
             if ($amount1 > 0 && $amount1 < 1000 && $amount2 > 1000) {
