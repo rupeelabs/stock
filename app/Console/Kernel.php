@@ -78,7 +78,7 @@ class Kernel extends ConsoleKernel
         $schedule->command(CROSS::class)->cron('40 19 * * *');
         $schedule->command(TGT::class)->cron('55 19 * * *');
         $schedule->command(TAPE::class)->cron('0 11 * * *');
-//        $schedule->command(ZHIBIAO::class)->cron('30 11 * * *');
+        $schedule->command(ZHIBIAO::class)->cron('30 11 * * *');
         $schedule->command(GAT::class)->cron('10 19 * * *');
         $schedule->command(VRT::class)->cron('22 19 * * *');
         $schedule->command(ZLZJ::class)->cron('30 * * * *');

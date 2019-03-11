@@ -242,8 +242,9 @@ class SpiderService
                     ]
                 )->getBody();
             } catch (\Exception $e) {
-                Log::error("zhibiao spider error:{$code}");
-                throw $e;
+                continue;
+//                Log::error("zhibiao spider error:{$code}");
+//                throw $e;
             }
             $response = json_decode($response, true);
             $netInterest = trim($response['Result']['ZhuYaoZhiBiaoList_QiYe'][0]['Netinterest'], '%');
@@ -259,7 +260,7 @@ class SpiderService
     public function getZhuLiZiJin()
     {
         $niceStocks = [];
-        $sql = "select * from stock where market_type=1";
+        $sql = "select * from stock where market_type=1 and net_interest>7";
         $stocks = \DB::select($sql);
         $today = date('Y-m-d');
         foreach ($stocks as $stock) {
