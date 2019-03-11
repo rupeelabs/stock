@@ -274,18 +274,29 @@ class SpiderService
             $data = JsonPResolver::resolve2($response);
 
             if (empty($data)) {
-                Log::error("zhu li zi jin({$code}) wu shuju");
+//                Log::error("zhu li zi jin({$code}) wu shuju");
                 continue;
             }
-            $slice = array_slice($data, count($data) - 2);
+            if (count($data) < 6) {
+                continue;
+            }
+            $slice = array_slice($data, count($data) - 4);
 //            var_dump($slice);exit;
             list($date1, $amount1) = explode(',', $slice[0]);
             list($date2, $amount2) = explode(',', $slice[1]);
-            if ($date2 < $today) {
+            list($date3, $amount3) = explode(',', $slice[2]);
+            list($date4, $amount4) = explode(',', $slice[3]);
+            if ($date4 < $today) {
 //                Log::error("未开市({$code})");
                 continue;
             }
-            if ($amount1 > 0 && $amount1 < 1000 && $amount2 > 1000) {
+            if (
+                $amount3 > 0 &&
+                $amount3 < 1000 &&
+                $amount2 < 1000 &&
+                $amount1 < 1000 &&
+                $amount4 > 1000
+            ) {
                 if (!\DB::select(sprintf(
                     "select id from zhuli where code='%s' and date='%s'",
                     $code,
