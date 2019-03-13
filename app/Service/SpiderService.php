@@ -295,7 +295,7 @@ class SpiderService
                 $amount3 > 0 &&
                 $amount3 < 1500 &&
                 $amount2 < 1500 &&
-                $amount1 < 3000 &&
+                $amount1 < 1500 &&
                 $amount4 > 900
             ) {
                 if (!\DB::select(sprintf(
