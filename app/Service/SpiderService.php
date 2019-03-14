@@ -259,6 +259,10 @@ class SpiderService
 
     public function getZhuLiZiJin()
     {
+        $now = date('H');
+        if ($now < 9 || $now > 16) {
+            return;
+        }
         $niceStocks = [];
         $sql = "select * from stock where market_type=1 and net_interest>7";
         $stocks = \DB::select($sql);
