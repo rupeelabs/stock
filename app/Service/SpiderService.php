@@ -265,6 +265,7 @@ class SpiderService
         $today = date('Y-m-d');
         foreach ($stocks as $stock) {
             $code =  $stock->code;
+
             $url = "http://ff.eastmoney.com//EM_CapitalFlowInterface/api/js?type=hff&rtntype=2&cb=var%20aff_data=&check=TMLBMSPROCR&acces_token=1942f5da9b46b069953c873404aad4b5&id={$code}1";
             try {
                 $response = (string)$this->httpClient->get($url)->getBody();
@@ -303,6 +304,7 @@ class SpiderService
                     $code,
                     $today
                 ))) {
+                    \App\Jobs\MailJob::dispatch($stock)->onConnection('database');
                     $niceStocks[] = $stock;
                     \DB::insert(
                         "insert into zhuli (code, date) 
@@ -317,7 +319,7 @@ value(?,?)",
             }
         }
         if ($niceStocks) {
-            Mail::send(new ZhuLiZiJinStock($niceStocks));
+            //Mail::send(new ZhuLiZiJinStock($niceStocks));
         }
     }
 }
