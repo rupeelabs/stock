@@ -292,6 +292,7 @@ class SpiderService
             list($date2, $amount2) = explode(',', $slice[1]);
             list($date3, $amount3) = explode(',', $slice[2]);
             list($date4, $amount4, $increase4,$bigAmount4) = explode(',', $slice[3]);
+            $increase4 = trim($increase4, '%');
 
             if ($date4 < $today) {
 //                Log::error("未开市({$code})");
@@ -302,7 +303,8 @@ class SpiderService
                 $amount3 < 1500 &&
                 $amount2 < 1500 &&
                 $amount1 < 1500 &&
-                $bigAmount4 > 900
+                $amount4 > 700 &&
+                $increase4 > 4.5
             ) {
                 if (!\DB::select(sprintf(
                     "select id from zhuli where code='%s' and date='%s'",
