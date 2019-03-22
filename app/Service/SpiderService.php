@@ -269,7 +269,7 @@ class SpiderService
         $today = date('Y-m-d');
         foreach ($stocks as $stock) {
             $code =  $stock->code;
-
+//            echo $code;exit;
             $url = "http://ff.eastmoney.com//EM_CapitalFlowInterface/api/js?type=hff&rtntype=2&cb=var%20aff_data=&check=TMLBMSPROCR&acces_token=1942f5da9b46b069953c873404aad4b5&id={$code}1";
             try {
                 $response = (string)$this->httpClient->get($url)->getBody();
@@ -291,9 +291,10 @@ class SpiderService
             list($date1, $amount1) = explode(',', $slice[0]);
             list($date2, $amount2) = explode(',', $slice[1]);
             list($date3, $amount3) = explode(',', $slice[2]);
-            list($date4, $amount4, $increase4,$bigAmount4) = explode(',', $slice[3]);
-            $increase4 = trim($increase4, '%');
+            list($date4, $amount4, $increase4,$bigAmount4,,,,,,,,,$improve4) = explode(',', $slice[3]);
 
+
+            $improve4 = trim($improve4, '%');
             if ($date4 < $today) {
 //                Log::error("未开市({$code})");
                 continue;
@@ -304,7 +305,7 @@ class SpiderService
                 $amount2 < 1500 &&
                 $amount1 < 1500 &&
                 $amount4 > 700 &&
-                $increase4 > 4.5
+                $improve4 > 6
             ) {
                 if (!\DB::select(sprintf(
                     "select id from zhuli where code='%s' and date='%s'",
