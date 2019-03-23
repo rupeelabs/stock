@@ -305,7 +305,8 @@ class SpiderService
                 $amount2 < 1500 &&
                 $amount1 < 1500 &&
                 $amount4 > 700 &&
-                $improve4 > 6
+                $improve4 > 6 &&
+                $improve4 < 9.5
             ) {
                 if (!\DB::select(sprintf(
                     "select id from zhuli where code='%s' and date='%s'",
