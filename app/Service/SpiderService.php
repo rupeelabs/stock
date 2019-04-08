@@ -299,13 +299,16 @@ class SpiderService
 //                Log::error("未开市({$code})");
                 continue;
             }
+            if (!$this->isLowerInPast($code, 4)) {
+                continue;
+            }
             if (
                 $amount3 > 0 &&
                 $amount3 < 1500 &&
                 $amount2 < 1500 &&
                 $amount1 < 1500 &&
-                $amount4 > 300 &&
-                $improve4 > 1 &&
+                $amount4 > 200 &&
+                $improve4 > 0 &&
                 $improve4 < 9.5
             ) {
                 if (!\DB::select(sprintf(
@@ -330,5 +333,23 @@ value(?,?)",
         if ($niceStocks) {
             //Mail::send(new ZhuLiZiJinStock($niceStocks));
         }
+    }
+
+    public function isLowerInPast($code, $days)
+    {
+        $sql = sprintf(
+            "select * from stock_flow where code='%d'  order by date desc limit %d",
+            $code,
+            $days
+        );
+        $flows = \DB::select($sql);
+        foreach ($flows as $key=>$flow) {
+            if (!isset($flows[$key+1]))
+                return true;
+            if ($flow->five_ave > $flows[$key+1]->five_ave) {
+                return false;
+            }
+        }
+        return true;
     }
 }
