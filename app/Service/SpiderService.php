@@ -299,7 +299,7 @@ class SpiderService
 //                Log::error("未开市({$code})");
                 continue;
             }
-            if (!$this->isLowerInPast($code, 5)) {
+            if (!$this->isLowerInPast($code, 10)) {
                 continue;
             }
             if (
