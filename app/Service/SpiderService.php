@@ -207,6 +207,97 @@ class SpiderService
         }
     }
 
+    public function getLirunBiao()
+    {
+        $sql = "select * from stock where market_type=1";
+        $stocks = \DB::select($sql);
+        foreach ($stocks as $stock) {
+            $code = $stock->code;
+            $url = "https://emh5.eastmoney.com/api/CaiWuFenXi/GetLiRunBiaoList";
+
+            $param['fc'] = $code.'01';
+            $param['platform'] = 'ios';
+            $param['fn'] = '%E5%8D%8E%E4%B8%BD%E5%AE%B6%E6%97%8F';
+            $param['stockMarketID'] = '1';
+            $param['stockTypeID'] = '2';
+            $param['color'] = 'w';
+            $param['Sys'] = 'ios';
+            $param['ProductType'] = 'cft';
+            $param['Version'] = '7.9';
+            $param['DeviceType'] = 'iOS 11.4.1';
+            $param['UniqueID'] = 'A85e71CBF794-7BDF-4BFE-BF4E-F2D437DA2EFe7455';
+            $param['Version'] = '7.9';
+            $param['corpType'] = '4';
+            $param['reportDateType'] = 1;
+            $param['latestCount'] = 4;
+            $param['reportType'] = 1;
+
+            try {
+                $response = (string)$this->httpClient->request(
+                    'POST',
+                    $url,
+                    [
+                        'headers' => ['Content-Type' => 'application/json;charset=UTF-8'],
+                        RequestOptions::JSON => $param
+                    ]
+                )->getBody();
+            } catch (\Exception $e) {
+                continue;
+//                Log::error("zhibiao spider error:{$code}");
+//                throw $e;
+            }
+            $response = json_decode($response, true);
+
+            $lirunBiao = $response['Result']['LiRunBiaoList_QiYe'];
+//            var_dump($lirunBiao);exit;
+
+            foreach ($lirunBiao as $item) {
+                $reportDate = $item['ReportDate'];
+                $Totaloperatereve = $item['Totaloperatereve'][0];
+                $TotaloperatereveTB = rtrim($item['Totaloperatereve'][1],'%');
+                $netProfit = $item['Netprofit'][0];
+                $netProfitTB = rtrim($item['Netprofit'][1],'%');
+                try {
+                    \DB::insert(
+                        "insert into lirun (code, report_date,operatereve,operatereve_tb,net_profit,net_profit_tb) 
+value(?,?,?,?,?,?)",
+                        [
+                            $code,
+                            $reportDate,
+                            $Totaloperatereve,
+                            $TotaloperatereveTB,
+                            $netProfit,
+                            $netProfitTB
+                        ]
+                    );
+                } catch (\Exception $e) {
+                    continue;
+                }
+            }
+        }
+    }
+
+    public function getYingliQiye()
+    {
+        $sql = "select * from stock where market_type=1";
+        $stocks = \DB::select($sql);
+        $qiye = [];
+        foreach ($stocks as $stock) {
+            $code = $stock->code;
+
+            $sql = "SELECT * from lirun where code={$code} order by report_date desc limit 3";
+
+            $lirun = \DB::select($sql);
+            var_dump($lirun);exit;
+            if ($lirun[0]->net_profit_tb > $lirun[1]->net_profit_tb &&
+                $lirun[1]->net_profit_tb  > $lirun[2]->net_profit_tb &&
+                $lirun[2]->net_profit_tb > 10
+            ) {
+                $qiye[] = $code;
+            }
+        }
+    }
+
 
     public function getZhuYaoZhiBiao()
     {
