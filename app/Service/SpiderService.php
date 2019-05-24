@@ -288,14 +288,17 @@ value(?,?,?,?,?,?)",
             $sql = "SELECT * from lirun where code={$code} order by report_date desc limit 3";
 
             $lirun = \DB::select($sql);
-            var_dump($lirun);exit;
+            if (!isset($lirun[0])) continue;
             if ($lirun[0]->net_profit_tb > $lirun[1]->net_profit_tb &&
                 $lirun[1]->net_profit_tb  > $lirun[2]->net_profit_tb &&
-                $lirun[2]->net_profit_tb > 10
+                $lirun[2]->net_profit_tb > 15
             ) {
                 $qiye[] = $code;
+                echo "$code\n";
             }
         }
+
+
     }
 
 
@@ -390,7 +393,7 @@ value(?,?,?,?,?,?)",
 //                Log::error("未开市({$code})");
                 continue;
             }
-            if (!$this->isLowerInPast($code, 10)) {
+            if (!$this->isLowerInPast($code, 4)) {
                 continue;
             }
             if (
