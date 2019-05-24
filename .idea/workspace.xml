@@ -77,7 +77,7 @@
       <file leaf-file-name="ZLZJ.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Console/Commands/ZLZJ.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="535">
+            <state relative-caret-position="597">
               <caret line="45" column="31" lean-forward="false" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
               <folding />
             </state>
@@ -87,39 +87,39 @@
       <file leaf-file-name="SpiderService.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Service/SpiderService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="395" column="46" lean-forward="false" selection-start-line="395" selection-start-column="46" selection-end-line="395" selection-end-column="46" />
+            <state relative-caret-position="275">
+              <caret line="356" column="33" lean-forward="false" selection-start-line="356" selection-start-column="33" selection-end-line="356" selection-end-column="33" />
               <folding>
-                <marker date="1558690285624" expanded="true" signature="1154:1190" ph="SELECT id Fr... stock" />
-                <marker date="1558690285624" expanded="true" signature="1301:1412" ph="INSERT INTO stock... " />
-                <marker date="1558690285624" expanded="true" signature="2063:2098" ph="select * fro... stock" />
-                <marker date="1558690285624" expanded="true" signature="2146:2165" ph="select * fro... stock" />
-                <marker date="1558690285624" expanded="true" signature="3010:3061" ph="select id fr... stock_flow" />
-                <marker date="1558690285624" expanded="true" signature="3010:3065" ph="select id fr... stock_flow" />
-                <marker date="1558690285624" expanded="true" signature="3283:3403" ph="INSERT INTO stock_flow... " />
-                <marker date="1558690285624" expanded="true" signature="3919:3938" ph="select * fro... stock" />
-                <marker date="1558690285624" expanded="true" signature="4562:4621" ph="select id fr... publish_record" />
-                <marker date="1558690285624" expanded="true" signature="4786:4845" ph="INSERT INTO publish_record... " />
-                <marker date="1558690285624" expanded="true" signature="5115:5137" ph="select code stock" />
-                <marker date="1558690285624" expanded="true" signature="5758:5807" ph="select id fr... stock_flow" />
-                <marker date="1558690285624" expanded="true" signature="5944:6064" ph="INSERT INTO stock_flow... " />
-                <marker date="1558690285624" expanded="true" signature="6533:6572" ph="select * fro... stock" />
-                <marker date="1558690285624" expanded="true" signature="6940:6989" ph="select id fr... tape" />
-                <marker date="1558690285624" expanded="true" signature="7160:7205" ph="update tape " />
-                <marker date="1558690285624" expanded="true" signature="7367:7423" ph="INSERT INTO publish_record... " />
-                <marker date="1558690285624" expanded="true" signature="7726:7765" ph="select * fro... stock" />
-                <marker date="1558690285624" expanded="true" signature="9794:9903" ph="insert into zhuli... " />
-                <marker date="1558690285624" expanded="true" signature="10413:10452" ph="select * fro... stock" />
-                <marker date="1558690285624" expanded="true" signature="10605:10676" ph="SELECT * fro... lirun" />
-                <marker date="1558690285624" expanded="true" signature="10605:10677" ph="SELECT * fro... lirun" />
-                <marker date="1558690285624" expanded="true" signature="11131:11170" ph="select * fro... stock" />
-                <marker date="1558690285624" expanded="true" signature="12841:12885" ph="update stock... " />
-                <marker date="1558690285624" expanded="true" signature="13136:13175" ph="select * fro... stock" />
-                <marker date="1558690285624" expanded="true" signature="13136:13194" ph="select * fro... stock" />
-                <marker date="1558690285624" expanded="true" signature="15012:15062" ph="select id fr... zhuli" />
-                <marker date="1558690285624" expanded="true" signature="15326:15368" ph="insert into zhuli... " />
-                <marker date="1558690285624" expanded="true" signature="15754:15821" ph="select * fro... stock_flow" />
-                <marker date="1558690285624" expanded="true" signature="15754:15823" ph="select * fro... stock_flow" />
+                <marker date="1558691321978" expanded="true" signature="1154:1190" ph="SELECT id Fr... stock" />
+                <marker date="1558691321978" expanded="true" signature="1301:1412" ph="INSERT INTO stock... " />
+                <marker date="1558691321978" expanded="true" signature="2063:2098" ph="select * fro... stock" />
+                <marker date="1558691321978" expanded="true" signature="2146:2165" ph="select * fro... stock" />
+                <marker date="1558691321978" expanded="true" signature="3010:3061" ph="select id fr... stock_flow" />
+                <marker date="1558691321978" expanded="true" signature="3010:3065" ph="select id fr... stock_flow" />
+                <marker date="1558691321978" expanded="true" signature="3283:3403" ph="INSERT INTO stock_flow... " />
+                <marker date="1558691321978" expanded="true" signature="3919:3938" ph="select * fro... stock" />
+                <marker date="1558691321978" expanded="true" signature="4562:4621" ph="select id fr... publish_record" />
+                <marker date="1558691321978" expanded="true" signature="4786:4845" ph="INSERT INTO publish_record... " />
+                <marker date="1558691321978" expanded="true" signature="5115:5137" ph="select code stock" />
+                <marker date="1558691321978" expanded="true" signature="5758:5807" ph="select id fr... stock_flow" />
+                <marker date="1558691321978" expanded="true" signature="5944:6064" ph="INSERT INTO stock_flow... " />
+                <marker date="1558691321978" expanded="true" signature="6533:6572" ph="select * fro... stock" />
+                <marker date="1558691321978" expanded="true" signature="6940:6989" ph="select id fr... tape" />
+                <marker date="1558691321978" expanded="true" signature="7160:7205" ph="update tape " />
+                <marker date="1558691321978" expanded="true" signature="7367:7423" ph="INSERT INTO publish_record... " />
+                <marker date="1558691321978" expanded="true" signature="7726:7765" ph="select * fro... stock" />
+                <marker date="1558691321978" expanded="true" signature="9794:9903" ph="insert into zhuli... " />
+                <marker date="1558691321978" expanded="true" signature="10413:10452" ph="select * fro... stock" />
+                <marker date="1558691321978" expanded="true" signature="10605:10676" ph="SELECT * fro... lirun" />
+                <marker date="1558691321978" expanded="true" signature="10605:10677" ph="SELECT * fro... lirun" />
+                <marker date="1558691321978" expanded="true" signature="11131:11170" ph="select * fro... stock" />
+                <marker date="1558691321978" expanded="true" signature="12841:12885" ph="update stock... " />
+                <marker date="1558691321978" expanded="true" signature="13138:13177" ph="select * fro... stock" />
+                <marker date="1558691321978" expanded="true" signature="13138:13196" ph="select * fro... stock" />
+                <marker date="1558691321978" expanded="true" signature="15016:15066" ph="select id fr... zhuli" />
+                <marker date="1558691321978" expanded="true" signature="15330:15372" ph="insert into zhuli... " />
+                <marker date="1558691321978" expanded="true" signature="15758:15825" ph="select * fro... stock_flow" />
+                <marker date="1558691321978" expanded="true" signature="15758:15827" ph="select * fro... stock_flow" />
               </folding>
             </state>
           </provider>
@@ -458,12 +458,12 @@
       <workItem from="1557279712723" duration="6267000" />
       <workItem from="1557990774226" duration="1116000" />
       <workItem from="1558258608440" duration="3367000" />
-      <workItem from="1558690246630" duration="39000" />
+      <workItem from="1558690246630" duration="1063000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="197710000" />
+    <option name="totallyTimeSpent" value="198734000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="79" y="23" width="1361" height="877" extended-state="0" />
@@ -859,7 +859,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Console/Commands/ZLZJ.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
+        <state relative-caret-position="597">
           <caret line="45" column="31" lean-forward="false" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
           <folding />
         </state>
@@ -867,39 +867,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Service/SpiderService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="395" column="46" lean-forward="false" selection-start-line="395" selection-start-column="46" selection-end-line="395" selection-end-column="46" />
+        <state relative-caret-position="275">
+          <caret line="356" column="33" lean-forward="false" selection-start-line="356" selection-start-column="33" selection-end-line="356" selection-end-column="33" />
           <folding>
-            <marker date="1558690285624" expanded="true" signature="1154:1190" ph="SELECT id Fr... stock" />
-            <marker date="1558690285624" expanded="true" signature="1301:1412" ph="INSERT INTO stock... " />
-            <marker date="1558690285624" expanded="true" signature="2063:2098" ph="select * fro... stock" />
-            <marker date="1558690285624" expanded="true" signature="2146:2165" ph="select * fro... stock" />
-            <marker date="1558690285624" expanded="true" signature="3010:3061" ph="select id fr... stock_flow" />
-            <marker date="1558690285624" expanded="true" signature="3010:3065" ph="select id fr... stock_flow" />
-            <marker date="1558690285624" expanded="true" signature="3283:3403" ph="INSERT INTO stock_flow... " />
-            <marker date="1558690285624" expanded="true" signature="3919:3938" ph="select * fro... stock" />
-            <marker date="1558690285624" expanded="true" signature="4562:4621" ph="select id fr... publish_record" />
-            <marker date="1558690285624" expanded="true" signature="4786:4845" ph="INSERT INTO publish_record... " />
-            <marker date="1558690285624" expanded="true" signature="5115:5137" ph="select code stock" />
-            <marker date="1558690285624" expanded="true" signature="5758:5807" ph="select id fr... stock_flow" />
-            <marker date="1558690285624" expanded="true" signature="5944:6064" ph="INSERT INTO stock_flow... " />
-            <marker date="1558690285624" expanded="true" signature="6533:6572" ph="select * fro... stock" />
-            <marker date="1558690285624" expanded="true" signature="6940:6989" ph="select id fr... tape" />
-            <marker date="1558690285624" expanded="true" signature="7160:7205" ph="update tape " />
-            <marker date="1558690285624" expanded="true" signature="7367:7423" ph="INSERT INTO publish_record... " />
-            <marker date="1558690285624" expanded="true" signature="7726:7765" ph="select * fro... stock" />
-            <marker date="1558690285624" expanded="true" signature="9794:9903" ph="insert into zhuli... " />
-            <marker date="1558690285624" expanded="true" signature="10413:10452" ph="select * fro... stock" />
-            <marker date="1558690285624" expanded="true" signature="10605:10676" ph="SELECT * fro... lirun" />
-            <marker date="1558690285624" expanded="true" signature="10605:10677" ph="SELECT * fro... lirun" />
-            <marker date="1558690285624" expanded="true" signature="11131:11170" ph="select * fro... stock" />
-            <marker date="1558690285624" expanded="true" signature="12841:12885" ph="update stock... " />
-            <marker date="1558690285624" expanded="true" signature="13136:13175" ph="select * fro... stock" />
-            <marker date="1558690285624" expanded="true" signature="13136:13194" ph="select * fro... stock" />
-            <marker date="1558690285624" expanded="true" signature="15012:15062" ph="select id fr... zhuli" />
-            <marker date="1558690285624" expanded="true" signature="15326:15368" ph="insert into zhuli... " />
-            <marker date="1558690285624" expanded="true" signature="15754:15821" ph="select * fro... stock_flow" />
-            <marker date="1558690285624" expanded="true" signature="15754:15823" ph="select * fro... stock_flow" />
+            <marker date="1558691321978" expanded="true" signature="1154:1190" ph="SELECT id Fr... stock" />
+            <marker date="1558691321978" expanded="true" signature="1301:1412" ph="INSERT INTO stock... " />
+            <marker date="1558691321978" expanded="true" signature="2063:2098" ph="select * fro... stock" />
+            <marker date="1558691321978" expanded="true" signature="2146:2165" ph="select * fro... stock" />
+            <marker date="1558691321978" expanded="true" signature="3010:3061" ph="select id fr... stock_flow" />
+            <marker date="1558691321978" expanded="true" signature="3010:3065" ph="select id fr... stock_flow" />
+            <marker date="1558691321978" expanded="true" signature="3283:3403" ph="INSERT INTO stock_flow... " />
+            <marker date="1558691321978" expanded="true" signature="3919:3938" ph="select * fro... stock" />
+            <marker date="1558691321978" expanded="true" signature="4562:4621" ph="select id fr... publish_record" />
+            <marker date="1558691321978" expanded="true" signature="4786:4845" ph="INSERT INTO publish_record... " />
+            <marker date="1558691321978" expanded="true" signature="5115:5137" ph="select code stock" />
+            <marker date="1558691321978" expanded="true" signature="5758:5807" ph="select id fr... stock_flow" />
+            <marker date="1558691321978" expanded="true" signature="5944:6064" ph="INSERT INTO stock_flow... " />
+            <marker date="1558691321978" expanded="true" signature="6533:6572" ph="select * fro... stock" />
+            <marker date="1558691321978" expanded="true" signature="6940:6989" ph="select id fr... tape" />
+            <marker date="1558691321978" expanded="true" signature="7160:7205" ph="update tape " />
+            <marker date="1558691321978" expanded="true" signature="7367:7423" ph="INSERT INTO publish_record... " />
+            <marker date="1558691321978" expanded="true" signature="7726:7765" ph="select * fro... stock" />
+            <marker date="1558691321978" expanded="true" signature="9794:9903" ph="insert into zhuli... " />
+            <marker date="1558691321978" expanded="true" signature="10413:10452" ph="select * fro... stock" />
+            <marker date="1558691321978" expanded="true" signature="10605:10676" ph="SELECT * fro... lirun" />
+            <marker date="1558691321978" expanded="true" signature="10605:10677" ph="SELECT * fro... lirun" />
+            <marker date="1558691321978" expanded="true" signature="11131:11170" ph="select * fro... stock" />
+            <marker date="1558691321978" expanded="true" signature="12841:12885" ph="update stock... " />
+            <marker date="1558691321978" expanded="true" signature="13138:13177" ph="select * fro... stock" />
+            <marker date="1558691321978" expanded="true" signature="13138:13196" ph="select * fro... stock" />
+            <marker date="1558691321978" expanded="true" signature="15016:15066" ph="select id fr... zhuli" />
+            <marker date="1558691321978" expanded="true" signature="15330:15372" ph="insert into zhuli... " />
+            <marker date="1558691321978" expanded="true" signature="15758:15825" ph="select * fro... stock_flow" />
+            <marker date="1558691321978" expanded="true" signature="15758:15827" ph="select * fro... stock_flow" />
           </folding>
         </state>
       </provider>

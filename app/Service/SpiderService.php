@@ -354,8 +354,8 @@ value(?,?,?,?,?,?)",
     public function getZhuLiZiJin()
     {
         $now = date('H');
-        if ($now < 9 || $now > 16) {
-            return;
+        if ($now < 9 || $now > 20) {
+            //return;
         }
         $niceStocks = [];
         $sql = "select * from stock where market_type=1 and net_interest>7";
@@ -393,7 +393,7 @@ value(?,?,?,?,?,?)",
 //                Log::error("未开市({$code})");
                 continue;
             }
-            if (!$this->isLowerInPast($code, 4)) {
+            if (!$this->isLowerInPast($code, 6)) {
                 continue;
             }
             if (
@@ -402,7 +402,7 @@ value(?,?,?,?,?,?)",
                 $amount2 < 1500 &&
                 $amount1 < 1500 &&
                 $amount4 > 400 &&
-                $improve4 > 0 &&
+                $improve4 > 300 &&
                 $improve4 < 9.5
             ) {
                 if (!\DB::select(sprintf(
