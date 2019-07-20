@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0da30504-7a91-4c15-ae80-972d4e540780" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Service/StockAnalyzerService.php" afterPath="$PROJECT_DIR$/app/Service/StockAnalyzerService.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -92,17 +91,17 @@
       <file leaf-file-name="StockAnalyzerService.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Service/StockAnalyzerService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="559">
-              <caret line="77" column="43" lean-forward="false" selection-start-line="77" selection-start-column="43" selection-end-line="77" selection-end-column="43" />
+            <state relative-caret-position="524">
+              <caret line="76" column="40" lean-forward="false" selection-start-line="76" selection-start-column="40" selection-end-line="76" selection-end-column="40" />
               <folding>
-                <marker date="1563609833527" expanded="true" signature="269:307" ph="select code stock" />
-                <marker date="1563609833527" expanded="true" signature="355:377" ph="select code stock" />
-                <marker date="1563609833527" expanded="true" signature="524:582" ph="SELECT * fro... stock_flow" />
-                <marker date="1563609833527" expanded="true" signature="1334:1415" ph="update stock... " />
-                <marker date="1563609833527" expanded="true" signature="2012:2034" ph="select code stock" />
-                <marker date="1563609833527" expanded="true" signature="2012:2054" ph="select code stock" />
-                <marker date="1563609833527" expanded="true" signature="2224:2279" ph="SELECT * fro... stock_flow" />
-                <marker date="1563609833527" expanded="true" signature="2224:2293" ph="SELECT * fro... stock_flow" />
+                <marker date="1563610137711" expanded="true" signature="269:307" ph="select code stock" />
+                <marker date="1563610137711" expanded="true" signature="355:377" ph="select code stock" />
+                <marker date="1563610137711" expanded="true" signature="524:582" ph="SELECT * fro... stock_flow" />
+                <marker date="1563610137711" expanded="true" signature="1334:1415" ph="update stock... " />
+                <marker date="1563610137711" expanded="true" signature="2012:2034" ph="select code stock" />
+                <marker date="1563610137711" expanded="true" signature="2012:2054" ph="select code stock" />
+                <marker date="1563610137711" expanded="true" signature="2224:2279" ph="SELECT * fro... stock_flow" />
+                <marker date="1563610137711" expanded="true" signature="2224:2293" ph="SELECT * fro... stock_flow" />
               </folding>
             </state>
           </provider>
@@ -440,12 +439,12 @@
       <workItem from="1559198480662" duration="545000" />
       <workItem from="1559263755892" duration="557000" />
       <workItem from="1560322131432" duration="565000" />
-      <workItem from="1563609204454" duration="605000" />
+      <workItem from="1563609204454" duration="857000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202264000" />
+    <option name="totallyTimeSpent" value="202516000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="82" y="23" width="1348" height="877" extended-state="0" />
@@ -896,17 +895,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Service/StockAnalyzerService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="77" column="43" lean-forward="false" selection-start-line="77" selection-start-column="43" selection-end-line="77" selection-end-column="43" />
+        <state relative-caret-position="524">
+          <caret line="76" column="40" lean-forward="false" selection-start-line="76" selection-start-column="40" selection-end-line="76" selection-end-column="40" />
           <folding>
-            <marker date="1563609833527" expanded="true" signature="269:307" ph="select code stock" />
-            <marker date="1563609833527" expanded="true" signature="355:377" ph="select code stock" />
-            <marker date="1563609833527" expanded="true" signature="524:582" ph="SELECT * fro... stock_flow" />
-            <marker date="1563609833527" expanded="true" signature="1334:1415" ph="update stock... " />
-            <marker date="1563609833527" expanded="true" signature="2012:2034" ph="select code stock" />
-            <marker date="1563609833527" expanded="true" signature="2012:2054" ph="select code stock" />
-            <marker date="1563609833527" expanded="true" signature="2224:2279" ph="SELECT * fro... stock_flow" />
-            <marker date="1563609833527" expanded="true" signature="2224:2293" ph="SELECT * fro... stock_flow" />
+            <marker date="1563610137711" expanded="true" signature="269:307" ph="select code stock" />
+            <marker date="1563610137711" expanded="true" signature="355:377" ph="select code stock" />
+            <marker date="1563610137711" expanded="true" signature="524:582" ph="SELECT * fro... stock_flow" />
+            <marker date="1563610137711" expanded="true" signature="1334:1415" ph="update stock... " />
+            <marker date="1563610137711" expanded="true" signature="2012:2034" ph="select code stock" />
+            <marker date="1563610137711" expanded="true" signature="2012:2054" ph="select code stock" />
+            <marker date="1563610137711" expanded="true" signature="2224:2279" ph="SELECT * fro... stock_flow" />
+            <marker date="1563610137711" expanded="true" signature="2224:2293" ph="SELECT * fro... stock_flow" />
           </folding>
         </state>
       </provider>

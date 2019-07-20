@@ -74,7 +74,7 @@ class StockAnalyzerService
                 "SELECT * from stock_flow where code = '%s' order by id desc limit 0,1",
                 $stock->code
             ));
-//            var_dump($flows);exit;
+            if (empty($flows)) continue;
             if ($flows[0]->close > $flows[0]->twenty_ave) {
                 $shangzhangStocks[] = $stock->code;
             }
