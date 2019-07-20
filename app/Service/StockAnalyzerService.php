@@ -63,5 +63,24 @@ class StockAnalyzerService
         return round($total/$limit, 4);
     }
 
+    public function shangzhang()
+    {
+        $sql = "select code from stock where market_type=1";
+        $stocks = \DB::select($sql);
+
+        $shangzhangStocks = [];
+        foreach ($stocks as $stock) {
+            $flows = \DB::select(sprintf(
+                "SELECT * from stock_flow where code = '%s' order by id desc limit 0,1",
+                $stock->code
+            ));
+//            var_dump($flows);exit;
+            if ($flows[0]->close > $flows[0]->twenty_ave) {
+                $shangzhangStocks[] = $stock->code;
+            }
+        }
+
+        var_dump($shangzhangStocks);
+    }
 
 }
