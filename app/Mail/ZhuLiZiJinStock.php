@@ -31,7 +31,7 @@ class ZhuLiZiJinStock extends Mailable
     public function build()
     {
         return $this->markdown('emails.nice.stock')
-            ->subject("主力资金上升")
+            ->subject("今日跌幅超过7%")
             ->with(['stocks' => $this->stocks]);
     }
 }

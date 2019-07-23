@@ -471,18 +471,9 @@ value(?,?)",
             if (!$this->isLowerInPast($code, 10)) {
                 continue;
             }
-            if ($improve <= -1) {
-//echo  $code;exit;
+            if ($improve <= -7) {
                     \App\Jobs\MailJob::dispatch($stock)->onConnection('database');
                     $niceStocks[] = $stock;
-//                    \DB::insert(
-//                        "insert into zhuli (code, date)
-//value(?,?)",
-//                        [
-//                            $code,
-//                            $today
-//                        ]
-//                    );
             }
 
         }
