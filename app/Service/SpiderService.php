@@ -472,13 +472,10 @@ value(?,?)",
                 continue;
             }
             if ($improve <= -7) {
-                    \App\Jobs\MailJob::dispatch($stock)->onConnection('database');
-                    $niceStocks[] = $stock;
+                \App\Jobs\MailJob::dispatch($stock)->onConnection('database');
+                $niceStocks[] = $stock;
             }
 
-        }
-        if ($niceStocks) {
-            Mail::send(new ZhuLiZiJinStock($niceStocks));
         }
     }
 

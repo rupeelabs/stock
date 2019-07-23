@@ -5,6 +5,7 @@ namespace App\Console;
 use App\Console\Commands\AVET;
 use App\Console\Commands\BuyingReminder;
 use App\Console\Commands\CROSS;
+use App\Console\Commands\DROP;
 use App\Console\Commands\FART;
 use App\Console\Commands\FifthReminder;
 use App\Console\Commands\FirstReminder;
@@ -81,7 +82,7 @@ class Kernel extends ConsoleKernel
         $schedule->command(ZHIBIAO::class)->cron('30 11 * * *');
         $schedule->command(GAT::class)->cron('10 19 * * *');
         $schedule->command(VRT::class)->cron('22 19 * * *');
-//        $schedule->command(ZLZJ::class)->cron('*/3 * * * *');
+        $schedule->command(DROP::class)->cron('48 14 * * *');
 
 
         $schedule->command(ThirdReminder::class)->cron('10 10 * * *');
