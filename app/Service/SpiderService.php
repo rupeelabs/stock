@@ -429,6 +429,69 @@ value(?,?)",
         }
     }
 
+    public function getTodayDrop()
+    {
+        $now = date('H');
+        if ($now < 9 || $now > 16) {
+            return;
+        }
+        $niceStocks = [];
+        $sql = "select * from stock where market_type=1 and net_interest>7";
+        $stocks = \DB::select($sql);
+        $today = date('Y-m-d');
+        foreach ($stocks as $stock) {
+            $code =  $stock->code;
+//            echo $code;exit;
+            $url = "http://ff.eastmoney.com//EM_CapitalFlowInterface/api/js?type=hff&rtntype=2&cb=var%20aff_data=&check=TMLBMSPROCR&acces_token=1942f5da9b46b069953c873404aad4b5&id={$code}1";
+            try {
+                $response = (string)$this->httpClient->get($url)->getBody();
+            } catch (\Exception $e) {
+                usleep(1000);
+                continue;
+            }
+            $data = JsonPResolver::resolve2($response);
+
+            if (empty($data)) {
+//                Log::error("zhu li zi jin({$code}) wu shuju");
+                continue;
+            }
+            if (count($data) < 6) {
+                continue;
+            }
+
+            $slice = $data[count($data)-1];
+
+            list($date, , ,,,,,,,,,,$improve) = explode(',', $slice);
+            $improve = rtrim($improve, '%');
+
+            if ($date < $today) {
+//                Log::error("未开市({$code})");
+                continue;
+            }
+            if (!$this->isLowerInPast($code, 10)) {
+                continue;
+            }
+            if ($improve <= -1) {
+//echo  $code;exit;
+                    \App\Jobs\MailJob::dispatch($stock)->onConnection('database');
+                    $niceStocks[] = $stock;
+//                    \DB::insert(
+//                        "insert into zhuli (code, date)
+//value(?,?)",
+//                        [
+//                            $code,
+//                            $today
+//                        ]
+//                    );
+            }
+
+        }
+        if ($niceStocks) {
+            Mail::send(new ZhuLiZiJinStock($niceStocks));
+        }
+    }
+
+
     public function isLowerInPast($code, $days)
     {
         $sql = sprintf(
