@@ -468,9 +468,6 @@ value(?,?)",
 //                Log::error("未开市({$code})");
                 continue;
             }
-            if (!$this->isLowerInPast($code, 10)) {
-                continue;
-            }
             if ($improve <= -7) {
                 \App\Jobs\MailJob::dispatch($stock)->onConnection('database');
                 $niceStocks[] = $stock;
