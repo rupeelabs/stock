@@ -188,21 +188,25 @@ class SpiderService
                 $code, $tape['Date']
             ));
 //            var_dump($result);exit;
-            if ($result) {
-                \DB::update(
-                    "update tape set tape_z=?, tape_d=? where id=?",
-                    [$tape['TapeZ'], $tape['TapeD'], $result[0]->id]
-                );
-            } else {
-                \DB::insert(
-                    "INSERT INTO tape(code,date,tape_z,tape_d) VALUE(?,?,?,?)",
-                    [
-                        $code,
-                        $tape['Date'],
-                        $tape['TapeZ'],
-                        $tape['TapeD']
-                    ]
-                );
+            try {
+                if ($result) {
+                    \DB::update(
+                        "update tape set tape_z=?, tape_d=? where id=?",
+                        [$tape['TapeZ'], $tape['TapeD'], $result[0]->id]
+                    );
+                } else {
+                    \DB::insert(
+                        "INSERT INTO tape(code,date,tape_z,tape_d) VALUE(?,?,?,?)",
+                        [
+                            $code,
+                            $tape['Date'],
+                            $tape['TapeZ'],
+                            $tape['TapeD']
+                        ]
+                    );
+                }
+            } catch (\Exception $e) {
+                
             }
         }
     }

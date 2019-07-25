@@ -35,6 +35,7 @@ class TRService
                     $flow->code,
                     $flow->date
                 );
+                if ($publishQuantity == 0) continue;
                 $turnoverRate = round($flow->turnover/$publishQuantity, 4)*10;
                 $sql = sprintf(
                     "update stock_flow set turnover_rate='%s' where id=%d",
