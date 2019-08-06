@@ -206,7 +206,7 @@ class SpiderService
                     );
                 }
             } catch (\Exception $e) {
-                
+
             }
         }
     }
@@ -440,7 +440,7 @@ value(?,?)",
             return;
         }
         $niceStocks = [];
-        $sql = "select * from stock where market_type=1 and net_interest>7";
+        $sql = "select * from stock where market_type=1 and jys=2 and net_interest>7";
         $stocks = \DB::select($sql);
         $today = date('Y-m-d');
         foreach ($stocks as $stock) {
