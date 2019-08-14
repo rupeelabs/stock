@@ -85,14 +85,14 @@ class Kernel extends ConsoleKernel
         $schedule->command(DROP::class)->cron('47 14 * * *');
 
 
-        $schedule->command(ThirdReminder::class)->cron('10 10 * * *');
-        $schedule->command(FirstReminder::class)->cron('10 20 * * *');
-        $schedule->command(SecondReminder::class)->cron('20 20 * * *');
-        $schedule->command(BuyingReminder::class)->cron('30 20 * * *');
-        $schedule->command(ForthReminder::class)->cron('40 20 * * *');
-        $schedule->command(FifthReminder::class)->cron('45 20 * * *');
-        $schedule->command(SixthReminder::class)->cron('50 20 * * *');
-        $schedule->command(SeventhReminder::class)->cron('55 20 * * *');
+        //$schedule->command(ThirdReminder::class)->cron('10 10 * * *');
+        //$schedule->command(FirstReminder::class)->cron('10 20 * * *');
+        //$schedule->command(SecondReminder::class)->cron('20 20 * * *');
+        //$schedule->command(BuyingReminder::class)->cron('30 20 * * *');
+        //$schedule->command(ForthReminder::class)->cron('40 20 * * *');
+        //$schedule->command(FifthReminder::class)->cron('45 20 * * *');
+        //$schedule->command(SixthReminder::class)->cron('50 20 * * *');
+        //$schedule->command(SeventhReminder::class)->cron('55 20 * * *');
     }
 
     /**
