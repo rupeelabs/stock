@@ -1,8 +1,8 @@
-* * * * * cd /wwwroot/stock/ && php artisan schedule:run >>  /wwwroot/log 2>&1
+# * * * * * cd /wwwroot/stock/ && php artisan schedule:run >>  /wwwroot/log 2>&1
 * 20 * * 6 cd /wwwroot/stock/ && php artisan MACD yes
 * 1 * * 6 cd /wwwroot/stock/ && php artisan KDJ yes
 * 23 * * 5 cd /wwwroot/stock/ && php artisan StockFlowSpider yes
 * 9 * * 6 cd /wwwroot/stock/ && php artisan StockAnalyzer yes
 
 
-## 添加crontab :  crontab stock.cron
+# 添加crontab :  crontab stock.cron
