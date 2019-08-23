@@ -1,7 +1,7 @@
 # * * * * * cd /wwwroot/stock/ && php artisan schedule:run >>  /wwwroot/log 2>&1
 0 20 * * 6 cd /wwwroot/stock/ && php artisan MACD yes
 0 6 * * 6 cd /wwwroot/stock/ && php artisan KDJ yes
-0 21 * * 5 cd /wwwroot/stock/ && php artisan StockFlowSpider yes
+15 15 * * 5 cd /wwwroot/stock/ && php artisan StockFlowSpider yes
 0 9 * * 6 cd /wwwroot/stock/ && php artisan StockAnalyzer yes
 
 
