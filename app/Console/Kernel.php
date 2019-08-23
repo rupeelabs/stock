@@ -6,12 +6,14 @@ use App\Console\Commands\AVET;
 use App\Console\Commands\BuyingReminder;
 use App\Console\Commands\CROSS;
 use App\Console\Commands\DROP;
+use App\Console\Commands\EighthReminder;
 use App\Console\Commands\FART;
 use App\Console\Commands\FifthReminder;
 use App\Console\Commands\FirstReminder;
 use App\Console\Commands\ForthReminder;
 use App\Console\Commands\GAT;
 use App\Console\Commands\KDJ;
+use App\Console\Commands\KDJT;
 use App\Console\Commands\MACD;
 use App\Console\Commands\MACDT;
 use App\Console\Commands\PS;
@@ -73,6 +75,7 @@ class Kernel extends ConsoleKernel
         $schedule->command(AVET::class)->cron('30 17 * * *');
         $schedule->command(FART::class)->cron('40 17 * * *');
         $schedule->command(KDJ::class)->cron('0 18 * * *');
+        $schedule->command(KDJT::class)->cron('15 19 * * *');
         $schedule->command(MACD::class)->cron('30 18 * * *');
         $schedule->command(TR::class)->cron('00 19 * * *');
         $schedule->command(MACDT::class)->cron('30 19 * * *');
@@ -93,6 +96,7 @@ class Kernel extends ConsoleKernel
         //$schedule->command(FifthReminder::class)->cron('45 20 * * *');
         //$schedule->command(SixthReminder::class)->cron('50 20 * * *');
         //$schedule->command(SeventhReminder::class)->cron('55 20 * * *');
+        $schedule->command(EighthReminder::class)->cron('10 20 * * *');
     }
 
     /**

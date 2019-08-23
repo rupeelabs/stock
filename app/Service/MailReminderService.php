@@ -11,6 +11,7 @@ use App\Mail\AVE;
 use App\Mail\CrossStock;
 use App\Mail\FAR;
 use App\Mail\GoldenAboveSixtyStock;
+use App\Mail\KdjLessThanTwentyStock;
 use App\Mail\MacdThiceGlodStock;
 use App\Mail\NewStock;
 use App\Mail\NiceStock;
@@ -114,6 +115,19 @@ where b.date='%s'",
         ));
         if ($stocks) {
             Mail::send(new GoldenAboveSixtyStock($stocks));
+        }
+    }
+
+    public function kdjLessThanTwentyRemind($date)
+    {
+        $date = $date ?: date('Y-m-d');
+        $stocks = \DB::select(sprintf(
+            "select a.code, a.name  from stock as a INNER JOIN `kdj_twenty` as b on a.code=b.code
+where b.date='%s'",
+            $date
+        ));
+        if ($stocks) {
+            Mail::send(new KdjLessThanTwentyStock($stocks));
         }
     }
 

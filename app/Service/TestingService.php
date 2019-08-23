@@ -245,6 +245,43 @@ value(?,?)",
         }
     }
 
+
+    /**
+     * kdj 小于20
+     * @param string $code
+     */
+    public function kdjLessThanTwenty($code)
+    {
+        if ($code) {
+            $sql = sprintf("select code,net_interest from stock where market_type=1 and code='%s'", $code);
+        } else {
+            $sql = "select code,net_interest from stock where market_type=1";
+        }
+
+        $stocks = \DB::select($sql);
+        foreach ($stocks as $stock) {
+            if ($stock->net_interest < 4) continue;
+
+            $code = $stock->code;
+            $flow = \DB::select(sprintf(
+                "select * from stock_flow where code='%s' order by id desc limit 1",
+                $code
+            ));
+            if (!$flow) continue;
+
+            if ($flow->kdj_k < 20 && $flow->kdj_d < 20 && $flow->kdj_j < 20) {
+                \DB::insert(
+                    "insert into kdj_twenty (code, date) 
+value(?,?)",
+                    [
+                        $flow->code,
+                        $flow->date
+                    ]
+                );
+            }
+        }
+    }
+
     /**
      * 5日与60日金叉
      * @param string $code

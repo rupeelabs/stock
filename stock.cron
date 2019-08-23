@@ -1,4 +1,4 @@
-# * * * * * cd /wwwroot/stock/ && php artisan schedule:run >>  /wwwroot/log 2>&1
+* * * * * cd /wwwroot/stock/ && php artisan schedule:run >>  /wwwroot/log 2>&1
 0 8 * * 7 cd /wwwroot/stock/ && php artisan MACD yes
 0 1 * * 7 cd /wwwroot/stock/ && php artisan KDJ yes
 0 21 * * 5 cd /wwwroot/stock/ && php artisan StockFlowSpider yes
