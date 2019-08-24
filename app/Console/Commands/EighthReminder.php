@@ -45,9 +45,9 @@ class EighthReminder extends Command
      */
     public function handle()
     {
-        Log::info('Seventh Remind start');
+        Log::info('Eighth Remind start');
         $date = $this->argument('date');
-        $this->service->volRiseRemind($date);
-        Log::info('Seventh Remind end');
+        $this->service->kdjLessThanTwentyRemind($date);
+        Log::info('Eighth Remind end');
     }
 }

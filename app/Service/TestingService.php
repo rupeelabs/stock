@@ -269,13 +269,13 @@ value(?,?)",
             ));
             if (!$flow) continue;
 
-            if ($flow->kdj_k < 20 && $flow->kdj_d < 20 && $flow->kdj_j < 20) {
+            if ($flow[0]->kdj_k < 20 && $flow[0]->kdj_d < 20 && $flow[0]->kdj_j < 20) {
                 \DB::insert(
                     "insert into kdj_twenty (code, date) 
 value(?,?)",
                     [
-                        $flow->code,
-                        $flow->date
+                        $flow[0]->code,
+                        $flow[0]->date
                     ]
                 );
             }
