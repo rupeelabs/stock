@@ -55,24 +55,37 @@ class KDJService
                     $yestodayJ = $j;
                 } else {
                     $todayRange = $flow->close - $flows[$key - 1]->close;
-                    if ($todayRange == 0) {//与昨日对比涨跌幅为0
-                        $k = $yestodayK;
-                        $d = $yestodayD;
-                        $j = $yestodayJ;
-                    } else {
-                        if ($isAll == 'no') {
-                            $yestodayK = $flows[$key-1]->kdj_k;
-                            $yestodayD = $flows[$key-1]->kdj_d;
-                            $yestodayJ = $flows[$key-1]->kdj_j;
-                        }
-                        $k = round(($yestodayK * 2) / 3 + $rsv / 3, 2);
-                        $d = round(($yestodayD * 2) / 3 + $k / 3, 2);
-                        $j = round(3 * $k - 2 * $d, 2);
+//                    if ($todayRange == 0) {//与昨日对比涨跌幅为0
+//                        $k = $yestodayK;
+//                        $d = $yestodayD;
+//                        $j = $yestodayJ;
+//                        echo $k;exit;
+//                    } else {
+//                        if ($isAll == 'no') {
+//                            $yestodayK = $flows[$key-1]->kdj_k;
+//                            $yestodayD = $flows[$key-1]->kdj_d;
+//                            $yestodayJ = $flows[$key-1]->kdj_j;
+//                        }
+//                        $k = round(($yestodayK * 2) / 3 + $rsv / 3, 2);
+//                        $d = round(($yestodayD * 2) / 3 + $k / 3, 2);
+//                        $j = round(3 * $k - 2 * $d, 2);
+//                    }
+
+                    if ($isAll == 'no') {
+                        $yestodayK = $flows[$key-1]->kdj_k;
+                        $yestodayD = $flows[$key-1]->kdj_d;
+                        $yestodayJ = $flows[$key-1]->kdj_j;
                     }
+                    $k = round(($yestodayK * 2) / 3 + $rsv / 3, 2);
+                    $d = round(($yestodayD * 2) / 3 + $k / 3, 2);
+                    $j = round(3 * $k - 2 * $d, 2);
+
+
                     $yestodayK = $k;
                     $yestodayD = $d;
                     $yestodayJ = $j;
                 }
+//                echo $k;exit;
                 \DB::update(
                     "update stock_flow set kdj_k=?, kdj_d=?, kdj_j=? where id=?",
                     [$k, $d, $j, $flow->id]
