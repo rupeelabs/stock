@@ -114,7 +114,8 @@ class SpiderService
             $url = "http://pdfm.eastmoney.com/EM_UBG_PDTI_Fast/api/js?token=4f1862fc3b5e77c150a2b985b12db0fd&rtntype=6&id={$code}{$stock->market_type}&type=k&authorityType=fa&cb=jsonp1546755196396";
             $stock = json_decode($this->grab($url), true);
             $flows = $stock['flow'];
-
+            if (!$flows) continue;
+            
             foreach ($flows as $flow) {
                 $date = date('Y-m-d', strtotime($flow['time']));
                 $quantity = $flow['ltg'];
