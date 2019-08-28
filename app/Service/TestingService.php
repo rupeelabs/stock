@@ -253,9 +253,9 @@ value(?,?)",
     public function kdjLessThanTwenty($code)
     {
         if ($code) {
-            $sql = sprintf("select code,net_interest from stock where market_type=1 and code='%s'", $code);
+            $sql = sprintf("select code,net_interest from stock where market_type=1 and jys=2 and code='%s'", $code);
         } else {
-            $sql = "select code,net_interest from stock where market_type=1";
+            $sql = "select code,net_interest from stock where market_type=1 and jys=2";
         }
 
         $stocks = \DB::select($sql);

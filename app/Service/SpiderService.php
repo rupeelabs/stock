@@ -115,7 +115,7 @@ class SpiderService
             $stock = json_decode($this->grab($url), true);
             $flows = $stock['flow'];
             if (!$flows) continue;
-            
+
             foreach ($flows as $flow) {
                 $date = date('Y-m-d', strtotime($flow['time']));
                 $quantity = $flow['ltg'];
@@ -446,7 +446,6 @@ value(?,?)",
         $today = date('Y-m-d');
         foreach ($stocks as $stock) {
             $code =  $stock->code;
-//            echo $code;exit;
             $url = "http://ff.eastmoney.com//EM_CapitalFlowInterface/api/js?type=hff&rtntype=2&cb=var%20aff_data=&check=TMLBMSPROCR&acces_token=1942f5da9b46b069953c873404aad4b5&id={$code}1";
             try {
                 $response = (string)$this->httpClient->get($url)->getBody();
