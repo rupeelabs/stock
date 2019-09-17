@@ -264,14 +264,31 @@ value(?,?)",
 
             $code = $stock->code;
             $flow = \DB::select(sprintf(
-                "select * from stock_flow where code='%s' order by id desc limit 1",
+                "select * from stock_flow where code='%s' order by id desc ",
                 $code
             ));
             if (!$flow) continue;
 
+//            foreach ($flow as $item) {
+//                if ($item->kdj_k < 20 && $item->kdj_d < 20 && $item->kdj_j < 20) {
+//                    try {
+//                        \DB::insert(
+//                            "insert into kdj_twenty (code, date)
+//value(?,?)",
+//                            [
+//                                $item->code,
+//                                $item->date
+//                            ]
+//                        );
+//                    } catch (\Exception $e) {
+//
+//                    }
+//                }
+//            }
+
             if ($flow[0]->kdj_k < 20 && $flow[0]->kdj_d < 20 && $flow[0]->kdj_j < 20) {
                 \DB::insert(
-                    "insert into kdj_twenty (code, date) 
+                    "insert into kdj_twenty (code, date)
 value(?,?)",
                     [
                         $flow[0]->code,
